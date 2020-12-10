@@ -1,0 +1,45 @@
+{
+    "name": "rapidez/account",
+    "description": "Rapidez Account",
+    "keywords": [
+        "rapidez"
+    ],
+    "homepage": "https://rapidez.io",
+    "authors": [
+        {
+            "name": "Roy Duineveld",
+            "email": "royduineveld@gmail.com",
+            "homepage": "https://royduineveld.nl",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url":  "git@github.com:rapidez/core.git"
+        }
+    ],
+    "require": {
+        "php": "^7.4",
+        "illuminate/support": "^8.0",
+        "illuminate/view": "^8.0",
+        "rapidez/core": "@dev"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rapidez\\Account\\": "src"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rapidez\\Account\\AccountServiceProvider"
+            ]
+        }
+    }
+}

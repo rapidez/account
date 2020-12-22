@@ -7,4 +7,5 @@
     id="{{ $name }}"
     v-model="changes.{{ $name }}"
     placeholder="@lang($label ?? ucfirst($name))"
+    {{ isset($required) ? 'required' : '' }}
 >

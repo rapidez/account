@@ -7,6 +7,6 @@ Route::middleware('web')->group(function () {
     Route::view('account/orders', 'rapidez::account.orders');
     Route::view('account/order/{id}', 'rapidez::account.order');
     Route::view('account/addresses', 'rapidez::account.addresses');
-    Route::view('account/address/new', 'rapidez::account.address');
-    Route::view('account/address/{id}', 'rapidez::account.address');
+    Route::view('account/address/new', 'rapidez::account.address-new');
+    Route::view('account/address/{id}', 'rapidez::account.address-edit');
 });

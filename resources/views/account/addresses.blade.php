@@ -22,17 +22,19 @@
                                     <th class="px-4">@lang('City')</th>
                                     <th class="px-4">@lang('Country')</th>
                                     <th class="px-4">@lang('Phone')</th>
+                                    <th></th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr v-for="additionalAddress in additionalAddresses">
                                     <td class="border px-4 py-2">@{{ additionalAddress.firstname }}</td>
                                     <td class="border px-4 py-2">@{{ additionalAddress.lastname }}</td>
-                                    <td class="border px-4 py-2">@{{ billing.street[0] }} @{{ billing.street[1] }} @{{ billing.street[2] }}</td>
-                                    <td class="border px-4 py-2">@{{ billing.postcode }}</td>
+                                    <td class="border px-4 py-2">@{{ additionalAddress.street[0] }} @{{ additionalAddress.street[1] }} @{{ additionalAddress.street[2] }}</td>
+                                    <td class="border px-4 py-2">@{{ additionalAddress.postcode }}</td>
                                     <td class="border px-4 py-2">@{{ additionalAddress.city }}</td>
                                     <td class="border px-4 py-2">@{{ additionalAddress.country_code }}</td>
                                     <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>
+                                    <td class="border px-4 py-2"><a :href="'/account/address/'+additionalAddress.id" class="underline hover:no-underline">@lang('Edit')</a></td>
                                 </tr>
                             </tbody>
                         </table>

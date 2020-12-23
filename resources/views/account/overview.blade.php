@@ -4,7 +4,7 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql v-cloak query="{ customer { firstname lastname email addresses { firstname lastname street city postcode country_code telephone default_billing default_shipping } orders ( pageSize: 5 ) { items { number order_date shipping_address { firstname lastname } total { grand_total { value } } status } } } }">
+        <graphql v-cloak query="@include('rapidez::account.partials.queries.overview')">
             <div v-if="data" slot-scope="{ data }">
                 <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Account information')</h2>
                 @{{ data.customer.firstname }} @{{ data.customer.lastname }}<br>

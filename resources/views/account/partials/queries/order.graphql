@@ -1,0 +1,54 @@
+{
+  customer {
+    orders ( filter: { number: { eq: "{{ request()->id }}" } } ) {
+      items {
+        number
+        order_date
+        shipping_method
+        payment_methods {
+          name
+        }
+        shipping_address {
+          firstname
+          lastname
+          street
+          postcode
+          city
+          country_code
+          telephone
+        }
+        billing_address {
+          firstname
+          lastname
+          street
+          postcode
+          city
+          country_code
+          telephone
+        }
+        total {
+          grand_total {
+            value
+          }
+          shipping_handling {
+            total_amount {
+              value
+            }
+          }
+          subtotal {
+            value
+          }
+        }
+        status
+        items {
+          product_name
+          product_sku
+          product_sale_price {
+            value
+          }
+          quantity_ordered
+        }
+      }
+    }
+  }
+}

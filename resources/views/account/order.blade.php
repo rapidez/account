@@ -4,7 +4,7 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql v-cloak query='{ customer { orders ( filter: { number: { eq: "{{ request()->id }}" } } ) { items { number order_date shipping_method payment_methods { name } shipping_address { firstname lastname street postcode city country_code telephone } billing_address { firstname lastname street postcode city country_code telephone } total { grand_total { value } shipping_handling { total_amount { value } } subtotal { value } } status items { product_name product_sku product_sale_price { value } quantity_ordered } } } } }' check="data.customer.orders.items[0]" redirect="/account/orders">
+        <graphql v-cloak query='@include('rapidez::account.partials.queries.order')' check="data.customer.orders.items[0]" redirect="/account/orders">
             <div v-if="data" slot-scope="{ data }">
                 <div class="overflow-scroll md:overflow-visible">
                     <table class="table-auto w-full text-left">

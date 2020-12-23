@@ -4,7 +4,7 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql v-cloak query="{ customer { orders { items { number order_date shipping_address { firstname lastname } total { grand_total { value } } status } } } }">
+        <graphql v-cloak query="@include('rapidez::account.partials.queries.orders')">
             <div v-if="data" slot-scope="{ data }">
                 @include('rapidez::account.partials.orders')
             </div>

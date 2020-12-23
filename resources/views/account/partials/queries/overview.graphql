@@ -1,0 +1,34 @@
+{
+  customer {
+    firstname
+    lastname
+    email
+    addresses {
+      firstname
+      lastname
+      street
+      city
+      postcode
+      country_code
+      telephone
+      default_billing
+      default_shipping
+    }
+    orders ( pageSize: 5 ) {
+      items {
+        number
+        order_date
+        status
+        shipping_address {
+          firstname
+          lastname
+        }
+        total {
+          grand_total {
+            value
+          }
+        }
+      }
+    }
+  }
+}

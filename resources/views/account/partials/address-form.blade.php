@@ -2,21 +2,25 @@
     <div class="flex space-x-4">
         <div class="w-1/2">
             <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Contact information')</h2>
-            @include('rapidez::account.partials.input', ['name' => 'firstname', 'required' => true])
-            @include('rapidez::account.partials.input', ['name' => 'lastname', 'required' => true])
-            @include('rapidez::account.partials.input', ['name' => 'company'])
-            @include('rapidez::account.partials.input', ['name' => 'telephone', 'required' => true])
+            <div class="flex flex-col space-y-3">
+                <x-rapidez::input name="firstname" v-model="changes.firstname" required />
+                <x-rapidez::input name="lastname" v-model="changes.lastname" required />
+                <x-rapidez::input name="company" v-model="changes.company" />
+                <x-rapidez::input name="telephone" v-model="changes.telephone" required />
+            </div>
         </div>
 
         <div class="w-1/2">
             <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Address')</h2>
-            @include('rapidez::account.partials.input', ['name' => 'street[0]', 'label' => 'Street', 'required' => true])
-            @include('rapidez::account.partials.input', ['name' => 'street[1]', 'label' => false])
-            @include('rapidez::account.partials.input', ['name' => 'street[2]', 'label' => false])
+            <div class="flex flex-col space-y-3">
+                <x-rapidez::input name="street[0]" v-model="changes.street[0]" label="Street" required />
+                <x-rapidez::input name="street[1]" v-model="changes.street[1]" label="" />
+                <x-rapidez::input name="street[2]" v-model="changes.street[2]" label="" />
 
-            @include('rapidez::account.partials.input', ['name' => 'country_code', 'label' => 'Country', 'required' => true])
-            @include('rapidez::account.partials.input', ['name' => 'city', 'required' => true])
-            @include('rapidez::account.partials.input', ['name' => 'postcode', 'required' => true])
+                <x-rapidez::input name="country_code" v-model="changes.country_code" label="Country" required />
+                <x-rapidez::input name="city" v-model="changes.city" required />
+                <x-rapidez::input name="postcode" v-model="changes.postcode" required />
+            </div>
         </div>
     </div>
 

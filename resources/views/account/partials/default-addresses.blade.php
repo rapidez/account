@@ -1,7 +1,7 @@
 <div class="flex">
     <div class="w-1/2">
         <h3 class="font-bold text-gray-700">@lang('Default billing address')</h3>
-        <div v-if="data.customer.addresses.find(a => a.default_billing == true)">
+        <div class="text-gray-700" v-if="data.customer.addresses.find(a => a.default_billing == true)">
             @{{ (billing = data.customer.addresses.find(a => a.default_billing == true)).firstname }} @{{ billing.lastname }}<br>
             @{{ billing.street[0] }} @{{ billing.street[1] }} @{{ billing.street[2] }}<br>
             @{{ billing.postcode }} @{{ billing.city }}<br>
@@ -15,7 +15,7 @@
     </div>
     <div class="w-1/2">
         <h3 class="font-bold text-gray-700">@lang('Default shipping address')</h3>
-        <div v-if="data.customer.addresses.find(a => a.default_shipping == true)">
+        <div class="text-gray-700" v-if="data.customer.addresses.find(a => a.default_shipping == true)">
             @{{ (shipping = data.customer.addresses.find(a => a.default_shipping == true)).firstname }} @{{ shipping.lastname }}<br>
             @{{ shipping.street[0] }} @{{ shipping.street[1] }} @{{ shipping.street[2] }}<br>
             @{{ shipping.postcode }} @{{ shipping.city }}<br>

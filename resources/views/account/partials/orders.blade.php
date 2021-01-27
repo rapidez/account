@@ -1,4 +1,4 @@
-<div v-if="data.customer.orders.length" class="overflow-scroll md:overflow-visible">
+<div v-if="data.customer.orders.items.length" class="overflow-scroll md:overflow-visible">
     <table class="table-auto w-full text-left text-gray-700">
         <thead>
             <tr>

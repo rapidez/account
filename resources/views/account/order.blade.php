@@ -7,7 +7,7 @@
         <graphql v-cloak query='@include('rapidez::account.partials.queries.order')' check="data.customer.orders.items[0]" redirect="/account/orders">
             <div v-if="data" slot-scope="{ data }">
                 <div class="overflow-scroll md:overflow-visible">
-                    <table class="table-auto w-full text-left">
+                    <table class="table-auto w-full text-left text-gray-700">
                         <thead>
                             <tr>
                                 <th class="px-4 py-2">@lang('Product name')</th>
@@ -47,27 +47,35 @@
                 <div class="flex flex-wrap">
                     <div class="w-full sm:w-1/2 lg:w-1/4 mt-3">
                         <h3 class="font-bold text-xl">@lang('Shipping address')</h3>
-                        @{{ (shipping = data.customer.orders.items[0].shipping_address).firstname }} @{{ shipping.lastname }}<br>
-                        @{{ shipping.street[0] }} @{{ shipping.street[1] }}<br>
-                        @{{ shipping.postcode }} @{{ shipping.city }}<br>
-                        @{{ shipping.country_code }}<br>
-                        T: @{{ shipping.telephone }}
+                        <div class="text-gray-700">
+                            @{{ (shipping = data.customer.orders.items[0].shipping_address).firstname }} @{{ shipping.lastname }}<br>
+                            @{{ shipping.street[0] }} @{{ shipping.street[1] }}<br>
+                            @{{ shipping.postcode }} @{{ shipping.city }}<br>
+                            @{{ shipping.country_code }}<br>
+                            T: @{{ shipping.telephone }}
+                        </div>
                     </div>
                     <div class="w-full sm:w-1/2 lg:w-1/4 mt-3">
                         <h3 class="font-bold text-xl">@lang('Shipping method')</h3>
-                        @{{ data.customer.orders.items[0].shipping_method }}
+                        <div class="text-gray-700">
+                            @{{ data.customer.orders.items[0].shipping_method }}
+                        </div>
                     </div>
                     <div class="w-full sm:w-1/2 lg:w-1/4 mt-3">
                         <h3 class="font-bold text-xl">@lang('Billing address')</h3>
-                        @{{ (billing = data.customer.orders.items[0].billing_address).firstname }} @{{ billing.lastname }}<br>
-                        @{{ billing.street[0] }} @{{ billing.street[1] }}<br>
-                        @{{ billing.postcode }} @{{ billing.city }}<br>
-                        @{{ billing.country_code }}<br>
-                        T: @{{ billing.telephone }}
+                        <div class="text-gray-700">
+                            @{{ (billing = data.customer.orders.items[0].billing_address).firstname }} @{{ billing.lastname }}<br>
+                            @{{ billing.street[0] }} @{{ billing.street[1] }}<br>
+                            @{{ billing.postcode }} @{{ billing.city }}<br>
+                            @{{ billing.country_code }}<br>
+                            T: @{{ billing.telephone }}
+                        </div>
                     </div>
                     <div class="w-full sm:w-1/2 lg:w-1/4 mt-3">
                         <h3 class="font-bold text-xl">@lang('Payment method')</h3>
-                        @{{ data.customer.orders.items[0].payment_methods[0].name }}
+                        <div class="text-gray-700">
+                            @{{ data.customer.orders.items[0].payment_methods[0].name }}
+                        </div>
                     </div>
                 </div>
             </div>

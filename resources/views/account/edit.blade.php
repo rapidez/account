@@ -8,23 +8,8 @@
             <div v-if="data" slot-scope="{ data }">
                 <graphql-mutation query="mutation { updateCustomerV2 ( input: changes ) { customer { firstname lastname } } }" :changes="data.customer" :refresh-user-info="true">
                     <form class="sm:w-1/3 md:w-1/4" slot-scope="{ changes, mutate, mutated }" v-on:submit.prevent="mutate">
-                        <label class="font-semibold" for="firstname">@lang('Firstname')</label>
-                        <input
-                            class="form-input w-full mb-2"
-                            type="text"
-                            id="firstname"
-                            v-model="changes.firstname"
-                            placeholder="@lang('Firstname')"
-                        >
-
-                        <label class="font-semibold" for="lastname">@lang('Lastname')</label>
-                        <input
-                            class="form-input w-full"
-                            type="text"
-                            id="lastname"
-                            v-model="changes.lastname"
-                            placeholder="@lang('Lastname')"
-                        >
+                        <x-rapidez::input name="firstname" v-model="changes.firstname" class="mb-2"/>
+                        <x-rapidez::input name="lastname" v-model="changes.lastname"/>
 
                         <div class="flex items-center mt-5">
                             <button

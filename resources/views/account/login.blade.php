@@ -7,26 +7,24 @@
         <div v-if="!$root.user" class="flex justify-center">
             <form class="p-8 border rounded w-400px" v-on:submit.prevent="go()">
                 <h1 class="font-bold text-4xl text-center mb-5">@lang('Login')</h1>
-                <input
-                    class="form-input w-full"
-                    id="email"
+
+                <x-rapidez::input
+                    :label="false"
+                    name="email"
                     type="email"
-                    dusk="email"
-                    placeholder="@lang('Email')"
-                    :value="email"
-                    @input="loginInputChange"
+                    v-bind:value="email"
+                    v-on:input="loginInputChange"
                     required
-                >
-                <input
-                    class="form-input w-full mt-3"
-                    id="password"
+                />
+                <x-rapidez::input
+                    :label="false"
+                    class="mt-3"
+                    name="password"
                     type="password"
-                    dusk="password"
-                    placeholder="@lang('Password')"
-                    :value="password"
-                    @input="loginInputChange"
+                    v-bind:value="password"
+                    v-on:input="loginInputChange"
                     required
-                >
+                />
                 <button
                     type="submit"
                     class="btn btn-primary w-full mt-5"

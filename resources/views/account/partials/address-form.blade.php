@@ -13,9 +13,9 @@
         <div class="w-1/2">
             <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Address')</h2>
             <div class="flex flex-col space-y-3">
-                <x-rapidez::input name="street[0]" v-model="changes.street[0]" label="Street" required />
-                <x-rapidez::input name="street[1]" v-model="changes.street[1]" label="" />
-                <x-rapidez::input name="street[2]" v-model="changes.street[2]" label="" />
+                <x-rapidez::input name="street[0]" v-model="changes.street[0]" label="Street" placeholder="Street" required />
+                <x-rapidez::input name="street[1]" v-model="changes.street[1]" label="" placeholder="" />
+                <x-rapidez::input name="street[2]" v-model="changes.street[2]" label="" placeholder="" />
 
                 <x-rapidez::input name="country_code" v-model="changes.country_code" label="Country" required />
                 <x-rapidez::input name="city" v-model="changes.city" required />

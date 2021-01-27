@@ -24,6 +24,9 @@
         </div>
     </div>
 
+    <x-rapidez::checkbox v-model="changes.default_billing">@lang('Default billing address')</x-rapidez::checkbox>
+    <x-rapidez::checkbox v-model="changes.default_shipping">@lang('Default shipping address')</x-rapidez::checkbox>
+
     <div class="flex items-center mt-5">
         <button
             type="submit"

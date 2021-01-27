@@ -1,5 +1,5 @@
-<div v-if="data.customer.orders" class="overflow-scroll md:overflow-visible">
-    <table class="table-auto w-full text-left">
+<div v-if="data.customer.orders.length" class="overflow-scroll md:overflow-visible">
+    <table class="table-auto w-full text-left text-gray-700">
         <thead>
             <tr>
                 <th class="px-4">@lang('Order #')</th>
@@ -24,4 +24,4 @@
         </tbody>
     </table>
 </div>
-<div v-else>@lang('You do not have any orders yet.')</div>
+<div v-else class="text-gray-700">@lang('You do not have any orders yet.')</div>

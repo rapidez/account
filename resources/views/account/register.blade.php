@@ -3,35 +3,38 @@
 @section('title', 'Register')
 
 @section('content')
-
-    <div class="container mx-auto">
+    <div class="flex justify-center">
         <graphql-mutation query="mutation { createCustomerV2 ( input: changes ) { customer { firstname lastname email } } }">
-            <form class="sm:w-1/3 md:w-1/4" slot-scope="{ changes, mutate, mutated }" v-on:submit.prevent="mutate">
-           <x-rapidez::input
-                name="firstname"
-                v-model="changes.firstname"
-                required
-            />
-            <x-rapidez::input
-                name="lastname"
-                v-model="changes.lastname"
-                required
-            />
-            <x-rapidez::input
-                name="email"
-                v-model="changes.email"
-                required
-            />
-            <x-rapidez::input
-                name="password"
-                v-model="changes.password"
-                required
-            />
-            {{--<x-rapidez::input
-                name="passwordConfirm"
-                v-model="changes.passwordConfirm"
-                required
-            />--}}
+            <form class="sm:w-1/3 md:w-1/4" slot-scope="{ changes, mutate, mutated }" v-on:submit.prevent="(changes.password !== passwordConfirm) ? alert('Passwords don\'t match') : mutate()">
+                <h1 class="font-bold text-4xl text-center mb-5">@lang('Register account')</h1>
+                <x-rapidez::input
+                    name="firstname"
+                    v-model="changes.firstname"
+                    required
+                />
+                <x-rapidez::input
+                    name="lastname"
+                    v-model="changes.lastname"
+                    required
+                />
+                <x-rapidez::input
+                    name="email"
+                    type="email"
+                    v-model="changes.email"
+                    required
+                />
+                <x-rapidez::input
+                    name="password"
+                    type="password"
+                    v-model="changes.password"
+                    required
+                />
+                <x-rapidez::input
+                    name="passwordConfirm"
+                    type="password"
+                    v-model="passwordConfirm"
+                    required
+                />
                 <div class="flex items-center mt-5">
                     <button
                         type="submit"

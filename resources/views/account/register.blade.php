@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="flex justify-center">
-        <graphql-mutation before="checkPassword" query="mutation { createCustomerV2 ( input: changes ) { customer { firstname lastname email } } }">
+        <graphql-mutation before="checkPassword" after="loginIfSuccesful" query="mutation { createCustomerV2 ( input: changes ) { customer { firstname lastname email } } }">
             <form class="sm:w-1/3 md:w-1/4" slot-scope="{ changes, beforeParams, mutate, mutated }" v-on:submit.prevent="mutate">
                 <h1 class="font-bold text-4xl text-center mb-5">@lang('Register account')</h1>
                 <x-rapidez::input

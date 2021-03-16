@@ -56,7 +56,7 @@
                     :disabled="$root.loading"
                     dusk="continue"
                 >
-                    @lang('Login')
+                    @lang('Register')
                 </button>
             </form>
         </div>

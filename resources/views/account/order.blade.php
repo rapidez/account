@@ -45,17 +45,17 @@
 
                 <h2 class="font-bold text-2xl mt-5">@lang('Order information')</h2>
                 <div class="flex flex-wrap">
-                    <div class="w-full sm:w-1/2 lg:w-1/4 mt-3">
+                    <div class="w-full sm:w-1/2 lg:w-1/4 mt-3" v-if="shipping = data.customer.orders.items[0].shipping_address">
                         <h3 class="font-bold text-xl">@lang('Shipping address')</h3>
                         <div class="text-gray-700">
-                            @{{ (shipping = data.customer.orders.items[0].shipping_address).firstname }} @{{ shipping.lastname }}<br>
+                            @{{ shipping.firstname }} @{{ shipping.lastname }}<br>
                             @{{ shipping.street[0] }} @{{ shipping.street[1] }}<br>
                             @{{ shipping.postcode }} @{{ shipping.city }}<br>
                             @{{ shipping.country_code }}<br>
                             T: @{{ shipping.telephone }}
                         </div>
                     </div>
-                    <div class="w-full sm:w-1/2 lg:w-1/4 mt-3">
+                    <div class="w-full sm:w-1/2 lg:w-1/4 mt-3" v-if="data.customer.orders.items[0].shipping_method">
                         <h3 class="font-bold text-xl">@lang('Shipping method')</h3>
                         <div class="text-gray-700">
                             @{{ data.customer.orders.items[0].shipping_method }}

@@ -17,7 +17,7 @@
                     </a>
                 </td>
                 <td class="border px-4 py-2">@{{ order.order_date }}</td>
-                <td class="border px-4 py-2">@{{ order.shipping_address.firstname }} @{{ order.shipping_address.lastname }}</td>
+                <td class="border px-4 py-2">@{{ order.shipping_address?.firstname }} @{{ order.shipping_address?.lastname }}</td>
                 <td class="border px-4 py-2">@{{ order.total.grand_total.value | price }}</td>
                 <td class="border px-4 py-2">@{{ order.status }}</td>
             </tr>

@@ -17,7 +17,13 @@
                 <x-rapidez::input name="street[1]" v-model="changes.street[1]" label="" placeholder="" />
                 <x-rapidez::input name="street[2]" v-model="changes.street[2]" label="" placeholder="" />
 
-                <x-rapidez::input name="country_code" v-model="changes.country_code" label="Country" required />
+                <x-rapidez::country-select
+                    name="country_code"
+                    label="Country"
+                    v-model="changes.country_code"
+                    required
+                />
+
                 <x-rapidez::input name="city" v-model="changes.city" required />
                 <x-rapidez::input name="postcode" v-model="changes.postcode" required />
             </div>

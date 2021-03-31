@@ -21,6 +21,7 @@
                     name="country_code"
                     label="Country"
                     v-model="changes.country_code"
+                    class="w-full"
                     required
                 />
 

@@ -20,7 +20,7 @@
                 <x-rapidez::country-select
                     name="country_code"
                     label="Country"
-                    vModel="changes.country_code"
+                    v-model="changes.country_code"
                     required
                 />
 

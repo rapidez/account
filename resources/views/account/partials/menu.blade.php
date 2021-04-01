@@ -1,8 +1,24 @@
 <div class="overflow-scroll">
-    <ul class="flex">
-        <li><a href="/account" class="btn btn-outline-primary mr-1">@lang('Overview')</a></li>
-        <li><a href="/account/edit" class="btn btn-outline-primary mr-1">@lang('Account')</a></li>
-        <li><a href="/account/addresses" class="btn btn-outline-primary mr-1">@lang('Addresses')</a></li>
-        <li><a href="/account/orders" class="btn btn-outline-primary mr-1">@lang('Orders')</a></li>
+    <ul class="flex space-x-1">
+        <li>
+            <x-rapidez::button href="/account" variant="outline">
+                @lang('Overview')
+            </x-rapidez::button>
+        </li>
+        <li>
+            <x-rapidez::button href="/account/edit" variant="outline">
+                @lang('Account')
+            </x-rapidez::button>
+        </li>
+        <li>
+            <x-rapidez::button href="/account/addresses" variant="outline">
+                @lang('Addresses')
+            </x-rapidez::button>
+        </li>
+        <li>
+            <x-rapidez::button href="/account/orders" variant="outline">
+                @lang('Orders')
+            </x-rapidez::button>
+        </li>
     </ul>
 </div>

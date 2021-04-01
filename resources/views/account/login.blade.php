@@ -25,14 +25,8 @@
                     v-on:input="loginInputChange"
                     required
                 />
-                <button
-                    type="submit"
-                    class="btn btn-primary w-full mt-5"
-                    :disabled="$root.loading"
-                    dusk="continue"
-                >
-                    @lang('Login')
-                </button>
+
+                <x-rapidez::button type="submit" class="w-full mt-5" dusk="continue">@lang('Login')</x-rapidez::button>
             </form>
         </div>
     </login>

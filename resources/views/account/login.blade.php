@@ -5,7 +5,7 @@
 @section('content')
     <login v-cloak :checkout-login="false" v-slot="{ email, password, go, loginInputChange }">
         <div v-if="!$root.user" class="flex justify-center">
-            <form class="p-8 border rounded w-400px" v-on:submit.prevent="go()">
+            <form class="p-8 border rounded w-[400px]" v-on:submit.prevent="go()">
                 <h1 class="font-bold text-4xl text-center mb-5">@lang('Login')</h1>
 
                 <x-rapidez::input
@@ -25,14 +25,8 @@
                     v-on:input="loginInputChange"
                     required
                 />
-                <button
-                    type="submit"
-                    class="btn btn-primary w-full mt-5"
-                    :disabled="$root.loading"
-                    dusk="continue"
-                >
-                    @lang('Login')
-                </button>
+
+                <x-rapidez::button type="submit" class="w-full mt-5" dusk="continue">@lang('Login')</x-rapidez::button>
             </form>
         </div>
     </login>

@@ -12,13 +12,9 @@
                         <x-rapidez::input name="lastname" v-model="changes.lastname"/>
 
                         <div class="flex items-center mt-5">
-                            <button
-                                type="submit"
-                                class="btn btn-primary"
-                                :disabled="$root.loading"
-                            >
+                            <x-rapidez::button type="submit">
                                 @lang('Change')
-                            </button>
+                            </x-rapidez::button>
 
                             <div v-if="mutated" class="ml-3 text-green-500">
                                 @lang('Changed successfully!')

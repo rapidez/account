@@ -57,7 +57,9 @@
                         @lang('You have no other address entries in your address book.')
                     </div>
 
-                    <a href="/account/address/new" class="btn btn-primary mt-5">@lang('Add new address')</a>
+                    <x-rapidez::button href="/account/address/new" class="mt-5">
+                        @lang('Add new address')
+                    </x-rapidez::button>
                 </div>
             </div>
         </graphql>

@@ -11,7 +11,10 @@
                 <a :href="'/account/address/'+billing.id" class="underline hover:no-underline text-primary">@lang('Change billing address')</a>
             @endisset
         </div>
-        <a v-else href="/account/address/new" class="btn btn-primary mt-5">@lang('Add billing address')</a>
+
+        <x-rapidez::button v-else href="/account/address/new" class="mt-5">
+            @lang('Add billing address')
+        </x-rapidez::button>
     </div>
     <div class="w-1/2">
         <h3 class="font-bold text-gray-700">@lang('Default shipping address')</h3>
@@ -25,6 +28,9 @@
                 <a :href="'/account/address/'+shipping.id" class="underline hover:no-underline text-primary">@lang('Change shipping address')</a>
             @endisset
         </div>
-        <a v-else href="/account/address/new" class="btn btn-primary mt-5">@lang('Add shipping address')</a>
+
+        <x-rapidez::button v-else href="/account/address/new" class="mt-5">
+            @lang('Add shipping address')
+        </x-rapidez::button>
     </div>
 </div>

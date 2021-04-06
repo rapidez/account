@@ -21,6 +21,7 @@
                     name="country_code"
                     label="Country"
                     v-model="changes.country_code"
+                    class="w-full"
                     required
                 />
 
@@ -34,13 +35,9 @@
     <x-rapidez::checkbox v-model="changes.default_shipping">@lang('Default shipping address')</x-rapidez::checkbox>
 
     <div class="flex items-center mt-5">
-        <button
-            type="submit"
-            class="btn btn-primary"
-            :disabled="$root.loading"
-        >
+        <x-rapidez::button type="submit">
             @lang(request()->id ? 'Change' : 'Add')
-        </button>
+        </x-rapidez::button>
 
         <div v-if="mutated" class="ml-3 text-green-500">
             @lang('Changed successfully!')

@@ -2,6 +2,7 @@
 
 Route::middleware('web')->group(function () {
     Route::view('login', 'rapidez::account.login');
+    Route::view('register', 'rapidez::account.register');
     Route::view('account', 'rapidez::account.overview');
     Route::view('account/edit', 'rapidez::account.edit');
     Route::view('account/orders', 'rapidez::account.orders');

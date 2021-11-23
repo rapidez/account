@@ -26,7 +26,12 @@
                     required
                 />
 
-                <x-rapidez::button type="submit" class="w-full mt-5" dusk="continue">@lang('Login')</x-rapidez::button>
+                <x-rapidez::button type="submit" class="w-full my-5" dusk="continue">@lang('Login')</x-rapidez::button>
+
+                <div class="flex justify-between">
+                    <a href="/register" class="text-sm hover:underline">@lang('Create an account')</a>
+                    <a href="/forgotpassword" class="text-sm hover:underline">@lang('Forgot your password?')</a>
+                </div>
             </form>
         </div>
     </login>

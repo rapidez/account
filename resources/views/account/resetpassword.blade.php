@@ -1,6 +1,6 @@
 @extends('rapidez::layouts.app')
 
-@section('title', 'Reset password')
+@section('title', __('Reset password'))
 
 @section('content')
     <graphql-mutation

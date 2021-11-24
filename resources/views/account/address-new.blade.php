@@ -1,6 +1,6 @@
 @extends('rapidez::account.partials.layout')
 
-@section('title', 'New address')
+@section('title', __('New address'))
 
 @section('account-content')
     <div class="container mx-auto">

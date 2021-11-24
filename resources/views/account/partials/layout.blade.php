@@ -1,6 +1,6 @@
 @extends('rapidez::layouts.app')
 
-@section('title', 'Account')
+@section('title', __('Account'))
 
 @section('content')
     <div class="container mx-auto">

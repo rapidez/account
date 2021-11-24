@@ -1,6 +1,6 @@
 @extends('rapidez::layouts.app')
 
-@section('title', 'Login')
+@section('title', __('Login'))
 
 @section('content')
     <login v-cloak :checkout-login="false" v-slot="{ email, password, go, loginInputChange }">

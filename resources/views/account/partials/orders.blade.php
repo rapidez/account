@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="order in data.customer.orders.items">
+            <tr v-for="order in data.customer.orders.items.reverse()">
                 <td class="border px-4 py-2">
                     <a :href="'/account/order/'+order.number" class="underline hover:no-underline">
                         @{{ order.number }}

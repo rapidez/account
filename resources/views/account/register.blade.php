@@ -3,11 +3,13 @@
 @section('title', __('Register'))
 
 @section('content')
+    <x-rapidez::recaptcha/>
     <graphql-mutation
         v-cloak
         query="mutation { createCustomerV2 ( input: changes ) { customer { email } } }"
         redirect="/account"
         :callback="registerCallback"
+        :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
     >
         <div v-if="!$root.user" class="flex justify-center" slot-scope="{ mutate, changes }">
             <form class="p-8 border rounded w-[400px] mr-1" v-on:submit.prevent="mutate">

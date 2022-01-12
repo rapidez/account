@@ -20,3 +20,8 @@ Vue.prototype.reorderCallback = async function (changes, variables, response) {
 
     await GetCart.methods.refreshCart()
 }
+
+Vue.prototype.sortOrdersCallback = async function (response) {
+    response.data.data.customer.orders.items.reverse()
+    return response.data.data
+}

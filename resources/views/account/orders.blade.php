@@ -4,7 +4,7 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql v-cloak query="@include('rapidez::account.partials.queries.orders')">
+        <graphql v-cloak query="@include('rapidez::account.partials.queries.orders')" :callback="sortOrdersCallback">
             <div v-if="data" slot-scope="{ data }">
                 @include('rapidez::account.partials.orders')
             </div>

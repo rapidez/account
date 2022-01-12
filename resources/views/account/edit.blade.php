@@ -4,7 +4,7 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql v-cloak query="{ customer { firstname lastname } }">
+        <graphql query="{ customer { firstname lastname } }">
             <div v-if="data" slot-scope="{ data }">
                 <graphql-mutation query="mutation { updateCustomerV2 ( input: changes ) { customer { firstname lastname } } }" :changes="data.customer" :callback="refreshUserInfoCallback">
                     <form class="sm:w-1/3 md:w-1/4" slot-scope="{ changes, mutate, mutated }" v-on:submit.prevent="mutate">

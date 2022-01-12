@@ -4,7 +4,7 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql v-cloak query='@include('rapidez::account.partials.queries.order')' check="data.customer.orders.items[0]" redirect="/account/orders">
+        <graphql query='@include('rapidez::account.partials.queries.order')' check="data.customer.orders.items[0]" redirect="/account/orders">
             <div v-if="data" slot-scope="{ data }">
                 <div class="overflow-scroll md:overflow-visible">
                     <table class="table-auto w-full text-left text-gray-700">

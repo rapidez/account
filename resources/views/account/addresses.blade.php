@@ -4,7 +4,7 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql v-cloak query="{ customer { addresses { id firstname lastname street city postcode country_code telephone default_billing default_shipping } } }">
+        <graphql query="{ customer { addresses { id firstname lastname street city postcode country_code telephone default_billing default_shipping } } }">
             <div v-if="data" slot-scope="{ data }">
                 <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Default addresses')</h2>
                 @include('rapidez::account.partials.default-addresses', ['edit' => true])

@@ -3,7 +3,7 @@
 @section('title', __('Register'))
 
 @section('content')
-    <x-rapidez::recaptcha/>
+    <x-rapidez::recaptcha location="customer_create"/>
     <graphql-mutation
         v-cloak
         query="mutation { createCustomerV2 ( input: changes ) { customer { email } } }"

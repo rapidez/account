@@ -4,25 +4,19 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql query="{ customer { firstname lastname } }">
-            <div v-if="data" slot-scope="{ data }">
-                <graphql-mutation query="mutation { updateCustomerV2 ( input: changes ) { customer { firstname lastname } } }" :changes="data.customer" :callback="refreshUserInfoCallback">
-                    <form class="sm:w-1/3 md:w-1/4" slot-scope="{ changes, mutate, mutated }" v-on:submit.prevent="mutate">
-                        <x-rapidez::input name="firstname" v-model="changes.firstname" class="mb-2"/>
-                        <x-rapidez::input name="lastname" v-model="changes.lastname"/>
-
-                        <div class="flex items-center mt-5">
-                            <x-rapidez::button type="submit">
-                                @lang('Change')
-                            </x-rapidez::button>
-
-                            <div v-if="mutated" class="ml-3 text-green-500">
-                                @lang('Changed successfully!')
-                            </div>
-                        </div>
-                    </form>
-                <graphql-mutation>
+        <div class="sm:flex sm:space-x-10">
+            <div class="sm:w-1/3">
+                <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Account information')</h2>
+                @include('rapidez::account.partials.edit.account')
             </div>
-        </graphql>
+            <div class="sm:w-1/3">
+                <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Change password')</h2>
+                @include('rapidez::account.partials.edit.password')
+            </div>
+            <div class="sm:w-1/3">
+                <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Change email')</h2>
+                @include('rapidez::account.partials.edit.email')
+            </div>
+        </div>
     </div>
 @endsection

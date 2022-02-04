@@ -2,6 +2,8 @@
 
 @section('title', __('Forgot password'))
 
+@section('robots', 'NOINDEX,NOFOLLOW')
+
 @section('content')
     <graphql-mutation
         v-cloak

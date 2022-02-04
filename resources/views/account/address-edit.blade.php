@@ -2,6 +2,8 @@
 
 @section('title', __('Edit address'))
 
+@section('robots', 'NOINDEX,NOFOLLOW')
+
 @section('account-content')
     <div class="container mx-auto">
         <graphql query="{ customer { addresses { id firstname lastname street city postcode country_code telephone company default_billing default_shipping } } }" check="data.customer.addresses.find(a => a.id == {{ request()->id }})" redirect="/account/orders">

@@ -2,6 +2,8 @@
 
 @section('title', __('Order').' #'.request()->id)
 
+@section('robots', 'NOINDEX,NOFOLLOW')
+
 @section('account-content')
     <div class="container mx-auto">
         <graphql query='@include('rapidez::account.partials.queries.order')' check="data.customer.orders.items[0]" redirect="/account/orders">

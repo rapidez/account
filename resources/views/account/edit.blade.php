@@ -2,6 +2,8 @@
 
 @section('title', __('Edit account'))
 
+@section('robots', 'NOINDEX,NOFOLLOW')
+
 @section('account-content')
     <div class="container mx-auto">
         <div class="sm:flex sm:space-x-10">

@@ -2,6 +2,8 @@
 
 @section('title', __('Register'))
 
+@section('robots', 'NOINDEX,NOFOLLOW')
+
 @section('content')
     <x-rapidez::recaptcha location="customer_create"/>
     <graphql-mutation

@@ -20,5 +20,12 @@
                 @lang('Orders')
             </x-rapidez::button>
         </li>
+        @if(App::providerIsLoaded('Rapidez\Wishlist\WishlistServiceProvider'))
+            <li>
+                <x-rapidez::button href="/account/wishlist" variant="outline">
+                    @lang('Wishlist')
+                </x-rapidez::button>
+            </li>
+        @endif
     </ul>
 </div>

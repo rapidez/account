@@ -2,6 +2,8 @@
 
 @section('title', __('Account overview'))
 
+@section('robots', 'NOINDEX,NOFOLLOW')
+
 @section('account-content')
     <div class="container mx-auto">
         <graphql query="@include('rapidez::account.partials.queries.overview')" :callback="sortOrdersCallback">

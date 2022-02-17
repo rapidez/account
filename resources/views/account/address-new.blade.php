@@ -2,6 +2,8 @@
 
 @section('title', __('New address'))
 
+@section('robots', 'NOINDEX,NOFOLLOW')
+
 @section('account-content')
     <div class="container mx-auto">
         <graphql-mutation query="mutation { createCustomerAddress ( input: changes ) { id } }" :changes="{ street: [] }" redirect="/account/addresses">

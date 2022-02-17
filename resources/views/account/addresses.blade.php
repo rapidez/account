@@ -2,6 +2,8 @@
 
 @section('title', __('Addresses'))
 
+@section('robots', 'NOINDEX,NOFOLLOW')
+
 @section('account-content')
     <div class="container mx-auto">
         <graphql query="{ customer { addresses { id firstname lastname street city postcode country_code telephone default_billing default_shipping } } }">

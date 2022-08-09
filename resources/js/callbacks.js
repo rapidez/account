@@ -4,7 +4,9 @@ import GetCart from 'Vendor/rapidez/core/resources/js/components/Cart/mixins/Get
 Vue.prototype.registerCallback = async function (variables, response) {
     await InteractWithUser.methods.login(variables.email, variables.password)
     await InteractWithUser.methods.refreshUser()
-    await GetCart.methods.linkUserToCart()
+    if (localStorage.cart && localStorage.mask) {
+        await GetCart.methods.linkUserToCart()
+    }
 }
 
 Vue.prototype.refreshUserInfoCallback = async function (variables, response) {

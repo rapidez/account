@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.10.0...master)
+## [Unreleased](https://github.com/org/repo/compare/0.11.0...master)
+
+## [0.11.0](https://github.com/org/repo/compare/0.10.0...0.11.0) - 2022-08-09
+
+### Added
+
+- Link user to cart when they register an account (#13)
 
 ## [0.10.0](https://github.com/org/repo/compare/0.9.0...0.10.0) - 2022-04-11
 

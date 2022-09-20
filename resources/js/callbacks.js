@@ -25,6 +25,9 @@ Vue.prototype.reorderCallback = async function (variables, response) {
 }
 
 Vue.prototype.sortOrdersCallback = async function (response) {
-    response.data.data.customer.orders.items.reverse()
+    response.data.data.customer.orders.items.sort((a,b) => {
+        return new Date(a.order_date) - new Date(b.order_date)
+    })
+
     return response.data.data
 }

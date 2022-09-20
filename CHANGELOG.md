@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.11.1...master)
+## [Unreleased](https://github.com/org/repo/compare/1.11.2...master)
+
+## [1.11.2](https://github.com/org/repo/compare/0.11.1...1.11.2) - 2022-09-20
+
+### Fixed
+
+- Fix for sorting by (https://github.com/rapidez/account/pull/16)
 
 ## [0.11.1](https://github.com/org/repo/compare/0.11.0...0.11.1) - 2022-09-20
 

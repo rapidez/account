@@ -11,9 +11,9 @@
                 <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Default addresses')</h2>
                 @include('rapidez::account.partials.default-addresses', ['edit' => true])
 
-                <div :set="additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
+                <div :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
                     <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Additional Address Entries')</h2>
-                    <div v-if="additionalAddresses.length">
+                    <div v-if="data.customer.additionalAddresses.length">
                         <table class="table-auto w-full text-left text-gray-700">
                             <thead>
                                 <tr>
@@ -29,7 +29,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="additionalAddress in additionalAddresses">
+                                <tr v-for="additionalAddress in data.customer.additionalAddresses">
                                     <td class="border px-4 py-2">@{{ additionalAddress.firstname }}</td>
                                     <td class="border px-4 py-2">@{{ additionalAddress.lastname }}</td>
                                     <td class="border px-4 py-2">@{{ additionalAddress.street[0] }} @{{ additionalAddress.street[1] }} @{{ additionalAddress.street[2] }}</td>

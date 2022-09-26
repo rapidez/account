@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/1.11.2...master)
+## [Unreleased](https://github.com/org/repo/compare/0.11.3...master)
+
+## [0.11.3](https://github.com/org/repo/compare/1.11.2...0.11.3) - 2022-09-26
+
+### Fixed
+
+- Use :set on reactive value (#14)
 
 ## [1.11.2](https://github.com/org/repo/compare/0.11.1...1.11.2) - 2022-09-20
 

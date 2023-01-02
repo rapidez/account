@@ -4,18 +4,32 @@
             <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Contact information')</h2>
             <div class="flex flex-col space-y-3">
                 <x-rapidez::input name="firstname" v-model="variables.firstname" required />
+                @if(Rapidez::config('customer/address/middlename_show', 0))
+                    <x-rapidez::input name="middlename" v-model="variables.middlename" />
+                @endif
                 <x-rapidez::input name="lastname" v-model="variables.lastname" required />
-                <x-rapidez::input name="company" v-model="variables.company" />
-                <x-rapidez::input name="telephone" v-model="variables.telephone" required />
+                @if(Rapidez::config('customer/address/company_show', 'opt'))
+                    <x-rapidez::input name="company" v-model="variables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
+                @endif
+                @if(Rapidez::config('customer/address/telephone_show', 'req'))
+                    <x-rapidez::input name="telephone" v-model="variables.telephone" :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'" />
+                @endif
             </div>
         </div>
 
         <div class="w-1/2">
             <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Address')</h2>
             <div class="flex flex-col space-y-3">
-                <x-rapidez::input name="street[0]" v-model="variables.street[0]" label="Street" placeholder="Street" required />
-                <x-rapidez::input name="street[1]" v-model="variables.street[1]" label="" placeholder="" />
-                <x-rapidez::input name="street[2]" v-model="variables.street[2]" label="" placeholder="" />
+                <x-rapidez::input name="street[0]" v-model="variables.street[0]" :label="__('Address')" placeholder="" required />
+                @if(Rapidez::config('customer/address/street_lines', 2) >= 2)
+                    <x-rapidez::input name="street[1]" v-model="variables.street[1]" label="" placeholder="" />
+                @endif
+                @if(Rapidez::config('customer/address/street_lines', 2) >= 3)
+                    <x-rapidez::input name="street[2]" v-model="variables.street[2]" label="" placeholder="" />
+                @endif
+                @if(Rapidez::config('customer/address/street_lines', 2) >= 4)
+                    <x-rapidez::input name="street[3]" v-model="variables.street[3]" label="" placeholder="" />
+                @endif
 
                 <x-rapidez::country-select
                     name="country_code"

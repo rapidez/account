@@ -1,5 +1,6 @@
 mutation address (
     $firstname: String,
+    $middlename: String,
     $lastname: String,
     $company: String,
     $telephone: String,
@@ -11,6 +12,7 @@ mutation address (
     $default_shipping: Boolean
 ) { createCustomerAddress ( input: {
     firstname: $firstname,
+    middlename: $middlename,
     lastname: $lastname,
     company: $company,
     telephone: $telephone,

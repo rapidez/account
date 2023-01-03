@@ -6,7 +6,7 @@
 
 @section('account-content')
     <div class="container mx-auto">
-        <graphql query="{ customer { addresses { id firstname lastname street city postcode country_code telephone default_billing default_shipping } } }">
+        <graphql query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone default_billing default_shipping } } }">
             <div v-if="data" slot-scope="{ data }">
                 <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Default addresses')</h2>
                 @include('rapidez::account.partials.default-addresses', ['edit' => true])
@@ -18,6 +18,9 @@
                             <thead>
                                 <tr>
                                     <th class="px-4">@lang('Firstname')</th>
+                                    @if(Rapidez::config('customer/address/middlename_show', 0))
+                                        <th class="px-4">@lang('Middlename')</th>
+                                    @endif
                                     <th class="px-4">@lang('Lastname')</th>
                                     <th class="px-4">@lang('Address')</th>
                                     <th class="px-4">@lang('Zipcode')</th>
@@ -31,12 +34,17 @@
                             <tbody>
                                 <tr v-for="additionalAddress in data.customer.additionalAddresses">
                                     <td class="border px-4 py-2">@{{ additionalAddress.firstname }}</td>
+                                    @if(Rapidez::config('customer/address/middlename_show', 0))
+                                        <td class="border px-4 py-2">@{{ additionalAddress.middlename }}</td>
+                                    @endif
                                     <td class="border px-4 py-2">@{{ additionalAddress.lastname }}</td>
-                                    <td class="border px-4 py-2">@{{ additionalAddress.street[0] }} @{{ additionalAddress.street[1] }} @{{ additionalAddress.street[2] }}</td>
+                                    <td class="border px-4 py-2">@{{ additionalAddress.street[0] }} @{{ additionalAddress.street[1] }} @{{ additionalAddress.street[2] }} @{{ additionalAddress.street[3] }}</td>
                                     <td class="border px-4 py-2">@{{ additionalAddress.postcode }}</td>
                                     <td class="border px-4 py-2">@{{ additionalAddress.city }}</td>
                                     <td class="border px-4 py-2">@{{ additionalAddress.country_code }}</td>
-                                    <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>
+                                    @if(Rapidez::config('customer/address/telephone_show', 'opt'))
+                                        <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>
+                                    @endif
                                     <td class="border px-4 py-2">
                                         <a :href="'/account/address/'+additionalAddress.id" class="underline hover:no-underline">
                                             @lang('Edit')

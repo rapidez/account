@@ -1,6 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/org/repo/compare/0.11.3...master)
+## [Unreleased](https://github.com/org/repo/compare/0.11.4...master)
+
+## [0.11.4](https://github.com/org/repo/compare/0.11.3...0.11.4) - 2023-01-03
+
+### Fixed
+
+- Show/hide account (address) fields by listening to the Magento Customer config (#17)
 
 ## [0.11.3](https://github.com/org/repo/compare/1.11.2...0.11.3) - 2022-09-26
 

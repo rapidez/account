@@ -14,11 +14,11 @@ Vue.prototype.refreshUserInfoCallback = async function (variables, response) {
 }
 
 Vue.prototype.reorderCallback = async function (variables, response) {
-    document.addEventListener('turbolinks:load', function showReorderErrors() {
+    document.addEventListener('turbo:load', function showReorderErrors() {
         response.data.data.reorderItems.userInputErrors.forEach((error) => {
             Notify(error.message, 'warning')
         })
-        document.removeEventListener('turbolinks:load', showReorderErrors)
+        document.removeEventListener('turbo:load', showReorderErrors)
     })
 
     await GetCart.methods.refreshCart()

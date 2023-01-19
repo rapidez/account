@@ -7,6 +7,12 @@
 - Replace turbolinks with turbo (#18)
 - Add changelog action (69bf2b7)
 
+## 0.11.2 - 2023-01-19
+
+### Fixed
+
+- Fix for sorting by (#16)
+
 ## 0.11.4 - 2023-01-03
 
 ### Fixed

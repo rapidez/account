@@ -1,7 +1,7 @@
 <form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate">
     <div class="flex space-x-4">
         <div class="w-1/2">
-            <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Contact information')</h2>
+            <h2 class="font-bold text-2xl mb-3">@lang('Contact information')</h2>
             <div class="flex flex-col space-y-3">
                 <x-rapidez::input name="firstname" v-model="variables.firstname" required />
                 @if(Rapidez::config('customer/address/middlename_show', 0))
@@ -18,7 +18,7 @@
         </div>
 
         <div class="w-1/2">
-            <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Address')</h2>
+            <h2 class="font-bold text-2xl mb-3">@lang('Address')</h2>
             <div class="flex flex-col space-y-3">
                 <x-rapidez::input name="street[0]" v-model="variables.street[0]" :label="__('Address')" placeholder="" required />
                 @if(Rapidez::config('customer/address/street_lines', 2) >= 2)

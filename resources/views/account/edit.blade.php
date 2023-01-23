@@ -5,20 +5,18 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('account-content')
-    <div class="container mx-auto">
-        <div class="sm:flex sm:space-x-10">
-            <div class="sm:w-1/3">
-                <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Account information')</h2>
-                @include('rapidez::account.partials.edit.account')
-            </div>
-            <div class="sm:w-1/3">
-                <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Change password')</h2>
-                @include('rapidez::account.partials.edit.password')
-            </div>
-            <div class="sm:w-1/3">
-                <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Change email')</h2>
-                @include('rapidez::account.partials.edit.email')
-            </div>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div>
+            <h2 class="mb-2 text-2xl font-bold">@lang('Account information')</h2>
+            @include('rapidez::account.partials.edit.account')
+        </div>
+        <div>
+            <h2 class="mb-2 text-2xl font-bold">@lang('Change password')</h2>
+            @include('rapidez::account.partials.edit.password')
+        </div>
+        <div>
+            <h2 class="mb-2 text-2xl font-bold">@lang('Change email')</h2>
+            @include('rapidez::account.partials.edit.email')
         </div>
     </div>
 @endsection

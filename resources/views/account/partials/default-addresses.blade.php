@@ -1,5 +1,5 @@
-<div class="flex">
-    <div class="w-1/2">
+<div class="flex flex-wrap gap-5">
+    <div class="flex-1">
         <h3 class="font-bold text-gray-700">@lang('Default billing address')</h3>
         <div class="text-gray-700" v-if="data.customer.addresses.find(a => a.default_billing == true)">
             @{{ (billing = data.customer.addresses.find(a => a.default_billing == true)).firstname }} @{{ billing.lastname }}<br>
@@ -16,7 +16,7 @@
             @lang('Add billing address')
         </x-rapidez::button>
     </div>
-    <div class="w-1/2">
+    <div class="flex-1">
         <h3 class="font-bold text-gray-700">@lang('Default shipping address')</h3>
         <div class="text-gray-700" v-if="data.customer.addresses.find(a => a.default_shipping == true)">
             @{{ (shipping = data.customer.addresses.find(a => a.default_shipping == true)).firstname }} @{{ shipping.lastname }}<br>

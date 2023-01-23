@@ -3,14 +3,23 @@
 @section('title', __('Account'))
 
 @section('content')
-    <div class="container mx-auto" v-cloak>
-        <div v-if="$root.user">
-            @include('rapidez::account.partials.menu')
-            <h1 class="font-bold text-4xl my-3">@yield('title')</h1>
-            @yield('account-content')
-        </div>
-        <div v-else>
-            @include('rapidez::account.partials.login', ['redirect' => false])
+    <div class="-mt-5 bg-slate-100 pt-5 pb-8">
+        <div
+            class="container mx-auto"
+            v-cloak
+        >
+            <div v-if="$root.user">
+                <h1 class="max-sm:px-3 mb-5 text-3xl font-bold text-gray-700">@yield('title')</h1>
+                <div class="max-sm:flex-col flex gap-10">
+                    @include('rapidez::account.partials.menu')
+                    <div class="w-full sm:rounded border bg-white p-8">
+                        @yield('account-content')
+                    </div>
+                </div>
+            </div>
+            <div v-else>
+                @include('rapidez::account.partials.login', ['redirect' => false])
+            </div>
         </div>
     </div>
 @endsection

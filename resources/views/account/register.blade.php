@@ -5,7 +5,7 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('content')
-    <x-rapidez::recaptcha location="customer_create"/>
+    <x-rapidez::recaptcha location="customer_create" />
     <graphql-mutation
         v-cloak
         query="mutation customer ($firstname: String!, $lastname: String!, $email: String!, $password: String) { createCustomerV2 ( input: { firstname: $firstname, lastname: $lastname, email: $email, password: $password } ) { customer { email } } }"
@@ -13,10 +13,18 @@
         :callback="registerCallback"
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
     >
-        <div v-if="!$root.user" class="flex justify-center" slot-scope="{ mutate, variables }">
-            <form class="p-8 border rounded w-[400px] mr-1" v-on:submit.prevent="mutate">
-                <h1 class="font-bold text-4xl text-center mb-5">@lang('Register')</h1>
-                <div class="space-y-3">
+        <div
+            class="flex flex-col items-center"
+            v-if="!$root.user"
+            slot-scope="{ mutate, variables }"
+        >
+            <h1 class="my-5 text-3xl font-bold text-gray-700">@lang('Register your account')</h1>
+
+            <form
+                class="flex w-[400px] flex-col gap-3 rounded border bg-white p-8 shadow"
+                v-on:submit.prevent="mutate"
+            >
+                <div class="flex flex-col gap-3">
                     <x-rapidez::input
                         name="firstname"
                         type="text"
@@ -42,7 +50,10 @@
                         required
                     />
 
-                    <x-rapidez::button type="submit" class="w-full">
+                    <x-rapidez::button
+                        class="mt-2"
+                        type="submit"
+                    >
                         @lang('Register')
                     </x-rapidez::button>
                 </div>

@@ -3,7 +3,7 @@
 @section('title', __('Account'))
 
 @section('content')
-    <div class="-mt-5 bg-slate-100 pt-5 pb-8">
+    <div class="-mt-5 bg-highlight pt-5 pb-8">
         <div
             class="container mx-auto"
             v-cloak

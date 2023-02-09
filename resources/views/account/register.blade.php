@@ -21,10 +21,10 @@
             <h1 class="my-5 text-3xl font-bold text-gray-700">@lang('Register your account')</h1>
 
             <form
-                class="grid grid-cols-12 w-full sm:w-[600px] gap-3 p-8"
+                class="grid grid-cols-2 w-full sm:w-[600px] gap-3 p-8"
                 v-on:submit.prevent="mutate"
             >
-                <div class="col-span-12 sm:col-span-6">
+                <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
                         name="firstname"
                         type="text"
@@ -32,7 +32,7 @@
                         required
                     />
                 </div>
-                <div class="col-span-12 sm:col-span-6">
+                <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
                         name="lastname"
                         type="text"
@@ -40,7 +40,7 @@
                         required
                     />
                 </div>
-                <div class="col-span-12 sm:col-span-6">
+                <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
                         name="email"
                         type="email"
@@ -48,7 +48,7 @@
                         required
                     />
                 </div>
-                <div class="col-span-12 sm:col-span-6">
+                <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
                         name="password"
                         type="password"
@@ -58,7 +58,7 @@
                 </div>
 
                 <x-rapidez::button
-                    class="col-span-12"
+                    class="col-span-2"
                     type="submit"
                 >
                     @lang('Register')

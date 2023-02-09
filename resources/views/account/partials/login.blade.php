@@ -1,8 +1,7 @@
 <login v-cloak :checkout-login="false" v-slot="{ email, password, go, loginInputChange }" redirect="{{ $redirect ?? '/account' }}">
-    <div v-if="!$root.user" class="flex flex-col items-center">
+    <div v-if="!$root.user" class="flex flex-col items-center bg-highlight">
         <h1 class="my-5 text-3xl font-bold text-gray-700">@lang('Login')</h1>
-        <form class="flex w-[400px] flex-col gap-3 rounded border bg-white p-8 shadow" v-on:submit.prevent="go()">
-
+        <form class="flex w-[500px] flex-col gap-3 p-8" v-on:submit.prevent="go()">
             <x-rapidez::input
                 :label="false"
                 name="email"

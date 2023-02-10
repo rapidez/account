@@ -12,7 +12,7 @@
                 <h1 class="max-sm:px-3 mb-5 text-3xl font-bold text-gray-700">@yield('title')</h1>
                 <div class="max-sm:flex-col flex gap-10">
                     @include('rapidez::account.partials.menu')
-                    <div class="w-full sm:rounded border bg-white p-8">
+                    <div class="w-full p-8">
                         @yield('account-content')
                     </div>
                 </div>

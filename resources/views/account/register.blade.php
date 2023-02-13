@@ -13,12 +13,12 @@
         :callback="registerCallback"
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
     >
+    <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
         <div
-            class="flex flex-col items-center bg-highlight"
+            class="flex flex-col items-center rounded bg-highlight mt-3.5"
             v-if="!$root.user"
-            slot-scope="{ mutate, variables }"
         >
-            <h1 class="my-5 text-3xl font-bold text-gray-700">@lang('Register your account')</h1>
+            <h1 class="mt-8 text-3xl font-bold">@lang('Register your account')</h1>
 
             <form
                 class="grid grid-cols-2 w-full sm:w-[600px] gap-3 p-8"
@@ -71,5 +71,6 @@
                 @lang('Go to your account')
             </x-rapidez::button>
         </div>
+    </div>
     </graphql-mutation>
 @endsection

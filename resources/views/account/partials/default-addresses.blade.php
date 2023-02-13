@@ -2,11 +2,12 @@
     <div class="flex-1">
         <h3 class="font-bold text-gray-700">@lang('Default billing address')</h3>
         <div class="text-gray-700" v-if="data.customer.addresses.find(a => a.default_billing == true)">
-            @{{ (billing = data.customer.addresses.find(a => a.default_billing == true)).firstname }} @{{ billing.lastname }}<br>
-            @{{ billing.street[0] }} @{{ billing.street[1] }} @{{ billing.street[2] }}<br>
-            @{{ billing.postcode }} @{{ billing.city }}<br>
-            @{{ billing.country_code }}<br>
-            T: @{{ billing.telephone }}<br>
+            <ul>
+                <li>@{{ (billing = data.customer.addresses.find(a => a.default_billing == true)).firstname }} @{{ billing.lastname }}</li>
+                <li>@{{ billing.street[0] }} @{{ billing.street[1] }} @{{ billing.street[2] }}</li>
+                <li>@{{ billing.postcode }} @{{ billing.city }} @{{ billing.country_code }}</li>
+                <li>T: @{{ billing.telephone }}</li>
+            </ul>
             @isset($edit)
                 <a :href="'/account/address/'+billing.id" class="underline hover:no-underline text-primary">@lang('Change billing address')</a>
             @endisset
@@ -19,11 +20,12 @@
     <div class="flex-1">
         <h3 class="font-bold text-gray-700">@lang('Default shipping address')</h3>
         <div class="text-gray-700" v-if="data.customer.addresses.find(a => a.default_shipping == true)">
-            @{{ (shipping = data.customer.addresses.find(a => a.default_shipping == true)).firstname }} @{{ shipping.lastname }}<br>
-            @{{ shipping.street[0] }} @{{ shipping.street[1] }} @{{ shipping.street[2] }}<br>
-            @{{ shipping.postcode }} @{{ shipping.city }}<br>
-            @{{ shipping.country_code }}<br>
-            T: @{{ shipping.telephone }}<br>
+            <ul>
+                <li>@{{ (shipping = data.customer.addresses.find(a => a.default_shipping == true)).firstname }} @{{ shipping.lastname }}</li>
+                <li>@{{ shipping.street[0] }} @{{ shipping.street[1] }} @{{ shipping.street[2] }}</li>
+                <li>@{{ shipping.postcode }} @{{ shipping.city }} @{{ shipping.country_code }}</li>
+                <li>T: @{{ shipping.telephone }}<br></li>
+            </ul>
             @isset($edit)
                 <a :href="'/account/address/'+shipping.id" class="underline hover:no-underline text-primary">@lang('Change shipping address')</a>
             @endisset

@@ -7,6 +7,7 @@
                     :label="false"
                     name="email"
                     type="email"
+                    placeholder="Email"
                     v-bind:value="email"
                     v-on:input="loginInputChange"
                     required
@@ -16,6 +17,7 @@
                     class="mt-2"
                     name="password"
                     type="password"
+                    placeholder="Password"
                     v-bind:value="password"
                     v-on:input="loginInputChange"
                     required

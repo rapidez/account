@@ -23,12 +23,14 @@
                         required
                     />
                     <x-rapidez::input
+                        label="Email"
                         name="email"
                         type="email"
                         v-model="variables.email"
                         required
                     />
                     <x-rapidez::input
+                        label="Password"
                         name="password"
                         type="password"
                         v-model="variables.password"

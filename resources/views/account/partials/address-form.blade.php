@@ -27,16 +27,16 @@
 
         <h2 class="col-span-12 font-bold text-2xl mt-2">@lang('Address')</h2>
         <div class="col-span-12 sm:col-span-4">
-            <x-rapidez::input name="street[0]" v-model="variables.street[0]" label="Street" :placeholder="__('Street')" required />
+            <x-rapidez::input name="street[0]" v-model="variables.street[0]" label="Street" placeholder="Street" required />
         </div>
         <div class="col-span-12 sm:col-span-4">
             @if(Rapidez::config('customer/address/street_lines', 2) >= 2)
-                <x-rapidez::input name="street[1]" v-model="variables.street[1]" label="Housenumber" :placeholder="__('Nr.')" />
+                <x-rapidez::input name="street[1]" v-model="variables.street[1]" label="Housenumber" placeholder="Nr." />
             @endif
         </div>
         <div class="col-span-12 sm:col-span-4">
             @if(Rapidez::config('customer/address/street_lines', 2) >= 3)
-                <x-rapidez::input name="street[2]" v-model="variables.street[2]" label="Addition" :placeholder="__('Nr.')" />
+                <x-rapidez::input name="street[2]" v-model="variables.street[2]" label="Addition" placeholder="Nr." />
             @endif
         </div>
         @if(Rapidez::config('customer/address/street_lines', 2) >= 4)

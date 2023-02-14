@@ -1,14 +1,12 @@
 <graphql-mutation query="mutation email ($email: String!, $password: String!) { updateCustomerEmail ( email: $email, password: $password ) { customer { email } } }" :clear="true" :callback="refreshUserInfoCallback">
     <form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate">
         <x-rapidez::input
-            label="Email"
             name="email"
             v-model="variables.email"
             required
             class="mb-2"
         />
         <x-rapidez::input
-            label="Password"
             type="password"
             name="password"
             v-model="variables.password"

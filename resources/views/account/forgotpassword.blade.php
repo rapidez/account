@@ -19,7 +19,6 @@
                     v-on:submit.prevent="mutate"
                 >
                     <x-rapidez::input
-                        label="Email"
                         name="email"
                         type="email"
                         v-model="variables.email"

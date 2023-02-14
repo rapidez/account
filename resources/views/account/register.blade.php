@@ -26,7 +26,6 @@
             >
                 <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
-                        label="Firstname"
                         name="firstname"
                         type="text"
                         v-model="variables.firstname"
@@ -35,7 +34,6 @@
                 </div>
                 <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
-                        label="Lastname"
                         name="lastname"
                         type="text"
                         v-model="variables.lastname"
@@ -44,7 +42,6 @@
                 </div>
                 <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
-                        label="Email"
                         name="email"
                         type="email"
                         v-model="variables.email"
@@ -53,7 +50,6 @@
                 </div>
                 <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
-                        label="Password"
                         name="password"
                         type="password"
                         v-model="variables.password"

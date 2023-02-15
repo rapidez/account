@@ -8,7 +8,7 @@
     <graphql query='@include('rapidez::account.partials.queries.order')' check="data.customer.orders.items[0]" redirect="/account/orders">
         <div v-if="data" slot-scope="{ data }">
             <div class="overflow-scroll md:overflow-visible">
-                <table class="table-auto w-full text-left text-gray-700">
+                <table class="table-auto w-full text-left text-gray-700 -mx-4">
                     <thead>
                         <tr>
                             <th class="px-4 py-2">@lang('Product name')</th>

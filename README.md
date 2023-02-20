@@ -2,13 +2,13 @@
 
 ## Installation
 
-```
+```bash
 composer require rapidez/account
 ```
 
-Register the callbacks in your `app.js`:
-```
-require('Vendor/rapidez/account/resources/js/callbacks.js');
+Make sure this exists in your `app.js`:
+```js
+import.meta.glob(['Vendor/rapidez/*/resources/js/app.js'], { eager: true });
 ```
 
 ## License

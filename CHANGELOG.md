@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/0.13.0...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/0.13.1...master)
+## [0.13.1](https://github.com/rapidez/account/releases/tag/0.13.1) - 2023-04-28
+
+#### Fixed
+
+- Rapidez/core v1 support (4a53926)
+
 ## [0.13.0](https://github.com/rapidez/account/releases/tag/0.13.0) - 2023-04-05
 
 #### Added

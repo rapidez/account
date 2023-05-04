@@ -19,6 +19,10 @@
         number
         order_date
         status
+        items {
+          product_name
+          product_sku
+        }
         shipping_address {
           firstname
           lastname

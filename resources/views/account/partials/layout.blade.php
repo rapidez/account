@@ -8,7 +8,7 @@
             class="container mx-auto"
             v-cloak
         >
-            <div v-if="$root.user">
+            <div v-if="$root.user?.id">
                 <h1 class="max-sm:px-3 mb-5 text-3xl font-bold text-gray-700">@yield('title')</h1>
                 <div class="max-sm:flex-col flex gap-10">
                     @include('rapidez::account.partials.menu')

@@ -13,7 +13,7 @@
         :callback="registerCallback"
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
     >
-        <div v-if="!$root.user" class="flex justify-center" slot-scope="{ mutate, variables }">
+        <div v-if="!$root.user?.id" class="flex justify-center" slot-scope="{ mutate, variables }">
             <form class="p-8 border rounded w-[400px] mr-1" v-on:submit.prevent="mutate">
                 <h1 class="font-bold text-4xl text-center mb-5">@lang('Register')</h1>
                 <div class="space-y-3">

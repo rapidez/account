@@ -1,5 +1,5 @@
 <login v-cloak :checkout-login="false" v-slot="{ email, password, go, loginInputChange }" redirect="{{ $redirect ?? '/account' }}">
-    <div v-if="!$root.user" class="flex justify-center">
+    <div v-if="!$root.user?.id" class="flex justify-center">
         <form class="p-8 border rounded w-[400px]" v-on:submit.prevent="go()">
             <h1 class="font-bold text-4xl text-center mb-5">@lang('Login')</h1>
 

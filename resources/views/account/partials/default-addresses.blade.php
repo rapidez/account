@@ -13,7 +13,7 @@
             @endisset
         </div>
 
-        <x-rapidez::button v-else href="/account/address/new" class="mt-5">
+        <x-rapidez::button.primary v-else href="/account/address/new" class="mt-5">
             @lang('Add billing address')
         </x-rapidez::button>
     </div>
@@ -31,7 +31,7 @@
             @endisset
         </div>
 
-        <x-rapidez::button v-else href="/account/address/new" class="mt-5">
+        <x-rapidez::button.primary v-else href="/account/address/new" class="mt-5">
             @lang('Add shipping address')
         </x-rapidez::button>
     </div>

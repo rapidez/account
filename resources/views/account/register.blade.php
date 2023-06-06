@@ -57,7 +57,7 @@
                     />
                 </div>
 
-                <x-rapidez::button
+                <x-rapidez::button.primary
                     class="col-span-2"
                     type="submit"
                 >
@@ -67,7 +67,7 @@
         </div>
         <div v-else>
             <div class="mb-5">@lang('You\'re already logged in.')</div>
-            <x-rapidez::button href="/account">
+            <x-rapidez::button.primary href="/account">
                 @lang('Go to your account')
             </x-rapidez::button>
         </div>

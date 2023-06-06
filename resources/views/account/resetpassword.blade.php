@@ -37,7 +37,7 @@
                     />
                 </div>
 
-                <x-rapidez::button type="submit" class="w-full mt-5">
+                <x-rapidez::button.primary type="submit" class="w-full mt-5">
                     @lang('Change password')
                 </x-rapidez::button>
             </form>

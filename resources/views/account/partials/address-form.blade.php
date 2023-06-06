@@ -68,7 +68,7 @@
     </div>
 
     <div class="flex items-center mt-5">
-        <x-rapidez::button type="submit">
+        <x-rapidez::button.primary type="submit">
             @lang(request()->id ? 'Change' : 'Add')
         </x-rapidez::button>
 

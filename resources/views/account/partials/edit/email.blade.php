@@ -14,7 +14,7 @@
         />
 
         <div class="flex items-center mt-5">
-            <x-rapidez::button type="submit">
+            <x-rapidez::button.primary type="submit">
                 @lang('Change')
             </x-rapidez::button>
 

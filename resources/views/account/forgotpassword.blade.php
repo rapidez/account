@@ -25,7 +25,7 @@
                         required
                     />
 
-                    <x-rapidez::button
+                    <x-rapidez::button.primary
                         class="mt-2"
                         type="submit"
                     >

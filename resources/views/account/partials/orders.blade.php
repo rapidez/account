@@ -24,7 +24,7 @@
                 <td class="border px-4 py-2">
                     <graphql-mutation :query='"mutation { reorderItems(orderNumber: \""+order.number+"\") { cart { id } userInputErrors { message } } }"' redirect="/cart" :callback="reorderCallback">
                         <form slot-scope="{ mutate }" v-on:submit.prevent="mutate">
-                            <x-rapidez::button type="submit" class="py-1 px-2 w-full">
+                            <x-rapidez::button.primary type="submit" class="py-1 px-2 w-full">
                                 @lang('Reorder')
                             </x-rapidez::button>
                         </form>

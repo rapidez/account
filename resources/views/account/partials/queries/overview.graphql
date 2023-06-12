@@ -3,7 +3,9 @@
     firstname
     lastname
     email
+    is_subscribed
     addresses {
+      id
       firstname
       lastname
       street

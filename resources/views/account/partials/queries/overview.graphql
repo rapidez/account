@@ -4,6 +4,7 @@
     lastname
     email
     addresses {
+      id
       firstname
       lastname
       street

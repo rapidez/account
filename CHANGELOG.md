@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/0.13.2...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/0.13.3...master)
+## [0.13.3](https://github.com/rapidez/account/releases/tag/0.13.3) - 2023-06-19
+
+### Fixed
+
+- Named all routes (#32)
+
 ## [0.13.2](https://github.com/rapidez/account/releases/tag/0.13.2) - 2023-06-12
 
 ### Fixed

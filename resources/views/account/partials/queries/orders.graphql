@@ -16,6 +16,11 @@
         }
         items {
           product_name
+          product_sku
+          product_sale_price {
+            value
+          }
+          quantity_ordered
         }
       }
     }

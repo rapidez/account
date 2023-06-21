@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/0.13.3...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/0.13.4...master)
+## [0.13.4](https://github.com/rapidez/account/releases/tag/0.13.4) - 2023-06-21
+
+### Fixed
+
+- Get the order items on the order overview (#33)
+
 ## [0.13.3](https://github.com/rapidez/account/releases/tag/0.13.3) - 2023-06-19
 
 ### Fixed

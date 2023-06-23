@@ -34,4 +34,4 @@
         </tbody>
     </table>
 </div>
-<div v-else class="text-secondary">@lang('You do not have any orders yet.')</div>
+<div v-else class="text-inactive">@lang('You do not have any orders yet.')</div>

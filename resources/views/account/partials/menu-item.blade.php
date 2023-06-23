@@ -1,6 +1,6 @@
 @props(['href', 'text', 'icon'])
 <a
-    class="{{ request()->is(trim($href, '/')) ? 'text-accent bg-accent/10' : 'text-secondary hover:text-primary' }} flex w-full items-center gap-2 rounded p-2 font-medium transition hover:bg-accent/20"
+    class="{{ request()->is(trim($href, '/')) ? 'text-primary bg-primary/10' : 'text-inactive hover:text-neutral' }} flex w-full items-center gap-2 rounded p-2 font-medium transition hover:bg-primary/20"
     href="{{ $href }}"
 >
     <x-icon

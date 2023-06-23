@@ -15,11 +15,11 @@
             slot-scope="{ data }"
         >
             <div>
-                <h2 class="text-2xl font-bold text-primary">@lang('Account information')</h2>
-                <div class="text-secondary">
-                    <span class="font-bold text-primary">@lang('Name'):</span> @{{ data.customer.firstname }}
+                <h2 class="text-2xl font-bold text-neutral">@lang('Account information')</h2>
+                <div class="text-inactive">
+                    <span class="font-bold text-neutral">@lang('Name'):</span> @{{ data.customer.firstname }}
                     @{{ data.customer.lastname }}<br>
-                    <span class="font-bold text-primary">@lang('E-mail'):</span> @{{ data.customer.email }}
+                    <span class="font-bold text-neutral">@lang('E-mail'):</span> @{{ data.customer.email }}
                 </div>
             </div>
             <div>

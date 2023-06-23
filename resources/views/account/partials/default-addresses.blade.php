@@ -9,7 +9,7 @@
                 <li>T: @{{ billing.telephone }}</li>
             </ul>
             @isset($edit)
-                <a :href="'/account/address/'+billing.id" class="underline hover:no-underline text-primary">@lang('Change billing address')</a>
+                <a :href="'/account/address/'+billing.id" class="underline hover:no-underline text-neutral">@lang('Change billing address')</a>
             @endisset
         </div>
 
@@ -27,7 +27,7 @@
                 <li>T: @{{ shipping.telephone }}<br></li>
             </ul>
             @isset($edit)
-                <a :href="'/account/address/'+shipping.id" class="underline hover:no-underline text-primary">@lang('Change shipping address')</a>
+                <a :href="'/account/address/'+shipping.id" class="underline hover:no-underline text-neutral">@lang('Change shipping address')</a>
             @endisset
         </div>
 

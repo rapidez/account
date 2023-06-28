@@ -8,11 +8,11 @@
             @{{ billing.country_code }}<br>
             T: @{{ billing.telephone }}<br>
             @isset($edit)
-                <a :href="'/account/address/'+billing.id" class="underline hover:no-underline text-primary">@lang('Change billing address')</a>
+                <a :href="'/account/address/'+billing.id | url" class="underline hover:no-underline text-primary">@lang('Change billing address')</a>
             @endisset
         </div>
 
-        <x-rapidez::button v-else href="/account/address/new" class="mt-5">
+        <x-rapidez::button v-else :href="route('account.address.create')" class="mt-5">
             @lang('Add billing address')
         </x-rapidez::button>
     </div>
@@ -25,11 +25,11 @@
             @{{ shipping.country_code }}<br>
             T: @{{ shipping.telephone }}<br>
             @isset($edit)
-                <a :href="'/account/address/'+shipping.id" class="underline hover:no-underline text-primary">@lang('Change shipping address')</a>
+                <a :href="'/account/address/'+shipping.id | url" class="underline hover:no-underline text-primary">@lang('Change shipping address')</a>
             @endisset
         </div>
 
-        <x-rapidez::button v-else href="/account/address/new" class="mt-5">
+        <x-rapidez::button v-else :href="route('account.address.create')" class="mt-5">
             @lang('Add shipping address')
         </x-rapidez::button>
     </div>

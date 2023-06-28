@@ -1,4 +1,4 @@
-{
+query customerOverview($ordersPageSize: Int = 5 $ordersCurrentPage: Int = 1) {
   customer {
     firstname
     lastname
@@ -16,7 +16,7 @@
       default_billing
       default_shipping
     }
-    orders ( pageSize: 5 ) {
+    orders ( pageSize: $ordersPageSize currentPage: $ordersCurrentPage ) {
       items {
         number
         order_date

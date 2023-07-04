@@ -1,6 +1,6 @@
-{
+query singleOrder($orderNumber: String = "{{ addslashes(request()->id) }}"){
   customer {
-    orders ( filter: { number: { eq: "{{ request()->id }}" } } ) {
+    orders ( filter: { number: { eq: $orderNumber } } pageSize: 1 ) {
       items {
         number
         order_date

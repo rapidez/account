@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/0.13.4...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/0.13.5...master)
+## [0.13.5](https://github.com/rapidez/account/releases/tag/0.13.5) - 2023-07-04
+
+### Fixed
+
+- Use url helpers (#35)
+
 ## [0.13.4](https://github.com/rapidez/account/releases/tag/0.13.4) - 2023-06-21
 
 ### Fixed

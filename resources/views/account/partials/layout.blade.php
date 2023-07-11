@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="container mx-auto" v-cloak>
-        <div v-if="$root.user">
+        <div v-if="$root.user?.id">
             @include('rapidez::account.partials.menu')
             <h1 class="font-bold text-4xl my-3">@yield('title')</h1>
             @yield('account-content')

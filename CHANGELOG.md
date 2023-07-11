@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/0.13.5...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/0.13.6...master)
+## [0.13.6](https://github.com/rapidez/account/releases/tag/0.13.6) - 2023-07-11
+
+### Fixed
+
+- Update user check for 1.x compatibility (#36)
+
 ## [0.13.5](https://github.com/rapidez/account/releases/tag/0.13.5) - 2023-07-04
 
 ### Fixed

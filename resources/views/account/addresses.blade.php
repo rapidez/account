@@ -88,7 +88,7 @@
 
                 <x-rapidez::button
                     class="mt-5"
-                    href="/account/address/new"
+                    :href="route('account.address.create')"
                 >
                     @lang('Add new address')
                 </x-rapidez::button>

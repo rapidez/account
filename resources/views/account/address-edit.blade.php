@@ -8,7 +8,7 @@
     <graphql
         query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone company default_billing default_shipping } } }"
         check="data.customer.addresses.find(a => a.id == {{ request()->id }})"
-        redirect="/account/orders"
+        redirect="{{ route('account.orders') }}"
     >
         <div
             v-if="data"
@@ -18,7 +18,7 @@
                 query="@include('rapidez::account.partials.queries.address-edit')"
                 :variables="Object.assign(data.customer.addresses.find(a => a.id ==
                 {{ request()->id }}), { id: {{ request()->id }} })"
-                redirect="/account/addresses"
+                redirect="{{ route('account.addresses') }}"
             >
                 @include('rapidez::account.partials.address-form')
                 <graphql-mutation>

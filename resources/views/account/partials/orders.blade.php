@@ -13,7 +13,7 @@
         <tbody>
             <tr v-for="order in data.customer.orders.items">
                 <td class="border px-4 py-2">
-                    <a :href="'/account/order/'+order.number" class="underline hover:no-underline">
+                    <a :href="'/account/order/'+order.number | url" class="underline hover:no-underline">
                         @{{ order.number }}
                     </a>
                 </td>
@@ -22,7 +22,7 @@
                 <td class="border px-4 py-2">@{{ order.total.grand_total.value | price }}</td>
                 <td class="border px-4 py-2">@{{ order.status }}</td>
                 <td class="border px-4 py-2">
-                    <graphql-mutation :query='"mutation { reorderItems(orderNumber: \""+order.number+"\") { cart { id } userInputErrors { message } } }"' redirect="/cart" :callback="reorderCallback">
+                    <graphql-mutation query="mutation reorderItems ($orderNumber: String!){ reorderItems(orderNumber: $orderNumber) { cart { id } userInputErrors { message } } }" :variables="{orderNumber: order.number}" redirect="{{ route('cart') }}" :callback="reorderCallback">
                         <form slot-scope="{ mutate }" v-on:submit.prevent="mutate">
                             <x-rapidez::button type="submit" class="py-1 px-2 w-full">
                                 @lang('Reorder')

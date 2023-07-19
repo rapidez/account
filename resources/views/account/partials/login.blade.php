@@ -1,4 +1,4 @@
-<login v-cloak :checkout-login="false" v-slot="{ email, password, go, loginInputChange }" redirect="{{ $redirect ?? '/account' }}">
+<login v-cloak :checkout-login="false" v-slot="{ email, password, go, loginInputChange }" redirect="{{ url($redirect ?? route('account.overview')) }}">
     <div v-if="!$root.user?.id" class="flex flex-col items-center">
         <div class="flex flex-col items-center bg-highlight rounded mt-3.5">
             <h1 class="mt-8 text-3xl font-bold">@lang('Login')</h1>
@@ -26,8 +26,8 @@
                 <x-rapidez::button type="submit" class="w-full my-5" dusk="continue">@lang('Login')</x-rapidez::button>
 
                 <div class="flex justify-between">
-                    <a href="/register" class="text-sm hover:underline">@lang('Create an account')</a>
-                    <a href="/forgotpassword" class="text-sm hover:underline">@lang('Forgot your password?')</a>
+                    <a href="{{ route('account.register') }}" class="text-sm hover:underline">@lang('Create an account')</a>
+                    <a href="{{ route('account.forgotpassword') }}" class="text-sm hover:underline">@lang('Forgot your password?')</a>
                 </div>
             </form>
         </div>

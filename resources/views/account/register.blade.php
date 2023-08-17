@@ -44,7 +44,9 @@
 
                     @if(Rapidez::config('customer/create_account/vat_frontend_visibility', 0))
                         <x-rapidez::input
-                            name="tax id"
+                            name="taxvat"
+                            label="Tax/VAT ID"
+                            placeholder="Tax/VAT ID"
                             type="text"
                             v-model="variables.taxvat"
                         />

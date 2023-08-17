@@ -11,6 +11,9 @@
                 @if(Rapidez::config('customer/address/company_show', 'opt'))
                     <x-rapidez::input name="company" v-model="variables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
                 @endif
+                @if(Rapidez::config('customer/address/taxvat_show', 0))
+                    <x-rapidez::input name="vat_id" label="Tax/VAT ID" placeholder="Tax/VAT ID" v-model="variables.vat_id" :required="Rapidez::config('customer/address/taxvat_show', '0') == 'req'" />
+                @endif
                 @if(Rapidez::config('customer/address/telephone_show', 'req'))
                     <x-rapidez::input name="telephone" v-model="variables.telephone" :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'" />
                 @endif

@@ -8,7 +8,7 @@
     <x-rapidez::recaptcha location="customer_create"/>
     <graphql-mutation
         v-cloak
-        query="mutation customer ($firstname: String!, $lastname: String!, $email: String!, $password: String) { createCustomerV2 ( input: { firstname: $firstname, lastname: $lastname, email: $email, password: $password } ) { customer { email } } }"
+        query="mutation customer ($firstname: String!, $lastname: String!, $email: String!, $password: String, $taxvat: String) { createCustomerV2 ( input: { firstname: $firstname, lastname: $lastname, email: $email, password: $password, taxvat: $taxvat } ) { customer { email } } }"
         redirect="{{ route('account.overview') }}"
         :callback="registerCallback"
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
@@ -41,6 +41,16 @@
                         v-model="variables.password"
                         required
                     />
+
+                    @if(Rapidez::config('customer/create_account/vat_frontend_visibility', 0))
+                        <x-rapidez::input
+                            name="taxvat"
+                            label="Tax/VAT ID"
+                            placeholder="Tax/VAT ID"
+                            type="text"
+                            v-model="variables.taxvat"
+                        />
+                    @endif
 
                     <x-rapidez::button type="submit" class="w-full">
                         @lang('Register')

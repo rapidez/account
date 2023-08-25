@@ -1,4 +1,4 @@
-<div class="flex flex-wrap gap-5">
+<div class="flex flex-wrap gap-5 max-sm:flex-col">
     <div class="flex-1">
         <h3 class="font-bold text-gray-700">@lang('Default billing address')</h3>
         <div class="text-gray-700" v-if="data.customer.addresses.find(a => a.default_billing == true)">

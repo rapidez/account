@@ -1,6 +1,10 @@
 @props(['href', 'text', 'icon'])
 <a
-    class="{{ request()->is(trim($href, '/')) ? 'text-primary bg-primary/10' : 'text-inactive hover:text-neutral' }} flex w-full items-center gap-2 rounded p-2 font-medium transition hover:bg-primary/20"
+    @class([
+        'flex items-center gap-2 rounded p-2 font-medium transition hover:bg-primary/20',
+        'text-primary bg-primary/10' => request()->url() == $href,
+        'text-inactive hover:text-neutral' => !request()->url() == $href,
+    ])
     href="{{ $href }}"
 >
     <x-icon

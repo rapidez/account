@@ -7,8 +7,8 @@
 @section('account-content')
     <graphql query='@include('rapidez::account.partials.queries.order')' :variables="{orderNumber: '{{ request()->id }}'}" check="data.customer.orders.items[0]" redirect="{{ route('account.orders') }}">
         <div v-if="data" slot-scope="{ data }">
-            <div class="overflow-scroll md:overflow-visible">
-                <table class="table-auto w-full text-left text-gray-700 -mx-4">
+            <div class="overflow-auto max-w-full">
+                <table class="text-left text-gray-700">
                     <thead>
                         <tr>
                             <th class="px-4 py-2">@lang('Product name')</th>

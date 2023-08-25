@@ -1,4 +1,4 @@
-<ul class="flex flex-1 flex-col gap-1">
+<ul class="flex flex-col gap-1">
     <li>
         @include('rapidez::account.partials.menu-item', [
             'href' => route('account.overview'),

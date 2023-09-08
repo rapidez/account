@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/0.14.0...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/0.15.0...master)
+## [0.15.0](https://github.com/rapidez/account/releases/tag/0.15.0) - 2023-09-08
+
+### Added
+
+- Laravel 10 support (0839fab)
+- Add vat_id (and company) to account queries (#39)
+
 ## [0.14.0](https://github.com/rapidez/account/releases/tag/0.14.0) - 2023-08-22
 
 ### Added

@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/0.15.0...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/0.16.0...master)
+## [0.16.0](https://github.com/rapidez/account/releases/tag/0.16.0) - 2023-09-14
+
+### Added
+
+- Magento reset password fallback route redirects (8efd235)
+
 ## [0.15.0](https://github.com/rapidez/account/releases/tag/0.15.0) - 2023-09-08
 
 ### Added

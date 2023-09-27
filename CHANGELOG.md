@@ -1,6 +1,25 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/0.13.6...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/0.16.0...master)
+## [0.16.0](https://github.com/rapidez/account/releases/tag/0.16.0) - 2023-09-14
+
+### Added
+
+- Magento reset password fallback route redirects (8efd235)
+
+## [0.15.0](https://github.com/rapidez/account/releases/tag/0.15.0) - 2023-09-08
+
+### Added
+
+- Laravel 10 support (0839fab)
+- Add vat_id (and company) to account queries (#39)
+
+## [0.14.0](https://github.com/rapidez/account/releases/tag/0.14.0) - 2023-08-22
+
+### Added
+
+- Added the VAT field on addresses and registration (#37)
+
 ## [0.13.6](https://github.com/rapidez/account/releases/tag/0.13.6) - 2023-07-11
 
 ### Fixed

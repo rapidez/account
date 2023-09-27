@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Http\Request;
+
 Route::middleware('web')->group(function () {
     Route::view('login', 'rapidez::account.login')->name('account.login');
     Route::view('register', 'rapidez::account.register')->name('account.register');
@@ -13,4 +15,9 @@ Route::middleware('web')->group(function () {
     Route::view('account/addresses', 'rapidez::account.addresses')->name('account.addresses');
     Route::view('account/address/new', 'rapidez::account.address-new')->name('account.address.create');
     Route::view('account/address/{id}', 'rapidez::account.address-edit')->name('account.address');
+
+    Route::redirect('customer/account/forgotpassword', '/forgotpassword', 301);
+    Route::get('customer/account/createpassword', function (Request $request) {
+        return redirect(str_replace('/customer/account/createpassword', '/resetpassword', $request->fullUrl()));
+    });
 });

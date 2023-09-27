@@ -13,6 +13,8 @@ query customerOverview($ordersPageSize: Int = 5 $ordersCurrentPage: Int = 1) {
       postcode
       country_code
       telephone
+      company
+      vat_id
       default_billing
       default_shipping
     }

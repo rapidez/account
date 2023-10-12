@@ -1,5 +1,5 @@
-<div v-if="data.customer.orders.items.length" class="overflow-scroll md:overflow-visible">
-    <table class="table-auto w-full text-left text-gray-700">
+<div v-if="data.customer.orders.items.length" class="max-w-full overflow-auto">
+    <table class="text-left text-gray-700">
         <thead>
             <tr>
                 <th class="px-4">@lang('Order #')</th>
@@ -24,7 +24,7 @@
                 <td class="border px-4 py-2">
                     <graphql-mutation query="mutation reorderItems ($orderNumber: String!){ reorderItems(orderNumber: $orderNumber) { cart { id } userInputErrors { message } } }" :variables="{orderNumber: order.number}" redirect="{{ route('cart') }}" :callback="reorderCallback">
                         <form slot-scope="{ mutate }" v-on:submit.prevent="mutate">
-                            <x-rapidez::button type="submit" class="py-1 px-2">
+                            <x-rapidez::button type="submit" class="py-1 px-2 w-full">
                                 @lang('Reorder')
                             </x-rapidez::button>
                         </form>
@@ -34,4 +34,4 @@
         </tbody>
     </table>
 </div>
-<div v-else class="text-gray-700">@lang('You do not have any orders yet.')</div>
+<div v-else class="text-inactive">@lang('You do not have any orders yet.')</div>

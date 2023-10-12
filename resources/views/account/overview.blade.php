@@ -5,21 +5,23 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('account-content')
-    <div class="container mx-auto">
-        <graphql query="@include('rapidez::account.partials.queries.overview')" :callback="sortOrdersCallback">
-            <div v-if="data" slot-scope="{ data }">
-                <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Account information')</h2>
-                <div class="text-gray-700">
-                    @{{ data.customer.firstname }} @{{ data.customer.lastname }}<br>
-                    @{{ data.customer.email }}
+    <graphql query="@include('rapidez::account.partials.queries.overview')" :callback="sortOrdersCallback">
+        <div class="flex flex-col gap-4" v-if="data" slot-scope="{ data }">
+            <div>
+                <h2 class="text-2xl font-bold text-neutral">@lang('Account information')</h2>
+                <div class="text-inactive">
+                    <span class="font-bold text-neutral">@lang('Name'):</span> @{{ data.customer.firstname }} @{{ data.customer.lastname }}<br>
+                    <span class="font-bold text-neutral">@lang('E-mail'):</span> @{{ data.customer.email }}
                 </div>
-
-                <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Addresses')</h2>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold">@lang('Addresses')</h2>
                 @include('rapidez::account.partials.default-addresses')
-
-                <h2 class="font-bold text-2xl mt-5 mb-3">@lang('Latest orders')</h2>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold">@lang('Latest orders')</h2>
                 @include('rapidez::account.partials.orders')
             </div>
-        </graphql>
-    </div>
+        </div>
+    </graphql>
 @endsection

@@ -5,7 +5,7 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('content')
-    <x-rapidez::recaptcha location="customer_create"/>
+    <x-rapidez::recaptcha location="customer_create" />
     <graphql-mutation
         v-cloak
         query="mutation customer ($firstname: String!, $lastname: String!, $email: String!, $password: String, $taxvat: String) { createCustomerV2 ( input: { firstname: $firstname, lastname: $lastname, email: $email, password: $password, taxvat: $taxvat } ) { customer { email } } }"
@@ -13,28 +13,36 @@
         :callback="registerCallback"
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
     >
-        <div v-if="!$root.user?.id" class="flex justify-center" slot-scope="{ mutate, variables }">
-            <form class="p-8 border rounded w-[400px] mr-1" v-on:submit.prevent="mutate">
-                <h1 class="font-bold text-4xl text-center mb-5">@lang('Register')</h1>
-                <div class="space-y-3">
+    <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
+        <div v-if="!loggedIn" class="flex flex-col items-center rounded bg-highlight mt-3.5 max-w-lg w-full">
+            <h1 class="mt-8 text-3xl font-bold px-8">@lang('Register your account')</h1>
+
+            <form v-on:submit.prevent="mutate" class="grid grid-cols-2 w-full gap-3 p-8">
+                <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
                         name="firstname"
                         type="text"
                         v-model="variables.firstname"
                         required
                     />
+                </div>
+                <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
                         name="lastname"
                         type="text"
                         v-model="variables.lastname"
                         required
                     />
+                </div>
+                <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
                         name="email"
                         type="email"
                         v-model="variables.email"
                         required
                     />
+                </div>
+                <div class="col-span-2 sm:col-span-1">
                     <x-rapidez::input
                         name="password"
                         type="password"
@@ -51,11 +59,11 @@
                             v-model="variables.taxvat"
                         />
                     @endif
-
-                    <x-rapidez::button type="submit" class="w-full">
-                        @lang('Register')
-                    </x-rapidez::button>
                 </div>
+
+                <x-rapidez::button class="col-span-2" type="submit">
+                    @lang('Register')
+                </x-rapidez::button>
             </form>
         </div>
         <div v-else>
@@ -64,5 +72,6 @@
                 @lang('Go to your account')
             </x-rapidez::button>
         </div>
+    </div>
     </graphql-mutation>
 @endsection

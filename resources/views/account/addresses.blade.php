@@ -70,10 +70,7 @@
                     @lang('You have no other address entries in your address book.')
                 </div>
 
-                <x-rapidez::button
-                    class="mt-5"
-                    :href="route('account.address.create')"
-                >
+                <x-rapidez::button :href="route('account.address.create')" class="mt-5">
                     @lang('Add new address')
                 </x-rapidez::button>
             </div>

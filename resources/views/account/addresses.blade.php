@@ -66,10 +66,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div
-                    class="text-gray-700"
-                    v-else
-                >
+                <div v-else class="text-gray-700">
                     @lang('You have no other address entries in your address book.')
                 </div>
 

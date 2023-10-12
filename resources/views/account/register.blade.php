@@ -16,7 +16,7 @@
     <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
         <div
             class="flex flex-col items-center rounded bg-highlight mt-3.5 max-w-lg w-full"
-            v-if="!$root.user?.id"
+            v-if="!loggedIn"
         >
             <h1 class="mt-8 text-3xl font-bold px-8">@lang('Register your account')</h1>
 

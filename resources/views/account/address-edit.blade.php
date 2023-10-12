@@ -10,18 +10,14 @@
         check="data.customer.addresses.find(a => a.id == {{ request()->id }})"
         redirect="{{ route('account.orders') }}"
     >
-        <div
-            v-if="data"
-            slot-scope="{ data }"
-        >
+        <div v-if="data" slot-scope="{ data }">
             <graphql-mutation
                 query="@include('rapidez::account.partials.queries.address-edit')"
-                :variables="Object.assign(data.customer.addresses.find(a => a.id ==
-                {{ request()->id }}), { id: {{ request()->id }} })"
+                :variables="Object.assign(data.customer.addresses.find(a => a.id == {{ request()->id }}), { id: {{ request()->id }} })"
                 redirect="{{ route('account.addresses') }}"
             >
                 @include('rapidez::account.partials.address-form')
-                <graphql-mutation>
+            <graphql-mutation>
         </div>
     </graphql>
 @endsection

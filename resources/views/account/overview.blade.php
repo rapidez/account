@@ -5,15 +5,8 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('account-content')
-    <graphql
-        query="@include('rapidez::account.partials.queries.overview')"
-        :callback="sortOrdersCallback"
-    >
-        <div
-            class="flex flex-col gap-4"
-            v-if="data"
-            slot-scope="{ data }"
-        >
+    <graphql query="@include('rapidez::account.partials.queries.overview')" :callback="sortOrdersCallback">
+        <div class="flex flex-col gap-4" v-if="data" slot-scope="{ data }">
             <div>
                 <h2 class="text-2xl font-bold text-neutral">@lang('Account information')</h2>
                 <div class="text-inactive">

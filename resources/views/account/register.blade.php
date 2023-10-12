@@ -67,10 +67,7 @@
                     @endif
                 </div>
 
-                <x-rapidez::button
-                    class="col-span-2"
-                    type="submit"
-                >
+                <x-rapidez::button class="col-span-2" type="submit">
                     @lang('Register')
                 </x-rapidez::button>
             </form>

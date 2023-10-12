@@ -5,19 +5,12 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('account-content')
-    <graphql
-        query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone default_billing default_shipping } } }"
-    >
-        <div
-            v-if="data"
-            slot-scope="{ data }"
-        >
+    <graphql query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone default_billing default_shipping } } }">
+        <div v-if="data" slot-scope="{ data }">
             <h2 class="mb-2 text-2xl font-bold">@lang('Default addresses')</h2>
             @include('rapidez::account.partials.default-addresses', ['edit' => true])
 
-            <div
-                :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a
-                    .default_shipping == false)">
+            <div :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
                 <h2 class="mt-2 mb-2 text-2xl font-bold">@lang('Additional Address Entries')</h2>
                 <div v-if="data.customer.additionalAddresses.length">
                     <table class="w-full table-auto text-left text-gray-700 -mx-4">
@@ -53,23 +46,14 @@
                                     <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>
                                 @endif
                                 <td class="border px-4 py-2">
-                                    <a
-                                        class="underline hover:no-underline"
-                                        :href="'/account/address/' + additionalAddress.id"
-                                    >
+                                    <a class="underline hover:no-underline" :href="'/account/address/' + additionalAddress.id | url">
                                         @lang('Edit')
                                     </a>
                                 </td>
                                 <td class="border px-4 py-2">
-                                    <graphql-mutation
-                                        :query="'mutation { deleteCustomerAddress ( id: ' + additionalAddress.id + ' ) }'"
-                                        redirect="/account/addresses"
-                                    >
+                                    <graphql-mutation :query="'mutation { deleteCustomerAddress ( id: ' + additionalAddress.id + ' ) }'" redirect="/account/addresses">
                                         <div slot-scope="{ mutate }">
-                                            <button
-                                                class="underline hover:no-underline"
-                                                v-on:click="mutate"
-                                            >
+                                            <button class="underline hover:no-underline" v-on:click="mutate">
                                                 @lang('Delete')
                                             </button>
                                         </div>
@@ -79,17 +63,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div
-                    class="text-gray-700"
-                    v-else
-                >
+                <div class="text-gray-700" v-else>
                     @lang('You have no other address entries in your address book.')
                 </div>
 
-                <x-rapidez::button
-                    class="mt-5"
-                    :href="route('account.address.create')"
-                >
+                <x-rapidez::button class="mt-5" :href="route('account.address.create')">
                     @lang('Add new address')
                 </x-rapidez::button>
             </div>

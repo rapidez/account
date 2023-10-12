@@ -46,10 +46,7 @@
                                     <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>
                                 @endif
                                 <td class="border px-4 py-2">
-                                    <a
-                                        class="underline hover:no-underline"
-                                        :href="'/account/address/' + additionalAddress.id"
-                                    >
+                                    <a :href="'/account/address/' + additionalAddress.id" class="underline hover:no-underline">
                                         @lang('Edit')
                                     </a>
                                 </td>

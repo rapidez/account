@@ -46,17 +46,14 @@
                                     <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>
                                 @endif
                                 <td class="border px-4 py-2">
-                                    <a :href="'/account/address/' + additionalAddress.id" class="underline hover:no-underline">
+                                    <a class="underline hover:no-underline" :href="'/account/address/' + additionalAddress.id | url">
                                         @lang('Edit')
                                     </a>
                                 </td>
                                 <td class="border px-4 py-2">
                                     <graphql-mutation query="mutation deleteCustomerAddress($id: Int!){ deleteCustomerAddress ( id: $id ) }" :variables="{id: additionalAddress.id}" redirect="{{ route('account.addresses') }}">
                                         <div slot-scope="{ mutate }">
-                                            <button
-                                                class="underline hover:no-underline"
-                                                v-on:click="mutate"
-                                            >
+                                            <button class="underline hover:no-underline" v-on:click="mutate">
                                                 @lang('Delete')
                                             </button>
                                         </div>

@@ -25,10 +25,7 @@
                         required
                     />
 
-                    <x-rapidez::button
-                        class="mt-2"
-                        type="submit"
-                    >
+                    <x-rapidez::button class="mt-2" type="submit">
                         @lang('Reset password')
                     </x-rapidez::button>
                 </form>

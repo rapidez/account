@@ -10,9 +10,7 @@
             <h2 class="mb-2 text-2xl font-bold">@lang('Default addresses')</h2>
             @include('rapidez::account.partials.default-addresses', ['edit' => true])
 
-            <div
-                :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a
-                    .default_shipping == false)">
+            <div :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
                 <h2 class="mt-2 mb-2 text-2xl font-bold">@lang('Additional Address Entries')</h2>
                 <div v-if="data.customer.additionalAddresses.length">
                     <table class="w-full table-auto text-left text-gray-700 -mx-4">

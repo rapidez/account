@@ -10,8 +10,7 @@
             <div>
                 <h2 class="text-2xl font-bold text-neutral">@lang('Account information')</h2>
                 <div class="text-inactive">
-                    <span class="font-bold text-neutral">@lang('Name'):</span> @{{ data.customer.firstname }}
-                    @{{ data.customer.lastname }}<br>
+                    <span class="font-bold text-neutral">@lang('Name'):</span> @{{ data.customer.firstname }} @{{ data.customer.lastname }}<br>
                     <span class="font-bold text-neutral">@lang('E-mail'):</span> @{{ data.customer.email }}
                 </div>
             </div>

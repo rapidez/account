@@ -14,10 +14,7 @@
         <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
             <div class="flex flex-col items-center rounded bg-highlight mt-3.5 max-w-lg w-full">
                 <h1 class="mt-8 text-3xl font-bold px-8">@lang('Forgot Your Password?')</h1>
-                <form
-                    class="flex w-full flex-col gap-3 p-8"
-                    v-on:submit.prevent="mutate"
-                >
+                <form v-on:submit.prevent="mutate" class="flex w-full flex-col gap-3 p-8">
                     <x-rapidez::input
                         name="email"
                         type="email"
@@ -25,7 +22,7 @@
                         required
                     />
 
-                    <x-rapidez::button class="mt-2" type="submit">
+                    <x-rapidez::button type="submit" class="mt-2">
                         @lang('Reset password')
                     </x-rapidez::button>
                 </form>

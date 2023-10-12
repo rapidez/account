@@ -2,7 +2,7 @@
     <div class="grid grid-cols-12 gap-4">
         <h2 class="col-span-12 font-bold text-2xl">@lang('Contact information')</h2>
         <div class="col-span-12 sm:col-span-6">
-            <x-rapidez::input name="firstname" v-model="variables.firstname" label="Firstname"  required />
+            <x-rapidez::input name="firstname" v-model="variables.firstname" label="Firstname" required />
         </div>
         @if(Rapidez::config('customer/address/middlename_show', 0))
             <div class="col-span-12 sm:col-span-6">

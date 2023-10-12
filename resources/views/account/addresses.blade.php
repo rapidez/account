@@ -37,8 +37,7 @@
                                     <td class="border px-4 py-2">@{{ additionalAddress.middlename }}</td>
                                 @endif
                                 <td class="border px-4 py-2">@{{ additionalAddress.lastname }}</td>
-                                <td class="border px-4 py-2">@{{ additionalAddress.street[0] }} @{{ additionalAddress.street[1] }}
-                                    @{{ additionalAddress.street[2] }} @{{ additionalAddress.street[3] }}</td>
+                                <td class="border px-4 py-2">@{{ additionalAddress.street[0] }} @{{ additionalAddress.street[1] }} @{{ additionalAddress.street[2] }} @{{ additionalAddress.street[3] }}</td>
                                 <td class="border px-4 py-2">@{{ additionalAddress.postcode }}</td>
                                 <td class="border px-4 py-2">@{{ additionalAddress.city }}</td>
                                 <td class="border px-4 py-2">@{{ additionalAddress.country_code }}</td>
@@ -46,14 +45,14 @@
                                     <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>
                                 @endif
                                 <td class="border px-4 py-2">
-                                    <a class="underline hover:no-underline" :href="'/account/address/' + additionalAddress.id | url">
+                                    <a :href="'/account/address/' + additionalAddress.id | url" class="underline hover:no-underline">
                                         @lang('Edit')
                                     </a>
                                 </td>
                                 <td class="border px-4 py-2">
                                     <graphql-mutation query="mutation deleteCustomerAddress($id: Int!){ deleteCustomerAddress ( id: $id ) }" :variables="{id: additionalAddress.id}" redirect="{{ route('account.addresses') }}">
                                         <div slot-scope="{ mutate }">
-                                            <button class="underline hover:no-underline" v-on:click="mutate">
+                                            <button v-on:click="mutate" class="underline hover:no-underline">
                                                 @lang('Delete')
                                             </button>
                                         </div>

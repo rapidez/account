@@ -8,10 +8,7 @@
     <graphql
         query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone default_billing default_shipping } } }"
     >
-        <div
-            v-if="data"
-            slot-scope="{ data }"
-        >
+        <div v-if="data" slot-scope="{ data }">
             <h2 class="mb-2 text-2xl font-bold">@lang('Default addresses')</h2>
             @include('rapidez::account.partials.default-addresses', ['edit' => true])
 

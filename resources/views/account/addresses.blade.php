@@ -51,7 +51,7 @@
                                     </a>
                                 </td>
                                 <td class="border px-4 py-2">
-                                    <graphql-mutation :query="'mutation { deleteCustomerAddress ( id: ' + additionalAddress.id + ' ) }'" redirect="/account/addresses">
+                                    <graphql-mutation query="mutation deleteCustomerAddress($id: Int!){ deleteCustomerAddress ( id: $id ) }" :variables="{id: additionalAddress.id}" redirect="{{ route('account.addresses') }}">
                                         <div slot-scope="{ mutate }">
                                             <button class="underline hover:no-underline" v-on:click="mutate">
                                                 @lang('Delete')
@@ -63,11 +63,11 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="text-gray-700" v-else>
+                <div v-else class="text-gray-700">
                     @lang('You have no other address entries in your address book.')
                 </div>
 
-                <x-rapidez::button class="mt-5" :href="route('account.address.create')">
+                <x-rapidez::button :href="route('account.address.create')" class="mt-5">
                     @lang('Add new address')
                 </x-rapidez::button>
             </div>

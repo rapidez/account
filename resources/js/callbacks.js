@@ -1,12 +1,13 @@
 import 'Vendor/rapidez/core/resources/js/vue'
 import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
-import GetCart from 'Vendor/rapidez/core/resources/js/components/Cart/mixins/GetCart'
+import { mask } from 'Vendor/rapidez/core/resources/js/stores/useMask'
+import { cart, linkUserToCart, refresh as refreshCart } from 'Vendor/rapidez/core/resources/js/stores/useCart'
 
 Vue.prototype.registerCallback = async function (variables, response) {
     await InteractWithUser.methods.login(variables.email, variables.password)
     await InteractWithUser.methods.refreshUser()
-    if (localStorage.cart && localStorage.mask) {
-        await GetCart.methods.linkUserToCart()
+    if (cart?.value?.id && mask) {
+        await linkUserToCart()
     }
 }
 
@@ -22,7 +23,7 @@ Vue.prototype.reorderCallback = async function (variables, response) {
         document.removeEventListener('turbo:load', showReorderErrors)
     })
 
-    await GetCart.methods.refreshCart()
+    await refreshCart()
 }
 
 Vue.prototype.sortOrdersCallback = async function (data, response) {

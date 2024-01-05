@@ -1,11 +1,13 @@
 import 'Vendor/rapidez/core/resources/js/vue'
 import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
+import { mask } from 'Vendor/rapidez/core/resources/js/stores/useMask';
+import { token } from 'Vendor/rapidez/core/resources/js/stores/useUser'
 import GetCart from 'Vendor/rapidez/core/resources/js/components/Cart/mixins/GetCart'
 
 Vue.prototype.registerCallback = async function (variables, response) {
     await InteractWithUser.methods.login(variables.email, variables.password)
     await InteractWithUser.methods.refreshUser()
-    if (localStorage.cart && localStorage.mask) {
+    if (token.value && mask.value) {
         await GetCart.methods.linkUserToCart()
     }
 }

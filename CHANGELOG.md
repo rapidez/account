@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/0.16.0...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/1.0.0...master)
+## [1.0.0](https://github.com/rapidez/account/releases/tag/1.0.0) - 2024-01-05
+
+### Changed
+
+- Improve frontend (#29)
+- Drop 0.x support and use stores (#44)
+
 ## [0.16.0](https://github.com/rapidez/account/releases/tag/0.16.0) - 2023-09-14
 
 ### Added

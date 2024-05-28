@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/2.0.0...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/2.1.0...master)
+## [2.1.0](https://github.com/rapidez/account/releases/tag/2.1.0) - 2024-05-28
+
+### Added
+
+- Laravel 11 support (#46)
+- Fire postcode change event (#45)
+
 ## [2.0.0](https://github.com/rapidez/account/releases/tag/2.0.0) - 2024-02-21
 
 ### Added

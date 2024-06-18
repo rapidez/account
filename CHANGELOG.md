@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/2.1.0...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/2.1.1...master)
+## [2.1.1](https://github.com/rapidez/account/releases/tag/2.1.1) - 2024-06-18
+
+### Fixed
+
+- Sort orders callback Rapidez v2 compatibility (#47)
+
 ## [2.1.0](https://github.com/rapidez/account/releases/tag/2.1.0) - 2024-05-28
 
 ### Added

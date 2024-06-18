@@ -31,5 +31,5 @@ Vue.prototype.sortOrdersCallback = async function (data, response) {
         return new Date(b.order_date) - new Date(a.order_date)
     })
 
-    return response.data.data
+    return response.data
 }

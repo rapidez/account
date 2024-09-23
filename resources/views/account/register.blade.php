@@ -14,7 +14,7 @@
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
     >
     <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
-        <div v-if="!loggedIn" class="flex flex-col items-center rounded bg-highlight mt-3.5 max-w-lg w-full">
+        <div v-if="!loggedIn" class="flex flex-col items-center rounded bg-inactive-100 mt-3.5 max-w-lg w-full">
             <h1 class="mt-8 text-3xl font-bold px-8">@lang('Register your account')</h1>
 
             <form v-on:submit.prevent="mutate" class="grid grid-cols-2 w-full gap-3 p-8">

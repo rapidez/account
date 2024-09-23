@@ -1,7 +1,7 @@
 <div class="flex flex-wrap gap-5 max-sm:flex-col">
     <div class="flex-1">
-        <h3 class="font-bold text-gray-700">@lang('Default billing address')</h3>
-        <div class="text-gray-700" v-if="data.customer.addresses.find(a => a.default_billing == true)">
+        <h3 class="font-bold text-neutral">@lang('Default billing address')</h3>
+        <div class="text-neutral" v-if="data.customer.addresses.find(a => a.default_billing == true)">
             <ul>
                 <li>@{{ (billing = data.customer.addresses.find(a => a.default_billing == true)).firstname }} @{{ billing.lastname }}</li>
                 <li>@{{ billing.street[0] }} @{{ billing.street[1] }} @{{ billing.street[2] }}</li>
@@ -18,8 +18,8 @@
         </x-rapidez::button>
     </div>
     <div class="flex-1">
-        <h3 class="font-bold text-gray-700">@lang('Default shipping address')</h3>
-        <div class="text-gray-700" v-if="data.customer.addresses.find(a => a.default_shipping == true)">
+        <h3 class="font-bold text-neutral">@lang('Default shipping address')</h3>
+        <div class="text-neutral" v-if="data.customer.addresses.find(a => a.default_shipping == true)">
             <ul>
                 <li>@{{ (shipping = data.customer.addresses.find(a => a.default_shipping == true)).firstname }} @{{ shipping.lastname }}</li>
                 <li>@{{ shipping.street[0] }} @{{ shipping.street[1] }} @{{ shipping.street[2] }}</li>

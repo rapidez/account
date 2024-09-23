@@ -13,7 +13,7 @@
             <div :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
                 <h2 class="mt-2 mb-2 text-2xl font-bold">@lang('Additional Address Entries')</h2>
                 <div v-if="data.customer.additionalAddresses.length">
-                    <table class="w-full table-auto text-left text-gray-700 -mx-4">
+                    <table class="w-full table-auto text-left text-neutral -mx-4">
                         <thead>
                             <tr>
                                 <th class="px-4">@lang('Firstname')</th>
@@ -62,7 +62,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div v-else class="text-gray-700">
+                <div v-else class="text-neutral">
                     @lang('You have no other address entries in your address book.')
                 </div>
 

@@ -5,10 +5,6 @@ import { cart, linkUserToCart, refresh as refreshCart } from 'Vendor/rapidez/cor
 
 Vue.prototype.registerCallback = async function (variables, response) {
     await InteractWithUser.methods.login(variables.email, variables.password)
-    await InteractWithUser.methods.refreshUser()
-    if (cart?.value?.id && mask) {
-        await linkUserToCart()
-    }
 }
 
 Vue.prototype.refreshUserInfoCallback = async function (variables, response) {

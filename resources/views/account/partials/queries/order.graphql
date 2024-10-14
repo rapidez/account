@@ -1,53 +1,10 @@
+@include('rapidez::checkout.queries.fragments.orderV2')
+
 query singleOrder($orderNumber: String = "{{ addslashes(request()->id) }}"){
   customer {
     orders ( filter: { number: { eq: $orderNumber } } pageSize: 1 ) {
       items {
-        number
-        order_date
-        shipping_method
-        payment_methods {
-          name
-        }
-        shipping_address {
-          firstname
-          lastname
-          street
-          postcode
-          city
-          country_code
-          telephone
-        }
-        billing_address {
-          firstname
-          lastname
-          street
-          postcode
-          city
-          country_code
-          telephone
-        }
-        total {
-          grand_total {
-            value
-          }
-          shipping_handling {
-            total_amount {
-              value
-            }
-          }
-          subtotal {
-            value
-          }
-        }
-        status
-        items {
-          product_name
-          product_sku
-          product_sale_price {
-            value
-          }
-          quantity_ordered
-        }
+        ...orderV2
       }
     }
   }

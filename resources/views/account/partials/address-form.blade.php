@@ -21,7 +21,14 @@
 
         <div class="col-span-12 sm:col-span-6">
             @if(Rapidez::config('customer/address/taxvat_show', 0))
-                <x-rapidez::input name="vat_id" label="Tax/VAT ID" placeholder="Tax/VAT ID" v-model="variables.vat_id" :required="Rapidez::config('customer/address/taxvat_show', '0') == 'req'" />
+                <x-rapidez::input
+                    name="vat_id"
+                    label="Tax/VAT ID"
+                    placeholder="Tax/VAT ID"
+                    v-model="variables.vat_id"
+                    v-on:change="window.app.$emit('vat-change', $event)"
+                    :required="Rapidez::config('customer/address/taxvat_show', '0') == 'req'"
+                />
             @endif
             @if(Rapidez::config('customer/address/telephone_show', 'req'))
                 <x-rapidez::input name="telephone" v-model="variables.telephone" label="Telephone" :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'" />

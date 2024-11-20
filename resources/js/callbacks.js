@@ -12,7 +12,7 @@ Vue.prototype.refreshUserInfoCallback = async function (variables, response) {
 
 Vue.prototype.reorderCallback = async function (variables, response) {
     document.addEventListener('turbo:load', function showReorderErrors() {
-        response.data.data.reorderItems.userInputErrors.forEach((error) => {
+        response.data.reorderItems.userInputErrors.forEach((error) => {
             Notify(error.message, 'warning')
         })
         document.removeEventListener('turbo:load', showReorderErrors)

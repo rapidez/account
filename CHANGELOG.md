@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/2.1.1...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/2.1.2...master)
+## [2.1.2](https://github.com/rapidez/account/releases/tag/2.1.2) - 2024-10-10
+
+### Fixed
+
+- Remove unnecessary register callback (#51)
+
 ## [2.1.1](https://github.com/rapidez/account/releases/tag/2.1.1) - 2024-06-18
 
 ### Fixed

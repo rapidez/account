@@ -23,7 +23,7 @@
                 <td class="border px-4 py-2">@{{ order.status }}</td>
                 <td class="border px-4 py-2">
                     <graphql-mutation
-                        query="@include('rapidez::account.queries.reorderItems')"
+                        query="@include('rapidez::account.queries.reorder-items')"
                         :variables="{orderNumber: order.number}"
                         redirect="{{ route('cart') }}"
                         :callback="reorderCallback"

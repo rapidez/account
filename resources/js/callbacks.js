@@ -19,7 +19,7 @@ Vue.prototype.reorderCallback = async function (variables, response) {
         document.removeEventListener('turbo:load', showReorderErrors)
     })
 
-    await refreshCart()
+    await Vue.prototype.updateCart(variables, response)
 }
 
 Vue.prototype.sortOrdersCallback = async function (data, response) {

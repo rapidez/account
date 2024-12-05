@@ -1,6 +1,20 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/2.1.2...master)
+[Unreleased changes](https://github.com/rapidez/account/compare/2.1.4...2.1.4)
+## [2.1.4](https://github.com/rapidez/account/releases/tag/2.1.4) - 2024-12-05
+
+### Fixed
+
+- VAT change event (#53)
+- Reorder in 1 request (#54)
+- GraphQL data check fix (#48)
+
+## [2.1.3](https://github.com/rapidez/account/releases/tag/2.1.3) - 2024-10-11
+
+### Fixed
+
+- Fix the handling of the response with fetch (#52)
+
 ## [2.1.2](https://github.com/rapidez/account/releases/tag/2.1.2) - 2024-10-10
 
 ### Fixed

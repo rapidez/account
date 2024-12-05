@@ -1,14 +1,13 @@
 import 'Vendor/rapidez/core/resources/js/vue'
-import InteractWithUser from 'Vendor/rapidez/core/resources/js/components/User/mixins/InteractWithUser'
-import { mask } from 'Vendor/rapidez/core/resources/js/stores/useMask'
-import { cart, linkUserToCart, refresh as refreshCart } from 'Vendor/rapidez/core/resources/js/stores/useCart'
+import { login, refresh as refreshUser } from 'Vendor/rapidez/core/resources/js/stores/useUser'
+import { refresh as refreshCart } from 'Vendor/rapidez/core/resources/js/stores/useCart'
 
 Vue.prototype.registerCallback = async function (variables, response) {
-    await InteractWithUser.methods.login(variables.email, variables.password)
+    await login(variables.email, variables.password)
 }
 
 Vue.prototype.refreshUserInfoCallback = async function (variables, response) {
-    await InteractWithUser.methods.refreshUser()
+    await refreshUser()
 }
 
 Vue.prototype.reorderCallback = async function (variables, response) {

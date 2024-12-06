@@ -26,7 +26,7 @@ class AccountServiceProvider extends ServiceProvider
 
     protected function bootTranslations(): self
     {
-        $this->loadJsonTranslationsFrom(__DIR__ . '/../lang');
+        $this->loadJsonTranslationsFrom(__DIR__.'/../lang');
 
         return $this;
     }

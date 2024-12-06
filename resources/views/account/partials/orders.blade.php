@@ -1,5 +1,5 @@
 <div v-if="data.customer.orders.items.length" class="max-w-full overflow-auto">
-    <table class="text-left text-gray-700">
+    <table class="text-left">
         <thead>
             <tr>
                 <th class="px-4">@lang('Order #')</th>
@@ -29,9 +29,9 @@
                         :callback="reorderCallback"
                     >
                         <form slot-scope="{ mutate }" v-on:submit.prevent="mutate">
-                            <x-rapidez::button type="submit" class="py-1 px-2 w-full">
+                            <x-rapidez::button.secondary type="submit" class="py-1 px-2 w-full">
                                 @lang('Reorder')
-                            </x-rapidez::button>
+                            </x-rapidez::button.secondary>
                         </form>
                     </graphql-mutation>
                 </td>
@@ -39,4 +39,4 @@
         </tbody>
     </table>
 </div>
-<div v-else class="text-inactive">@lang('You do not have any orders yet.')</div>
+<div v-else class="text-muted">@lang('You do not have any orders yet.')</div>

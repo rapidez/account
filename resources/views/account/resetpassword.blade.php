@@ -22,24 +22,28 @@
                         label="Security token"
                         required
                     />
-                    <x-rapidez::input
-                        name="email"
-                        type="email"
-                        v-model="variables.email"
-                        required
+                    <label>
+                        <x-rapidez::label>@lang('Email')</x-rapidez::label>
+                        <x-rapidez::input
+                            name="email"
+                            type="email"
+                            v-model="variables.email"
+                            required
                     />
-                    <x-rapidez::input
-                        name="password"
-                        type="password"
-                        v-model="variables.password"
-                        label="New password"
-                        required
-                    />
+                    </label>
+                    <label>
+                        <x-rapidez::label>@lang('New password')</x-rapidez::label>
+                        <x-rapidez::input.password
+                            name="password"
+                            v-model="variables.password"
+                            required
+                        />
+                    </label>
                 </div>
 
-                <x-rapidez::button type="submit" class="w-full mt-5">
+                <x-rapidez::button.secondary type="submit" class="w-full mt-5">
                     @lang('Change password')
-                </x-rapidez::button>
+                </x-rapidez::button.secondary>
             </form>
         </div>
     </graphql-mutation>

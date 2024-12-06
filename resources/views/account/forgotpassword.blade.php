@@ -18,7 +18,7 @@
                     <x-rapidez::input
                         name="email"
                         type="email"
-                        placeholder="Email"
+                        :placeholder="__('Email')"
                         v-model="variables.email"
                         required
                     />

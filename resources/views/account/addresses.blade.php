@@ -22,7 +22,7 @@
                                 @endif
                                 <th class="px-4">@lang('Lastname')</th>
                                 <th class="px-4">@lang('Address')</th>
-                                <th class="px-4">@lang('Zipcode')</th>
+                                <th class="px-4">@lang('Postcode')</th>
                                 <th class="px-4">@lang('City')</th>
                                 <th class="px-4">@lang('Country')</th>
                                 <th class="px-4">@lang('Phone')</th>

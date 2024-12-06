@@ -13,6 +13,8 @@ class AccountServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->bootTranslations();
+
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'rapidez');
@@ -20,5 +22,12 @@ class AccountServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/rapidez'),
         ], 'views');
+    }
+
+    protected function bootTranslations(): self
+    {
+        $this->loadJsonTranslationsFrom(__DIR__.'/../lang');
+
+        return $this;
     }
 }

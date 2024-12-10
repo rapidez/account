@@ -5,7 +5,7 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('account-content')
-    <graphql query='@include('rapidez::account.partials.queries.order')' :variables="{orderNumber: '{{ request()->id }}'}" check="customer.orders.items[0]" redirect="{{ route('account.orders') }}">
+    <graphql query='@include('rapidez::account.partials.queries.order')' :variables="{orderNumber: '{{ request()->id }}'}" check="(data) => data.customer.orders.items[0]" redirect="{{ route('account.orders') }}">
         <div v-if="data" slot-scope="{ data }">
             <div class="overflow-auto max-w-full">
                 <table class="text-left text-gray-700">

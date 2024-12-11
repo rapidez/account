@@ -50,7 +50,12 @@
                                     </a>
                                 </td>
                                 <td class="border px-4 py-2">
-                                    <graphql-mutation query="mutation deleteCustomerAddress($id: Int!){ deleteCustomerAddress ( id: $id ) }" :variables="{id: additionalAddress.id}" redirect="{{ route('account.addresses') }}">
+                                    <graphql-mutation
+                                        query="mutation deleteCustomerAddress($id: Int!){ deleteCustomerAddress ( id: $id ) }"
+                                        :variables="{ id: additionalAddress.id }"
+                                        :callback="refreshUserInfoCallback"
+                                        redirect="{{ route('account.addresses') }}"
+                                    >
                                         <div slot-scope="{ mutate }">
                                             <button v-on:click="mutate" class="underline hover:no-underline">
                                                 @lang('Delete')

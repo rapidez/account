@@ -12,19 +12,20 @@
         :notify="{ message: '@lang('An email is send with a password reset link if an account exists with the provided email address.')' }"
     >
         <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
-            <div class="flex flex-col items-center rounded bg-highlight mt-3.5 max-w-lg w-full">
+            <div class="flex flex-col items-center rounded bg mt-3.5 max-w-lg w-full">
                 <h1 class="mt-8 text-3xl font-bold px-8">@lang('Forgot Your Password?')</h1>
                 <form v-on:submit.prevent="mutate" class="flex w-full flex-col gap-3 p-8">
                     <x-rapidez::input
                         name="email"
                         type="email"
+                        :placeholder="__('Email')"
                         v-model="variables.email"
                         required
                     />
 
-                    <x-rapidez::button type="submit" class="mt-2">
+                    <x-rapidez::button.secondary type="submit" class="mt-2">
                         @lang('Reset password')
-                    </x-rapidez::button>
+                    </x-rapidez::button.secondary>
                 </form>
             </div>
         </div>

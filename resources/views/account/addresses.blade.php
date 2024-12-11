@@ -11,9 +11,9 @@
             @include('rapidez::account.partials.default-addresses', ['edit' => true])
 
             <div :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
-                <h2 class="mt-2 mb-2 text-2xl font-bold">@lang('Additional Address Entries')</h2>
+                <h2 class="mt-2 mb-2 text-2xl font-bold">@lang('Additional address entries')</h2>
                 <div v-if="data.customer.additionalAddresses.length">
-                    <table class="w-full table-auto text-left text-gray-700 -mx-4">
+                    <table class="w-full table-auto text-left -mx-4">
                         <thead>
                             <tr>
                                 <th class="px-4">@lang('Firstname')</th>
@@ -22,7 +22,7 @@
                                 @endif
                                 <th class="px-4">@lang('Lastname')</th>
                                 <th class="px-4">@lang('Address')</th>
-                                <th class="px-4">@lang('Zipcode')</th>
+                                <th class="px-4">@lang('Postcode')</th>
                                 <th class="px-4">@lang('City')</th>
                                 <th class="px-4">@lang('Country')</th>
                                 <th class="px-4">@lang('Phone')</th>
@@ -62,13 +62,13 @@
                         </tbody>
                     </table>
                 </div>
-                <div v-else class="text-gray-700">
+                <div v-else>
                     @lang('You have no other address entries in your address book.')
                 </div>
 
-                <x-rapidez::button :href="route('account.address.create')" class="mt-5">
+                <x-rapidez::button.secondary :href="route('account.address.create')" class="mt-5">
                     @lang('Add new address')
-                </x-rapidez::button>
+                </x-rapidez::button.secondary>
             </div>
         </div>
     </graphql>

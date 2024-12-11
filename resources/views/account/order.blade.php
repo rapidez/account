@@ -8,7 +8,7 @@
     <graphql query='@include('rapidez::account.partials.queries.order')' :variables="{orderNumber: '{{ request()->id }}'}" check="(data) => data.customer.orders.items[0]" redirect="{{ route('account.orders') }}">
         <div v-if="data" slot-scope="{ data }">
             <div class="overflow-auto max-w-full">
-                <table class="text-left text-gray-700">
+                <table class="text-left">
                     <thead>
                         <tr>
                             <th class="px-4 py-2">@lang('Product name')</th>
@@ -48,7 +48,7 @@
             <div class="flex flex-wrap">
                 <div class="w-full sm:w-1/2 lg:w-1/4 mt-3" v-if="shipping = data.customer.orders.items[0].shipping_address">
                     <h3 class="font-bold text-xl">@lang('Shipping address')</h3>
-                    <div class="text-gray-700">
+                    <div>
                         @{{ shipping.firstname }} @{{ shipping.lastname }}<br>
                         @{{ shipping.street[0] }} @{{ shipping.street[1] }}<br>
                         @{{ shipping.postcode }} @{{ shipping.city }}<br>
@@ -58,13 +58,13 @@
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-1/4 mt-3" v-if="data.customer.orders.items[0].shipping_method">
                     <h3 class="font-bold text-xl">@lang('Shipping method')</h3>
-                    <div class="text-gray-700">
+                    <div>
                         @{{ data.customer.orders.items[0].shipping_method }}
                     </div>
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-1/4 mt-3">
                     <h3 class="font-bold text-xl">@lang('Billing address')</h3>
-                    <div class="text-gray-700">
+                    <div>
                         @{{ (billing = data.customer.orders.items[0].billing_address).firstname }} @{{ billing.lastname }}<br>
                         @{{ billing.street[0] }} @{{ billing.street[1] }}<br>
                         @{{ billing.postcode }} @{{ billing.city }}<br>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="w-full sm:w-1/2 lg:w-1/4 mt-3">
                     <h3 class="font-bold text-xl">@lang('Payment method')</h3>
-                    <div class="text-gray-700">
+                    <div>
                         @{{ data.customer.orders.items[0].payment_methods[0].name }}
                     </div>
                 </div>

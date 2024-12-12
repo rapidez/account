@@ -14,6 +14,7 @@
             <graphql-mutation
                 query="@include('rapidez::account.partials.queries.address-edit')"
                 :variables="Object.assign(data.customer.addresses.find(a => a.id == {{ request()->id }}), { id: {{ request()->id }} })"
+                :callback="refreshUserInfoCallback"
                 redirect="{{ route('account.addresses') }}"
             >
                 @include('rapidez::account.partials.address-form')

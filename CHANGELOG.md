@@ -3,13 +3,15 @@
 [Unreleased changes](https://github.com/rapidez/account/compare/3.0.0...3.0.0)
 ## [3.0.0](https://github.com/rapidez/account/releases/tag/3.0.0) - 2024-12-12
 
-#### Added
--  Rapidez V3 support (#49)
+### Added
+
+- Rapidez V3 support (#49)
 - Refresh user data on address change (#57)
 
-#### Changed
+### Changed
+
 - Update check props (#56)
-- Replaced Inputs & buttons from blade-components  (#55)
+- Replaced Inputs & buttons from blade-components (#55)
 
 ## [2.1.4](https://github.com/rapidez/account/releases/tag/2.1.4) - 2024-12-05
 

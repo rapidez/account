@@ -7,6 +7,7 @@
     "Additional address entries": "Extra adressen",
     "Address": "Adres",
     "Addresses": "Adressen",
+    "An email has been sent with a password reset link if an account exists with the provided email address.": "Een e-mail is verstuurd met een link om het wachtwoord te herstellen indien een account met dit adres bestaat.",
     "Change": "Wijzigen",
     "Change billing address": "Factuuradres wijzigen",
     "Change email": "E-mail wijzigen",
@@ -23,6 +24,8 @@
     "Delete": "Verwijderen",
     "Edit": "Wijzigen",
     "Edit account": "Account informatie wijzigen",
+    "Edit address": "Adres wijzigen",
+    "Go to your account": "Naar het klantencentrum",
     "Grand Total": "Totaal",
     "Latest orders": "Laatste bestellingen",
     "Name": "Naam",
@@ -35,7 +38,7 @@
     "Phone": "Telefoonnummer",
     "Price": "Prijs",
     "Product name": "Productnaam",
-    "QTY": "Aantal",
+    "Qty": "Aantal",
     "Register": "Registreren",
     "Register your account": "Account aanmaken",
     "Reorder": "Opnieuw bestellen",
@@ -45,5 +48,7 @@
     "SKU": "SKU",
     "Status": "Status",
     "Tax/VAT ID": "BTW-nummer",
+    "You do not have any orders yet.": "Je hebt nog geen bestellingen.",
+    "You have no other address entries in your address book.": "Je hebt geen andere adressen.",
     "Your password has been changed, please login.": "Je wachtwoord is gewijzigd, log nu in."
 }

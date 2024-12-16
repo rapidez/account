@@ -14,7 +14,7 @@
     >
         <div class="flex justify-center" slot-scope="{ mutate, variables }">
             <form class="p-8 border rounded w-[400px] mr-1" v-on:submit.prevent="mutate">
-                <h1 class="font-bold text-4xl text-center mb-5">@lang('Reset Password')</h1>
+                <h1 class="font-bold text-4xl text-center mb-5">@lang('Reset password')</h1>
                 <div class="space-y-3">
                     <x-rapidez::input
                         name="token"

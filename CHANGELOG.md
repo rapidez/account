@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/3.0.0...3.0.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/3.0.1...3.0.1)
+## [3.0.1](https://github.com/rapidez/account/releases/tag/3.0.1) - 2024-12-17
+
+### Fixed
+
+- Fix missing translations (#58)
+
 ## [3.0.0](https://github.com/rapidez/account/releases/tag/3.0.0) - 2024-12-12
 
 ### Added

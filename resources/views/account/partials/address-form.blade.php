@@ -104,7 +104,7 @@
         <div class="col-span-12 sm:col-span-4">
             <label>
                 <x-rapidez::label>@lang('Country')</x-rapidez::label>
-                <x-rapidez::country-select
+                <x-rapidez::input.select.country
                     name="country_code"
                     v-model="variables.country_code"
                     v-on:change="window.app.$emit('postcode-change', variables)"

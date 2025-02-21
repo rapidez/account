@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/3.0.1...3.0.1)
+[Unreleased changes](https://github.com/rapidez/account/compare/3.0.2...3.0.2)
+## [3.0.2](https://github.com/rapidez/account/releases/tag/3.0.2) - 2025-02-21
+
+### Fixed
+
+- Fix country select (#59)
+
 ## [3.0.1](https://github.com/rapidez/account/releases/tag/3.0.1) - 2024-12-17
 
 ### Fixed

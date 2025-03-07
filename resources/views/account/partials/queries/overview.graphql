@@ -12,6 +12,11 @@ query customerOverview($ordersPageSize: Int = 5 $ordersCurrentPage: Int = 1) {
       city
       postcode
       country_code
+      region {
+        region
+        region_code
+        region_id
+      }
       telephone
       company
       vat_id

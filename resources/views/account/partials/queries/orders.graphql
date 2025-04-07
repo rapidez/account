@@ -1,6 +1,6 @@
 {
   customer {
-    orders {
+    orders ( sort: { sort_field: NUMBER, sort_direction: DESC } ) {
       items {
         number
         order_date

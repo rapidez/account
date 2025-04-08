@@ -18,7 +18,7 @@ query customerOverview($ordersPageSize: Int = 5 $ordersCurrentPage: Int = 1) {
       default_billing
       default_shipping
     }
-    orders ( pageSize: $ordersPageSize currentPage: $ordersCurrentPage ) {
+    orders ( pageSize: $ordersPageSize currentPage: $ordersCurrentPage sort: { sort_field: NUMBER, sort_direction: DESC } ) {
       items {
         number
         order_date

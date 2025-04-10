@@ -24,6 +24,7 @@
                                 <th class="px-4">@lang('Address')</th>
                                 <th class="px-4">@lang('Postcode')</th>
                                 <th class="px-4">@lang('City')</th>
+                                <th class="px-4">@lang('Region')</th>
                                 <th class="px-4">@lang('Country')</th>
                                 <th class="px-4">@lang('Phone')</th>
                                 <th></th>
@@ -40,6 +41,7 @@
                                 <td class="border px-4 py-2">@{{ additionalAddress.street[0] }} @{{ additionalAddress.street[1] }} @{{ additionalAddress.street[2] }} @{{ additionalAddress.street[3] }}</td>
                                 <td class="border px-4 py-2">@{{ additionalAddress.postcode }}</td>
                                 <td class="border px-4 py-2">@{{ additionalAddress.city }}</td>
+                                <td class="border px-4 py-2">@{{ additionalAddress.region?.region }}</td>
                                 <td class="border px-4 py-2">@{{ additionalAddress.country_code }}</td>
                                 @if (Rapidez::config('customer/address/telephone_show', 'opt'))
                                     <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>

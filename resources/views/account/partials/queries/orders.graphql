@@ -1,6 +1,6 @@
-{
+query customerOrders($pageSize: Int = 5 $page: Int = 1) {
   customer {
-    orders ( sort: { sort_field: NUMBER, sort_direction: DESC } ) {
+    orders ( pageSize: $pageSize currentPage: $page sort: { sort_field: CREATED_AT, sort_direction: DESC } ) {
       items {
         number
         order_date

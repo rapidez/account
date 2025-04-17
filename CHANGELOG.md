@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/3.0.2...3.0.2)
+[Unreleased changes](https://github.com/rapidez/account/compare/3.1.0...3.1.0)
+## [3.1.0](https://github.com/rapidez/account/releases/tag/3.1.0) - 2025-03-06
+
+### Added
+
+- Laravel 12 support (#61)
+
 ## [3.0.2](https://github.com/rapidez/account/releases/tag/3.0.2) - 2025-02-21
 
 ### Fixed

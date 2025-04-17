@@ -1,6 +1,16 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/3.1.0...3.1.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/3.2.0...3.2.0)
+## [3.2.0](https://github.com/rapidez/account/releases/tag/3.2.0) - 2025-04-17
+
+### Added
+
+- Region select (#60)
+
+### Fixed
+
+- Sort the orders by number descending (#62)
+
 ## [3.1.0](https://github.com/rapidez/account/releases/tag/3.1.0) - 2025-03-06
 
 ### Added

@@ -1,3 +1,5 @@
+@props(['region' => 'region.region_id'])
+
 <form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate">
     <div class="grid grid-cols-12 gap-4">
         <h2 class="col-span-12 font-bold text-2xl">@lang('Contact information')</h2>
@@ -107,9 +109,26 @@
                 <x-rapidez::input.select.country
                     name="country_code"
                     v-model="variables.country_code"
-                    v-on:change="window.app.$emit('postcode-change', variables)"
+                    v-on:change="$root.$nextTick(() => {
+                        window.app.$emit('postcode-change', variables);
+                        variables.region = {};
+                        variables.{{ $region }} = null;
+                    })"
                     class="w-full"
                     required
+                />
+            </label>
+        </div>
+        <div class="col-span-12 sm:col-span-6 has-[.exists]:block hidden">
+            <label>
+                <x-rapidez::label>@lang('Region')</x-rapidez::label>
+                <x-rapidez::input.select.region
+                    class="exists"
+                    name="{{ $type }}_region"
+                    dusk="{{ $type }}_region"
+                    country="variables.country_code"
+                    v-model="variables.{{ $region }}"
+                    :$useRegionId
                 />
             </label>
         </div>

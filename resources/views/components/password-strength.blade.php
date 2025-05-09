@@ -52,7 +52,11 @@
                     <x-heroicon-s-x-circle class="size-4 text-red-500" />
                 </div>
                 <p class="text-primary text-sm">
-                    @{{ error }} <input class="pointer-events-none absolute inset-0 opacity-0" type="checkbox" required>
+                    @{{ error }} <input
+                        class="pointer-events-none inset-0 opacity-0"
+                        type="checkbox"
+                        required
+                    >
                 </p>
             </div>
             <div v-for="strength in passwordStrength.strengths" class="my-1 flex items-center gap-x-2">

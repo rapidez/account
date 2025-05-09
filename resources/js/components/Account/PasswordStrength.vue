@@ -14,55 +14,68 @@ export default {
             type: Number,
             default: null
         },
+        checks: {
+            type: Object,
+            default: null
+        },
+    },
+
+    data() {
+        return {
+            strengths: [],
+            errors: []
+        }
     },
 
     render() {
         return this.$scopedSlots.default(this)
     },
 
-    computed: {
-        errors: function () {
-            let errors = []
+    mounted() {
+        this.validate()
+    },
+    watch: {
+        password: {
+            handler: function () {
+                this.validate()
+            }
+        }
+    },
+
+    methods: {
+        validate() {
+            this.errors = []
+            this.strengths = []
             if (!/[a-z]/.test(this.password)) {
-                errors.push(window.config.translations.password.lowercase)
+                this.errors.push(this.checks.lowercase)
+            } else {
+                this.strengths.push(this.checks.lowercase)
             }
             if (!/[A-Z]/.test(this.password)) {
-                errors.push(window.config.translations.password.uppercase)
+                this.errors.push(this.checks.uppercase)
+            } else {
+                this.strengths.push(this.checks.uppercase)
             }
             if (!/\d/.test(this.password)) {
-                errors.push(window.config.translations.password.number)
+                this.errors.push(this.checks.number)
+            } else {
+                this.strengths.push(this.checks.number)
             }
             if (!/[^a-zA-Z0-9]/.test(this.password)) {
-                errors.push(window.config.translations.password.special)
+                this.errors.push(this.checks.special)
+            } else {
+                this.strengths.push(this.checks.special)
             }
-            let satisfiedClasses = 4 - errors.length
+            let satisfiedClasses = 4 - this.errors.length
             if (satisfiedClasses >= this.minClasses) {
-                errors = []
+                this.errors = []
             }
             if (this.password.length < this.minLength) {
-                errors.push(window.config.translations.password.characters.replace(':minLength', this.minLength))
+                this.errors.push(this.checks.length)
+            } else {
+                this.strengths.push(this.checks.length)
             }
-            return errors
-        },
-        strengths: function () {
-            let strengths = []
-            if (this.minLength <= this.password.length) {
-                strengths.push(window.config.translations.password.characters.replace(':minLength', this.minLength))
-            }
-            if (/[a-z]/.test(this.password)) {
-                strengths.push(window.config.translations.password.lowercase)
-            }
-            if (/[A-Z]/.test(this.password)) {
-                strengths.push(window.config.translations.password.uppercase)
-            }
-            if (/\d/.test(this.password)) {
-                strengths.push(window.config.translations.password.number)
-            }
-            if (/[^a-zA-Z0-9]/.test(this.password)) {
-                strengths.push(window.config.translations.password.special)
-            }
-            return strengths
-        },
+        }
     },
 }
 </script>

@@ -6,10 +6,6 @@ export default {
             type: String,
             default: ''
         },
-        minLength: {
-            type: Number,
-            default: null
-        },
         minClasses: {
             type: Number,
             default: null
@@ -23,7 +19,7 @@ export default {
     data() {
         return {
             strengths: [],
-            errors: []
+            errors: [],
         }
     },
 
@@ -34,6 +30,7 @@ export default {
     mounted() {
         this.validate()
     },
+
     watch: {
         password: {
             handler: function () {
@@ -46,34 +43,21 @@ export default {
         validate() {
             this.errors = []
             this.strengths = []
-            if (!/[a-z]/.test(this.password)) {
-                this.errors.push(this.checks.lowercase)
-            } else {
-                this.strengths.push(this.checks.lowercase)
+            for (const check in this.checks) {
+                if (Object.prototype.hasOwnProperty.call(this.checks, check)) {
+                    if (new RegExp(this.checks[check].regex).test(this.password)) {
+                        this.strengths.push(this.checks[check].text)
+                    } else {
+                        this.errors.push(this.checks[check].text)
+                    }
+                }
             }
-            if (!/[A-Z]/.test(this.password)) {
-                this.errors.push(this.checks.uppercase)
-            } else {
-                this.strengths.push(this.checks.uppercase)
-            }
-            if (!/\d/.test(this.password)) {
-                this.errors.push(this.checks.number)
-            } else {
-                this.strengths.push(this.checks.number)
-            }
-            if (!/[^a-zA-Z0-9]/.test(this.password)) {
-                this.errors.push(this.checks.special)
-            } else {
-                this.strengths.push(this.checks.special)
-            }
-            let satisfiedClasses = 4 - this.errors.length
+            let satisfiedClasses = Object.keys(this.checks).length - this.errors.length
             if (satisfiedClasses >= this.minClasses) {
                 this.errors = []
-            }
-            if (this.password.length < this.minLength) {
-                this.errors.push(this.checks.length)
-            } else {
-                this.strengths.push(this.checks.length)
+                if (!this.strengths.includes(this.checks.length.text)) {
+                    this.errors.push(this.checks.length.text)
+                }
             }
         }
     },

@@ -1,26 +1,43 @@
 @slots(['label'])
 
-@php($checks = [
-        'length' => __('Bevat :length karakters', ['length' => '8']),
-        'lowercase' => __('Contains a lowercase letter'),
-        'uppercase' => __('Contains an uppercase letter'),
-        'number' => __('Contains a number'),
-        'special' => __('Contains a special character')
-    ])
+@php
+    $length = Rapidez::config('customer/password/minimum_password_length', 8);
+    $checks = [
+        'length' => [
+            'text' => __('Bevat :length karakters', ['length' => $length]),
+            'regex' => '^.{' . $length . ',}',
+        ],
+        'lowercase' => [
+            'text' => __('Contains a lowercase letter'),
+            'regex' => '[a-z]',
+        ],
+        'uppercase' => [
+            'text' => __('Contains an uppercase letter'),
+            'regex' => '[A-Z]',
+        ],
+        'number' => [
+            'text' => __('Contains a number'),
+            'regex' => '[\d]',
+        ],
+        'special' => [
+            'text' => __('Contains a special character'),
+            'regex' => '[^a-zA-Z0-9]',
+        ],
+    ];
+@endphp
 
-<div {{ $attributes->only('class')->class('') }}>
-    <x-rapidez::label class="mb-2 text-inactive">
+<div>
+    <x-rapidez::label class="text-inactive mb-2">
         {{ $label }}
     </x-rapidez::label>
     <password-strength
         v-slot="passwordStrength"
         v-bind:checks='@json($checks)'
-        v-bind:min-length="{{ Rapidez::config('customer/password/minimum_password_length', 8) }}"
         v-bind:min-classes="{{ Rapidez::config('customer/password/required_character_classes_number', 3) }}"
         {{ $attributes }}
     >
         <div>
-            <p v-if="passwordStrength.minClasses < 4" class="mb-2 text-xs text-inactive">
+            <p v-if="passwordStrength.minClasses < 4" class="text-inactive mb-2 text-xs">
                 @lang('Password must have :minClasses differrent characters', ['minClasses' => '@{{ passwordStrength.minClasses }}'])
             </p>
             <div class="mb-4 h-2.5 w-full rounded-full bg-gray-200">
@@ -34,12 +51,9 @@
                 <div class="flex size-4 shrink-0 items-center justify-center rounded-full">
                     <x-heroicon-s-x-circle class="size-4 text-red-500" />
                 </div>
-                <p class="text-sm text-primary"> @{{ error }}<input
-                        type="checkbox"
-                        oninvalid="this.setCustomValidity(error)"
-                        required
-                        class="pointer-events-none absolute inset-0 opacity-0"
-                    ></p>
+                <p class="text-primary text-sm">
+                    @{{ error }} <input class="pointer-events-none absolute inset-0 opacity-0" type="checkbox" required>
+                </p>
             </div>
             <div v-for="strength in passwordStrength.strengths" class="my-1 flex items-center gap-x-2">
                 <div class="flex size-4 shrink-0 items-center justify-center rounded-full text-white">

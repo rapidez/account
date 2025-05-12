@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 
 Route::middleware('web')->group(function () {
     // Magento_Customer
-    Route::get('customer/address/edit/id/{addressId}', function($addressId) {
+    Route::get('customer/address/edit/id/{addressId}', function ($addressId) {
         return to_route('account.address', ['id' => $addressId], 301);
     });
     Route::permanentRedirect('customer/address', route('account.addresses'));
@@ -22,7 +22,7 @@ Route::middleware('web')->group(function () {
 
     // Magento_Sales
     Route::permanentRedirect('sales/order/history', route('account.orders'));
-    Route::get('sales/order/view/order_id/{orderId}', function($orderId) {
+    Route::get('sales/order/view/order_id/{orderId}', function ($orderId) {
         return to_route('account.order', ['id' => $orderId], 301);
     });
 });

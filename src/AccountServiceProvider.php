@@ -16,6 +16,7 @@ class AccountServiceProvider extends ServiceProvider
         $this->bootTranslations();
 
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/magento-redirects.php');
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'rapidez');
 

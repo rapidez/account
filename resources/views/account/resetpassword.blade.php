@@ -20,6 +20,7 @@
                         v-model="variables.token"
                         name="token"
                         label="Security token"
+                        class="hidden"
                         required
                     />
                     <label>

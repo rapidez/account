@@ -14,11 +14,11 @@
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
     >
         <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
-            <div v-if="!loggedIn" class="bg mt-3.5 flex w-full max-w-lg flex-col items-center rounded">
+            <div v-if="!loggedIn" class="mt-3.5 flex w-full max-w-lg flex-col items-center rounded bg-highlight">
                 <h1 class="mt-8 px-8 text-3xl font-bold">@lang('Register your account')</h1>
 
                 <form v-on:submit.prevent="mutate" class="grid w-full grid-cols-2 gap-3 p-8">
-                    <div class="col-span-2 sm:col-span-1">
+                    <div class="max-sm:col-span-2">
                         <x-rapidez::input
                             v-model="variables.firstname"
                             name="firstname"
@@ -27,7 +27,7 @@
                             required
                         />
                     </div>
-                    <div class="col-span-2 sm:col-span-1">
+                    <div class="max-sm:col-span-2">
                         <x-rapidez::input
                             v-model="variables.lastname"
                             name="lastname"
@@ -36,7 +36,7 @@
                             required
                         />
                     </div>
-                    <div class="col-span-2 sm:col-span-1">
+                    <div class="max-sm:col-span-2">
                         <x-rapidez::input
                             v-model="variables.email"
                             name="email"
@@ -45,14 +45,13 @@
                             required
                         />
                     </div>
-                    <div class="col-span-2 sm:col-span-1">
-                        <x-rapidez::input.password
+                    <div class="max-sm:col-span-2">
+                        <x-rapidez::password
                             v-model="variables.password"
                             name="password"
                             :placeholder="__('Password')"
                             required
                         />
-
                         @if (Rapidez::config('customer/create_account/vat_frontend_visibility', 0))
                             <x-rapidez::input
                                 v-model="variables.taxvat"
@@ -63,23 +62,23 @@
                             />
                         @endif
                     </div>
-                    <div class="col-span-2">
+                    <div class="col-span-full">
                         <x-rapidez::password-strength
                             v-bind:password="variables.password"
                             name="password-strength"
                             :label="__('Password requirements')"
                         />
                     </div>
-                    <x-rapidez::button.secondary class="col-span-2" type="submit">
+                    <x-rapidez::button class="col-span-full" type="submit">
                         @lang('Register')
-                    </x-rapidez::button.secondary>
+                    </x-rapidez::button>
                 </form>
             </div>
             <div v-else>
                 <div class="mb-5">@lang('You\'re already logged in.')</div>
-                <x-rapidez::button.secondary :href="route('account.overview')">
+                <x-rapidez::button :href="route('account.overview')">
                     @lang('Go to your account')
-                </x-rapidez::button.secondary>
+                </x-rapidez::button>
             </div>
         </div>
     </graphql-mutation>

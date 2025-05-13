@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/2.1.4...2.1.4)
+[Unreleased changes](https://github.com/rapidez/account/compare/2.1.5...2.1.5)
+## [2.1.5](https://github.com/rapidez/account/releases/tag/2.1.5) - 2025-05-13
+
+### Fixed
+
+- Sort the orders by number descending (#63)
+- Reorder callback notification fix (#66)
+
 ## [2.1.4](https://github.com/rapidez/account/releases/tag/2.1.4) - 2024-12-05
 
 ### Fixed

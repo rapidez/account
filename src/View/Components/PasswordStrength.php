@@ -14,28 +14,28 @@ class PasswordStrength extends Component
 
         $extraChecks = [];
 
-        if($length > 1) {
-            $extraChecks[] =  [
-                'text' => __('Contains :length characters', ['length' => $length]),
-                'regex' => '^.{' . $length . ',}',
+        if ($length > 1) {
+            $extraChecks[] = [
+                'text'  => __('Contains :length characters', ['length' => $length]),
+                'regex' => '^.{'.$length.',}',
             ];
         }
 
         $classes = [
             [
-                'text' => __('Contains a lowercase letter'),
+                'text'  => __('Contains a lowercase letter'),
                 'regex' => '[a-z]',
             ],
             [
-                'text' => __('Contains an uppercase letter'),
+                'text'  => __('Contains an uppercase letter'),
                 'regex' => '[A-Z]',
             ],
             [
-                'text' => __('Contains a number'),
+                'text'  => __('Contains a number'),
                 'regex' => '[\d]',
             ],
             [
-                'text' => __('Contains a special character'),
+                'text'  => __('Contains a special character'),
                 'regex' => '[^a-zA-Z0-9]',
             ],
         ];

@@ -1,43 +1,13 @@
-@slots(['label'])
-
-@php
-    $length = Rapidez::config('customer/password/minimum_password_length', 8);
-    $checks = [
-        'length' => [
-            'text' => __('Contains :length chracters', ['length' => $length]),
-            'regex' => '^.{' . $length . ',}',
-        ],
-        'lowercase' => [
-            'text' => __('Contains a lowercase letter'),
-            'regex' => '[a-z]',
-        ],
-        'uppercase' => [
-            'text' => __('Contains an uppercase letter'),
-            'regex' => '[A-Z]',
-        ],
-        'number' => [
-            'text' => __('Contains a number'),
-            'regex' => '[\d]',
-        ],
-        'special' => [
-            'text' => __('Contains a special character'),
-            'regex' => '[^a-zA-Z0-9]',
-        ],
-    ];
-@endphp
-
-<x-rapidez::label class="text-muted mb-2">
-    {{ $label }}
-</x-rapidez::label>
 <password-strength
     v-slot="passwordStrength"
-    v-bind:checks='@json($checks)'
-    v-bind:min-classes="{{ Rapidez::config('customer/password/required_character_classes_number', 3) }}"
+    v-bind:classes='@json($classes)'
+    v-bind:extra-checks='@json($extraChecks)'
+    v-bind:min-classes="{{ Rapidez::config('customer/password/required_character_classes_number') }}"
     {{ $attributes }}
 >
     <div>
         <p v-if="passwordStrength.minClasses < 4" class="text-inactive mb-2 text-xs">
-            @lang('Password must have :minClasses differrent characters', ['minClasses' => '@{{ passwordStrength.minClasses }}'])
+            @lang('Password must have at least :minClasses different types of characters', ['minClasses' => '@{{ passwordStrength.minClasses }}'])
         </p>
         <div class="mb-4 h-2.5 w-full rounded-full bg-emphasis">
             <div
@@ -56,6 +26,8 @@
                     class="pointer-events-none absolute inset-0 opacity-0"
                     type="checkbox"
                     required
+                    v-bind:oninvalid="`this.setCustomValidity('${error}')`"
+                    tabindex="-1"
                 >
             </p>
         </div>

@@ -4,16 +4,20 @@ export default {
     props: {
         password: {
             type: String,
-            default: ''
+            default: '',
         },
         minClasses: {
             type: Number,
-            default: null
+            default: null,
         },
-        checks: {
-            type: Object,
-            default: null
+        classes: {
+            type: Array,
+            default: null,
         },
+        extraChecks: {
+            type: Array,
+            default: null,
+        }
     },
 
     data() {
@@ -43,20 +47,25 @@ export default {
         validate() {
             this.errors = []
             this.strengths = []
-            for (const check in this.checks) {
-                if (new RegExp(this.checks[check].regex).test(this.password)) {
-                    this.strengths.push(this.checks[check].text)
-                } else {
-                    this.errors.push(this.checks[check].text)
-                }
-            }
-            let satisfiedClasses = Object.keys(this.checks).length - this.errors.length
+
+            this.runChecks(this.classes)
+
+            let satisfiedClasses = this.classes.length - this.errors.length
             if (satisfiedClasses >= this.minClasses) {
                 this.errors = []
-                if (!this.strengths.includes(this.checks.length.text)) {
-                    this.errors.push(this.checks.length.text)
-                }
             }
+
+            this.runChecks(this.extraChecks)
+        },
+
+        runChecks(checks) {
+            checks.forEach((check) => {
+                if (new RegExp(check.regex).test(this.password)) {
+                    this.strengths.push(check.text)
+                } else {
+                    this.errors.push(check.text)
+                }
+            })
         }
     },
 }

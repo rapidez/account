@@ -46,7 +46,7 @@
                         />
                     </div>
                     <div class="max-sm:col-span-2">
-                        <x-rapidez::password
+                        <x-rapidez::input.password
                             v-model="variables.password"
                             name="password"
                             :placeholder="__('Password')"
@@ -63,11 +63,7 @@
                         @endif
                     </div>
                     <div class="col-span-full">
-                        <x-rapidez::password-strength
-                            v-bind:password="variables.password"
-                            name="password-strength"
-                            :label="__('Password requirements')"
-                        />
+                        <x-rapidez::password-strength v-bind:password="variables.password"/>
                     </div>
                     <x-rapidez::button class="col-span-full" type="submit">
                         @lang('Register')

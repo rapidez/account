@@ -40,11 +40,7 @@
                             required
                         />
                     </label>
-                    <x-rapidez::password-strength
-                        v-bind:password="variables.password"
-                        name="password-strength"
-                        :label="__('Password requirements')"
-                    />
+                    <x-rapidez::password-strength v-bind:password="variables.password"/>
                 </div>
                 <x-rapidez::button.secondary type="submit" class="mt-5 w-full">
                     @lang('Change password')

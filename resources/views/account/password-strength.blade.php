@@ -6,7 +6,7 @@
     {{ $attributes }}
 >
     <div>
-        <p v-if="passwordStrength.minClasses < 4" class="text-inactive mb-2 text-xs">
+        <p v-if="passwordStrength.minClasses < 4" class="text-muted mb-2 text-xs">
             @lang('Password must have at least :minClasses different types of characters', ['minClasses' => '@{{ passwordStrength.minClasses }}'])
         </p>
         <div class="mb-4 h-2.5 w-full rounded-full bg-emphasis">

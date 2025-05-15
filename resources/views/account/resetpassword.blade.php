@@ -13,35 +13,36 @@
         :notify="{ message: '@lang('Your password has been changed, please login.')' }"
     >
         <div class="flex justify-center" slot-scope="{ mutate, variables }">
-            <form class="p-8 border rounded w-[400px] mr-1" v-on:submit.prevent="mutate">
-                <h1 class="font-bold text-4xl text-center mb-5">@lang('Reset password')</h1>
+            <form v-on:submit.prevent="mutate" class="mr-1 w-[400px] rounded border p-8">
+                <h1 class="mb-5 text-center text-4xl font-bold">@lang('Reset password')</h1>
                 <div class="space-y-3">
                     <x-rapidez::input
-                        name="token"
                         v-model="variables.token"
+                        name="token"
                         label="Security token"
+                        class="hidden"
                         required
                     />
                     <label>
                         <x-rapidez::label>@lang('Email')</x-rapidez::label>
                         <x-rapidez::input
+                            v-model="variables.email"
                             name="email"
                             type="email"
-                            v-model="variables.email"
                             required
-                    />
+                        />
                     </label>
                     <label>
                         <x-rapidez::label>@lang('New password')</x-rapidez::label>
                         <x-rapidez::input.password
-                            name="password"
                             v-model="variables.password"
+                            name="password"
                             required
                         />
                     </label>
+                    <x-rapidez::password-strength v-bind:password="variables.password"/>
                 </div>
-
-                <x-rapidez::button.secondary type="submit" class="w-full mt-5">
+                <x-rapidez::button.secondary type="submit" class="mt-5 w-full">
                     @lang('Change password')
                 </x-rapidez::button.secondary>
             </form>

@@ -2,6 +2,7 @@
 
 namespace Rapidez\Account;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AccountServiceProvider extends ServiceProvider
@@ -23,6 +24,8 @@ class AccountServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/vendor/rapidez'),
         ], 'views');
+
+        Blade::componentNamespace('Rapidez\\Account\\View\\Components', 'rapidez');
     }
 
     protected function bootTranslations(): self

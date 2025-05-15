@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/3.3.0...3.3.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/3.4.0...3.4.0)
+## [3.4.0](https://github.com/rapidez/account/releases/tag/3.4.0) - 2025-05-15
+
+### Added
+
+- Password strength check (#69)
+
 ## [3.3.0](https://github.com/rapidez/account/releases/tag/3.3.0) - 2025-05-13
 
 ### Added

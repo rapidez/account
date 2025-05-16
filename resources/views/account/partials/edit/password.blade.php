@@ -1,23 +1,27 @@
 <graphql-mutation query="mutation password ($currentPassword: String!, $newPassword: String!) { changeCustomerPassword ( currentPassword: $currentPassword, newPassword: $newPassword ) { email } }" :clear="true">
-    <form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate" class="flex flex-col gap-y-2">
+    <form
+        v-on:submit.prevent="mutate"
+        slot-scope="{ variables, mutate, mutated }"
+        class="flex flex-col gap-y-2"
+    >
         <label>
             <x-rapidez::label>@lang('Current password')</x-rapidez::label>
             <x-rapidez::input.password
-                name="currentPassword"
                 v-model="variables.currentPassword"
+                name="currentPassword"
                 required
             />
         </label>
         <label>
             <x-rapidez::label>@lang('New password')</x-rapidez::label>
             <x-rapidez::input.password
-                name="newPassword"
                 v-model="variables.newPassword"
+                name="newPassword"
                 required
             />
         </label>
-
-        <div class="flex items-center mt-5">
+        <x-rapidez::password-strength v-bind:password="variables.newPassword" class="my-2" />
+        <div class="mt-5 flex items-center">
             <x-rapidez::button.secondary type="submit">
                 @lang('Change')
             </x-rapidez::button.secondary>
@@ -27,4 +31,4 @@
             </div>
         </div>
     </form>
-<graphql-mutation>
+    <graphql-mutation>

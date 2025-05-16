@@ -20,7 +20,7 @@
             <div class="flex size-4 shrink-0 items-center justify-center rounded-full">
                 <x-heroicon-s-x-circle class="size-4 text-red-500" />
             </div>
-            <p class="text-primary text-sm relative">
+            <p class="text-red-500 text-sm relative">
                 @{{ error }}
                 <input
                     class="pointer-events-none absolute inset-0 opacity-0"

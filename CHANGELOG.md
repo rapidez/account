@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/3.5.0...3.5.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/3.5.1...3.5.1)
+## [3.5.1](https://github.com/rapidez/account/releases/tag/3.5.1) - 2025-05-21
+
+### Fixed
+
+- Password strength v-cloak (ccbeee0)
+
 ## [3.5.0](https://github.com/rapidez/account/releases/tag/3.5.0) - 2025-05-16
 
 ### Added

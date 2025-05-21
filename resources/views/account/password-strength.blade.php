@@ -5,7 +5,7 @@
     v-bind:min-classes="{{ Rapidez::config('customer/password/required_character_classes_number') }}"
     {{ $attributes }}
 >
-    <div>
+    <div v-cloak>
         <p v-if="passwordStrength.minClasses < 4" class="text-muted mb-2 text-xs">
             @lang('Password must have at least :minClasses different types of characters', ['minClasses' => '@{{ passwordStrength.minClasses }}'])
         </p>

@@ -1,6 +1,16 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/3.5.0...3.5.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/4.0.0...4.0.0)
+## [4.0.0](https://github.com/rapidez/account/releases/tag/4.0.0) - 2025-05-21
+
+### Added
+
+- Rapidez v4 support (0a06446)
+
+### Fixed
+
+- Password strength v-cloak (#71)
+
 ## [3.5.0](https://github.com/rapidez/account/releases/tag/3.5.0) - 2025-05-16
 
 ### Added

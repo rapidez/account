@@ -124,11 +124,10 @@
                 <x-rapidez::label>@lang('Region')</x-rapidez::label>
                 <x-rapidez::input.select.region
                     class="exists"
-                    name="{{ $type }}_region"
-                    dusk="{{ $type }}_region"
+                    name="region"
+                    dusk="region"
                     country="variables.country_code"
                     v-model="variables.{{ $region }}"
-                    :$useRegionId
                 />
             </label>
         </div>

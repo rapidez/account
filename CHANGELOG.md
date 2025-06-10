@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/4.0.0...4.0.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/4.0.1...4.0.1)
+## [4.0.1](https://github.com/rapidez/account/releases/tag/4.0.1) - 2025-06-10
+
+### Fixed
+
+- Various fixes (#72)
+
 ## [4.0.0](https://github.com/rapidez/account/releases/tag/4.0.0) - 2025-05-21
 
 ### Added

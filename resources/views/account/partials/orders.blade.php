@@ -1,5 +1,5 @@
 <div v-if="data.customer.orders.items.length" class="max-w-full overflow-auto">
-    <table class="text-left">
+    <table class="text-left w-full">
         <thead>
             <tr>
                 <th class="px-4">@lang('Order #')</th>

@@ -7,7 +7,7 @@
 @section('account-content')
     <graphql
         query="{ customer { addresses { id firstname middlename lastname street city postcode country_code region { region_id } telephone company default_billing default_shipping } } }"
-        check="(data) => data.customer.addresses.find(a => a.id == {{ request()->id }})"
+        :check="(data) => data.customer.addresses.find(a => a.id == {{ request()->id }})"
         redirect="{{ route('account.orders') }}"
     >
         <div v-if="data" slot-scope="{ data }">

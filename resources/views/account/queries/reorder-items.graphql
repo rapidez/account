@@ -1,10 +1,10 @@
 mutation reorderItems($orderNumber: String!) {
-  reorderItems(orderNumber: $orderNumber) {
-    cart {
-        @include('rapidez::cart.queries.cart')
+    reorderItems(orderNumber: $orderNumber) {
+        cart { ...cart }
+        userInputErrors {
+            message
+        }
     }
-    userInputErrors {
-      message
-    }
-  }
 }
+
+@include('rapidez::cart.queries.fragments.cart')

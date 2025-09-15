@@ -9,7 +9,7 @@
         <div class="flex flex-col gap-4" v-if="data" slot-scope="{ data }">
             <div>
                 <h2 class="text-2xl font-bold">@lang('Account information')</h2>
-                <div class="text-muted">
+                <div class="text-muted" data-testid="masked">
                     <span class="font-bold text">@lang('Name'):</span> @{{ data.customer.firstname }} @{{ data.customer.lastname }}<br>
                     <span class="font-bold text">@lang('Email'):</span> @{{ data.customer.email }}
                 </div>

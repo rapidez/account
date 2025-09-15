@@ -57,7 +57,7 @@
         <div class="col-span-12 sm:col-span-4">
             <label>
                 <x-rapidez::label>@lang('Street')</x-rapidez::label>
-                <x-rapidez::input name="street[0]" v-model="variables.street[0]" required />
+                <x-rapidez::input name="street" v-model="variables.street[0]" required />
             </label>
         </div>
         <div class="col-span-12 sm:col-span-4">
@@ -65,7 +65,7 @@
                 <label>
                     <x-rapidez::label>@lang('Housenumber')</x-rapidez::label>
                     <x-rapidez::input
-                        name="street[1]"
+                        name="housenumber"
                         v-model="variables.street[1]"
                         v-on:change="window.app.$emit('postcode-change', variables)"
                         required
@@ -77,7 +77,7 @@
             @if(Rapidez::config('customer/address/street_lines', 2) >= 3)
                 <label>
                     <x-rapidez::label>@lang('Addition')</x-rapidez::label>
-                    <x-rapidez::input name="street[2]" v-model="variables.street[2]" />
+                    <x-rapidez::input name="addition" v-model="variables.street[2]" />
                 </label>
             @endif
         </div>
@@ -107,7 +107,7 @@
             <label>
                 <x-rapidez::label>@lang('Country')</x-rapidez::label>
                 <x-rapidez::input.select.country
-                    name="country_code"
+                    name="country"
                     v-model="variables.country_code"
                     v-on:change="$root.$nextTick(() => {
                         window.app.$emit('postcode-change', variables);
@@ -140,7 +140,7 @@
     </div>
 
     <div class="flex items-center mt-5">
-        <x-rapidez::button.secondary type="submit">
+        <x-rapidez::button.secondary type="submit" data-testid="continue">
             @lang(request()->id ? 'Change' : 'Add')
         </x-rapidez::button.secondary>
 

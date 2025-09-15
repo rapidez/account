@@ -11,7 +11,7 @@
                     <div class="flex-1 md:max-w-xs">
                         @include('rapidez::account.partials.menu')
                     </div>
-                    <div class="max-w-full flex-1">
+                    <div class="max-w-full flex-1" data-testid="account-content">
                         @yield('account-content')
                     </div>
                 </div>

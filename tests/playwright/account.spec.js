@@ -79,6 +79,7 @@ test('orders', async ({ page }) => {
 
     await page.waitForURL('/account/order/*')
     await page.waitForLoadState('networkidle')
+    await expect(page.getByTestId('account-content')).toContainText('Bruce');
 
     // Order detail page
     await new BasePage(page).screenshot('fullpage-footer', {

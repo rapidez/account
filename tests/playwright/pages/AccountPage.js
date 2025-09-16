@@ -8,7 +8,7 @@ export class AccountPage {
     async setDefaultAddress() {
         await this.page.goto('/account/addresses')
         await this.page.waitForLoadState('networkidle')
-        await this.page.getByTestId('address-edit').click()
+        await this.page.getByTestId('address-edit').first().click()
         await this.page.waitForURL('/account/address/*')
         await this.page.waitForLoadState('networkidle')
         await this.page.check('[name=default_billing]')

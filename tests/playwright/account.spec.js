@@ -3,6 +3,7 @@ import { BasePage } from '../../vendor/rapidez/core/tests/playwright/pages/BaseP
 import { ProductPage } from '../../vendor/rapidez/core/tests/playwright/pages/ProductPage'
 import { CheckoutPage } from '../../vendor/rapidez/core/tests/playwright/pages/CheckoutPage'
 import { RegisterPage } from './pages/RegisterPage'
+import { AccountPage } from './pages/AccountPage'
 
 test.beforeEach(async ({ page }) => {
     await new RegisterPage(page).register()
@@ -47,18 +48,7 @@ test('addresses', async ({ page }) => {
 
     await expect(page.getByTestId('account-content')).toContainText('Mountain Drive')
     await new BasePage(page).screenshot('fullpage-footer')
-
-    await page.getByTestId('address-edit').click()
-    await page.waitForURL('/account/address/*')
-    await page.waitForLoadState('networkidle')
-    await page.check('[name=default_billing]')
-    await page.check('[name=default_shipping]')
-    await page.getByTestId('continue').click()
-    await page.waitForTimeout(200)
-    await page.waitForLoadState('networkidle')
-    await page.waitForURL('/account/addresses')
-
-    await page.waitForLoadState('networkidle')
+    await new AccountPage(page).setDefaultAddress()
     await new BasePage(page).screenshot('fullpage-footer')
 })
 
@@ -81,6 +71,8 @@ test('orders', async ({ page }) => {
     await new BasePage(page).screenshot('fullpage-footer', {
         mask: [await page.getByTestId('account-title')],
     })
+
+    await new AccountPage(page).setDefaultAddress()
 
     await page.goto('/account')
     await new BasePage(page).screenshot('fullpage-footer', {

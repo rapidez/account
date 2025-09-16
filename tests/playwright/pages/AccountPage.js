@@ -17,8 +17,8 @@ export class AccountPage {
         await this.page.waitForTimeout(200)
         await this.page.waitForLoadState('networkidle')
         await this.page.waitForURL('/account/addresses')
-        await this.page.waitForLoadState('networkidle')
         await this.page.waitForTimeout(200)
+        await this.page.waitForLoadState('networkidle')
     }
 
     async register() {

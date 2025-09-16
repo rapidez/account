@@ -18,7 +18,7 @@ export class AccountPage {
         await this.page.waitForLoadState('networkidle')
         await this.page.waitForURL('/account/addresses')
         await this.page.waitForLoadState('networkidle')
-    },
+    }
 
     async register() {
         const email = `wayne+${crypto.randomUUID()}@enterprises.com`;

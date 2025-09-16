@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test'
 import { BasePage } from '../../vendor/rapidez/core/tests/playwright/pages/BasePage'
+import { ProductPage } from '../../vendor/rapidez/core/tests/playwright/pages/ProductPage'
+import { CheckoutPage } from '../../vendor/rapidez/core/tests/playwright/pages/CheckoutPage'
 import { RegisterPage } from './pages/RegisterPage'
 
 test.beforeEach(async ({ page }) => {
@@ -13,7 +15,7 @@ test('overview', async ({ page }) => {
     })
 })
 
-test('edit account', async ({ page }) => {
+test('edit', async ({ page }) => {
     await page.goto('/account/edit')
     const input = page.locator('[name=firstname]')
     await expect(input).toHaveValue('Bruce')
@@ -60,6 +62,28 @@ test('addresses', async ({ page }) => {
     await new BasePage(page).screenshot('fullpage-footer')
 })
 
-// TODO:
-// account/orders
-// account/order/{id}
+test('orders', async ({ page }) => {
+    const productPage = new ProductPage(page)
+    const checkoutPage = new CheckoutPage(page)
+
+    await productPage.addToCart(process.env.PRODUCT_URL_SIMPLE)
+    await checkoutPage.checkout()
+
+    await page.goto('/account/orders')
+    await page.waitForLoadState('networkidle')
+    await new BasePage(page).screenshot('fullpage-footer', {
+        mask: [await page.getByTestId('masked')],
+    })
+    await page.getByTestId('order-id').click()
+
+    await page.waitForURL('/account/order/*')
+    await page.waitForLoadState('networkidle')
+    await new BasePage(page).screenshot('fullpage-footer', {
+        mask: [await page.getByTestId('account-title')],
+    })
+
+    await page.goto('/account')
+    await new BasePage(page).screenshot('fullpage-footer', {
+        mask: [await page.getByTestId('masked')],
+    })
+})

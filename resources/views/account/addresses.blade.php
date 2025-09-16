@@ -47,7 +47,7 @@
                                     <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>
                                 @endif
                                 <td class="border px-4 py-2">
-                                    <a :href="'/account/address/' + additionalAddress.id | url" class="underline hover:no-underline">
+                                    <a :href="'/account/address/' + additionalAddress.id | url" class="underline hover:no-underline" data-testid="address-edit">
                                         @lang('Edit')
                                     </a>
                                 </td>
@@ -59,7 +59,7 @@
                                         redirect="{{ route('account.addresses') }}"
                                     >
                                         <div slot-scope="{ mutate }">
-                                            <button v-on:click="mutate" class="underline hover:no-underline">
+                                            <button v-on:click="mutate" class="underline hover:no-underline" data-testid="address-delete">
                                                 @lang('Delete')
                                             </button>
                                         </div>

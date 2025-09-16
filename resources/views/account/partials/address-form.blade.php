@@ -132,10 +132,14 @@
             </label>
         </div>
         <div class="col-span-12">
-            <x-rapidez::input.checkbox v-model="variables.default_billing">@lang('Default billing address')</x-rapidez::input.checkbox>
+            <x-rapidez::input.checkbox v-model="variables.default_billing" name="default_billing">
+                @lang('Default billing address')
+            </x-rapidez::input.checkbox>
         </div>
         <div class="col-span-12">
-            <x-rapidez::input.checkbox v-model="variables.default_shipping">@lang('Default shipping address')</x-rapidez::input.checkbox>
+            <x-rapidez::input.checkbox v-model="variables.default_shipping" name="default_shipping">
+                @lang('Default shipping address')
+            </x-rapidez::input.checkbox>
         </div>
     </div>
 

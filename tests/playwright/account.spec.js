@@ -26,6 +26,9 @@ test('edit account', async ({ page }) => {
 
 test('addresses', async ({ page }) => {
     await page.goto('/account/address/new')
+    await page.waitForLoadState('networkidle')
+    await new BasePage(page).screenshot('fullpage-footer')
+
     await page.fill('[name=firstname]', 'Bruce')
     await page.fill('[name=lastname]', 'Wayne')
     await page.fill('[name=telephone]', '530-7972')
@@ -37,15 +40,26 @@ test('addresses', async ({ page }) => {
     await page.getByTestId('continue').click()
     await page.waitForTimeout(200)
     await page.waitForLoadState('networkidle')
-
-    await page.goto('/account/addresses')
+    await page.waitForURL('/account/addresses')
     await page.waitForLoadState('networkidle')
-    await expect(page.getByTestId('account-content')).toContainText('Mountain Drive');
+
+    await expect(page.getByTestId('account-content')).toContainText('Mountain Drive')
+    await new BasePage(page).screenshot('fullpage-footer')
+
+    await page.getByTestId('address-edit').click()
+    await page.waitForURL('/account/address/*')
+    await page.waitForLoadState('networkidle')
+    await page.check('[name=default_billing]')
+    await page.check('[name=default_shipping]')
+    await page.getByTestId('continue').click()
+    await page.waitForTimeout(200)
+    await page.waitForLoadState('networkidle')
+    await page.waitForURL('/account/addresses')
+
+    await page.waitForLoadState('networkidle')
+    await new BasePage(page).screenshot('fullpage-footer')
 })
 
 // TODO:
-// account/addresses
-// account/address/new
-// account/address/{id}
 // account/orders
 // account/order/{id}

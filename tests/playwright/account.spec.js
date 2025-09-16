@@ -27,7 +27,7 @@ test('edit account', async ({ page }) => {
 test('addresses', async ({ page }) => {
     await page.goto('/account/address/new')
     await page.fill('[name=firstname]', 'Bruce')
-    await page.fill('[name=firstname]', 'Wayne')
+    await page.fill('[name=lastname]', 'Wayne')
     await page.fill('[name=telephone]', '530-7972')
     await page.fill('[name=street]', 'Mountain Drive')
     await page.fill('[name=housenumber]', '1007')

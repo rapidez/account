@@ -15,6 +15,7 @@ test('overview', async ({ page }) => {
     // Blank account overview page
     await new BasePage(page).screenshot('fullpage-footer', {
         mask: [await page.getByTestId('masked')],
+        name: 'overview-blank.png',
     })
 })
 
@@ -34,7 +35,7 @@ test('addresses', async ({ page }) => {
     await page.waitForLoadState('networkidle')
 
     // Blank new address page
-    await new BasePage(page).screenshot('fullpage-footer')
+    await new BasePage(page).screenshot('fullpage-footer', { name: 'address-new.png'})
 
     await page.fill('[name=firstname]', 'Bruce')
     await page.fill('[name=lastname]', 'Wayne')
@@ -53,11 +54,15 @@ test('addresses', async ({ page }) => {
     await expect(page.getByTestId('account-content')).toContainText('Mountain Drive')
 
     // Addresses page with 1 additional address
-    await new BasePage(page).screenshot('fullpage-footer')
+    await new BasePage(page).screenshot('fullpage-footer', {
+        name: 'address-additional.png',
+    })
     await new AccountPage(page).setDefaultAddress()
 
     // Addresses page with 1 default address
-    await new BasePage(page).screenshot('fullpage-footer')
+    await new BasePage(page).screenshot('fullpage-footer', {
+        name: 'address-default.png',
+    })
 })
 
 test('orders', async ({ page }) => {
@@ -74,6 +79,7 @@ test('orders', async ({ page }) => {
     // Order overview page
     await new BasePage(page).screenshot('fullpage-footer', {
         mask: [await page.getByTestId('masked')],
+        name: 'order-overview.png',
     })
     await page.getByTestId('order-id').click()
 
@@ -84,6 +90,7 @@ test('orders', async ({ page }) => {
     // Order detail page
     await new BasePage(page).screenshot('fullpage-footer', {
         mask: [await page.getByTestId('account-title')],
+        name: 'order-detail.png',
     })
 
     await new AccountPage(page).setDefaultAddress()
@@ -92,5 +99,6 @@ test('orders', async ({ page }) => {
     // Account overview page with addresses and order
     await new BasePage(page).screenshot('fullpage-footer', {
         mask: [await page.getByTestId('masked')],
+        name: 'overview-filled.png',
     })
 })

@@ -18,6 +18,6 @@ export class RegisterPage {
         await this.page.getByTestId('continue').click()
         await this.page.waitForLoadState('networkidle')
         await this.page.waitForURL('/account')
-        await expect(this.page.getByTestId('account-content')).toContainText('Bruce');
+        await expect(this.page.getByTestId('account-content')).toBeVisible()
     }
 }

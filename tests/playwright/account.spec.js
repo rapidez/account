@@ -11,6 +11,8 @@ test.beforeEach(async ({ page }) => {
 
 test('overview', async ({ page }) => {
     await page.goto('/account')
+
+    // Blank account overview page
     await new BasePage(page).screenshot('fullpage-footer', {
         mask: [await page.getByTestId('masked')],
     })
@@ -30,6 +32,8 @@ test('edit', async ({ page }) => {
 test('addresses', async ({ page }) => {
     await page.goto('/account/address/new')
     await page.waitForLoadState('networkidle')
+
+    // Blank new address page
     await new BasePage(page).screenshot('fullpage-footer')
 
     await page.fill('[name=firstname]', 'Bruce')
@@ -47,8 +51,12 @@ test('addresses', async ({ page }) => {
     await page.waitForLoadState('networkidle')
 
     await expect(page.getByTestId('account-content')).toContainText('Mountain Drive')
+
+    // Addresses page with 1 additional address
     await new BasePage(page).screenshot('fullpage-footer')
     await new AccountPage(page).setDefaultAddress()
+
+    // Addresses page with 1 default address
     await new BasePage(page).screenshot('fullpage-footer')
 })
 
@@ -56,11 +64,14 @@ test('orders', async ({ page }) => {
     const productPage = new ProductPage(page)
     const checkoutPage = new CheckoutPage(page)
 
+    // Place an order
     await productPage.addToCart(process.env.PRODUCT_URL_SIMPLE)
     await checkoutPage.checkout()
 
     await page.goto('/account/orders')
     await page.waitForLoadState('networkidle')
+
+    // Order overview page
     await new BasePage(page).screenshot('fullpage-footer', {
         mask: [await page.getByTestId('masked')],
     })
@@ -68,13 +79,16 @@ test('orders', async ({ page }) => {
 
     await page.waitForURL('/account/order/*')
     await page.waitForLoadState('networkidle')
+
+    // Order detail page
     await new BasePage(page).screenshot('fullpage-footer', {
         mask: [await page.getByTestId('account-title')],
     })
 
     await new AccountPage(page).setDefaultAddress()
-
     await page.goto('/account')
+
+    // Account overview page with addresses and order
     await new BasePage(page).screenshot('fullpage-footer', {
         mask: [await page.getByTestId('masked')],
     })

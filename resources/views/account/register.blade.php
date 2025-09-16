@@ -65,7 +65,7 @@
                     <div class="col-span-full">
                         <x-rapidez::password-strength v-bind:password="variables.password"/>
                     </div>
-                    <x-rapidez::button.secondary class="col-span-full" type="submit">
+                    <x-rapidez::button.secondary class="col-span-full" type="submit" data-testid="continue">
                         @lang('Register')
                     </x-rapidez::button.secondary>
                 </form>

@@ -12,7 +12,7 @@
 
             <div :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
                 <h2 class="mt-2 mb-2 text-2xl font-bold">@lang('Additional address entries')</h2>
-                <div v-if="data.customer.additionalAddresses.length">
+                <div v-if="data.customer.additionalAddresses.length" class="max-w-full overflow-auto">
                     <table class="w-full table-auto text-left -mx-4">
                         <thead>
                             <tr>

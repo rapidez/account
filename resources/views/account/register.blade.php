@@ -5,6 +5,7 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('content')
+<div class="min-h-screen">
     <x-rapidez::recaptcha location="customer_create" />
     <graphql-mutation
         v-cloak
@@ -52,7 +53,9 @@
                             :placeholder="__('Password')"
                             required
                         />
-                        @if (Rapidez::config('customer/create_account/vat_frontend_visibility', 0))
+                    </div>
+                    @if (Rapidez::config('customer/create_account/vat_frontend_visibility', 0))
+                        <div class="col-span-full">
                             <x-rapidez::input
                                 v-model="variables.taxvat"
                                 name="taxvat"
@@ -60,8 +63,8 @@
                                 :placeholder="__('Tax/VAT ID')"
                                 type="text"
                             />
-                        @endif
-                    </div>
+                        </div>
+                    @endif
                     <div class="col-span-full">
                         <x-rapidez::password-strength v-bind:password="variables.password"/>
                     </div>
@@ -78,4 +81,5 @@
             </div>
         </div>
     </graphql-mutation>
+</div>
 @endsection

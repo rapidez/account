@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/4.1.1...4.1.1)
+[Unreleased changes](https://github.com/rapidez/account/compare/4.1.2...4.1.2)
+## [4.1.2](https://github.com/rapidez/account/releases/tag/4.1.2) - 2025-09-17
+
+### Fixed
+
+- Vat field position and page bounce fix (#75)
+
 ## [4.1.1](https://github.com/rapidez/account/releases/tag/4.1.1) - 2025-09-16
 
 ### Fixed

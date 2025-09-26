@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test'
-import { BasePage } from '../../vendor/rapidez/core/tests/playwright/pages/BasePage'
+import { BasePage } from '@rapidez/core/tests/playwright/pages/BasePage.js'
 import { RegisterPage } from './pages/RegisterPage'
 
 test('screenshot', async ({ page }) => {

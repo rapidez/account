@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
-import { BasePage } from '../../vendor/rapidez/core/tests/playwright/pages/BasePage'
-import { ProductPage } from '../../vendor/rapidez/core/tests/playwright/pages/ProductPage'
-import { CheckoutPage } from '../../vendor/rapidez/core/tests/playwright/pages/CheckoutPage'
+import { BasePage } from '@rapidez/core/tests/playwright/pages/BasePage.js'
+import { ProductPage } from '@rapidez/core/tests/playwright/pages/ProductPage.js'
+import { CheckoutPage } from '@rapidez/core/tests/playwright/pages/CheckoutPage.js'
 import { RegisterPage } from './pages/RegisterPage'
 import { AccountPage } from './pages/AccountPage'
 
@@ -14,7 +14,6 @@ test('overview', async ({ page }) => {
 
     // Blank account overview page
     await new BasePage(page).screenshot('fullpage-footer', {
-        mask: [await page.getByTestId('masked')],
         name: 'overview-blank.png',
     })
 })
@@ -78,7 +77,6 @@ test('orders', async ({ page }) => {
 
     // Order overview page
     await new BasePage(page).screenshot('fullpage-footer', {
-        mask: [await page.getByTestId('masked')],
         name: 'order-overview.png',
     })
     await page.getByTestId('order-id').click()
@@ -89,7 +87,6 @@ test('orders', async ({ page }) => {
 
     // Order detail page
     await new BasePage(page).screenshot('fullpage-footer', {
-        mask: [await page.getByTestId('account-title')],
         name: 'order-detail.png',
     })
 
@@ -98,7 +95,6 @@ test('orders', async ({ page }) => {
 
     // Account overview page with addresses and order
     await new BasePage(page).screenshot('fullpage-footer', {
-        mask: [await page.getByTestId('masked')],
         name: 'overview-filled.png',
     })
 })

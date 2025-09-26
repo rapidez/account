@@ -1,6 +1,12 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/4.1.2...4.1.2)
+[Unreleased changes](https://github.com/rapidez/account/compare/4.1.3...4.1.3)
+## [4.1.3](https://github.com/rapidez/account/releases/tag/4.1.3) - 2025-09-26
+
+### Fixed
+
+- Playwright use npm workspaces for dependencies (#76)
+
 ## [4.1.2](https://github.com/rapidez/account/releases/tag/4.1.2) - 2025-09-17
 
 ### Fixed

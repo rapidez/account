@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test'
-import { BasePage } from '../../vendor/rapidez/core/tests/playwright/pages/BasePage'
-import { ProductPage } from '../../vendor/rapidez/core/tests/playwright/pages/ProductPage'
-import { CheckoutPage } from '../../vendor/rapidez/core/tests/playwright/pages/CheckoutPage'
+import { BasePage } from '@rapidez/core/tests/playwright/pages/BasePage.js'
+import { ProductPage } from '@rapidez/core/tests/playwright/pages/ProductPage.js'
+import { CheckoutPage } from '@rapidez/core/tests/playwright/pages/CheckoutPage.js'
 import { RegisterPage } from './pages/RegisterPage'
 import { AccountPage } from './pages/AccountPage'
 

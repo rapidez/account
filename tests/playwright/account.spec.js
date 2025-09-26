@@ -14,7 +14,6 @@ test('overview', async ({ page }) => {
 
     // Blank account overview page
     await new BasePage(page).screenshot('fullpage-footer', {
-        mask: [await page.getByTestId('masked')],
         name: 'overview-blank.png',
     })
 })
@@ -78,7 +77,6 @@ test('orders', async ({ page }) => {
 
     // Order overview page
     await new BasePage(page).screenshot('fullpage-footer', {
-        mask: [await page.getByTestId('masked')],
         name: 'order-overview.png',
     })
     await page.getByTestId('order-id').click()
@@ -89,7 +87,6 @@ test('orders', async ({ page }) => {
 
     // Order detail page
     await new BasePage(page).screenshot('fullpage-footer', {
-        mask: [await page.getByTestId('account-title')],
         name: 'order-detail.png',
     })
 
@@ -98,7 +95,6 @@ test('orders', async ({ page }) => {
 
     // Account overview page with addresses and order
     await new BasePage(page).screenshot('fullpage-footer', {
-        mask: [await page.getByTestId('masked')],
         name: 'overview-filled.png',
     })
 })

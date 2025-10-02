@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
     await new RegisterPage(page).register()
 })
 
-test('overview', async ({ page }) => {
+test('overview', BasePage.tags, async ({ page }) => {
     await page.goto('/account')
 
     // Blank account overview page
@@ -18,7 +18,7 @@ test('overview', async ({ page }) => {
     })
 })
 
-test('edit', async ({ page }) => {
+test('edit', BasePage.tags, async ({ page }) => {
     await page.goto('/account/edit')
     const input = page.locator('[name=firstname]')
     await expect(input).toHaveValue('Bruce')
@@ -29,7 +29,7 @@ test('edit', async ({ page }) => {
     await expect(input).toHaveValue('Batman')
 })
 
-test('addresses', async ({ page }) => {
+test('addresses', BasePage.tags, async ({ page }) => {
     await page.goto('/account/address/new')
     await page.waitForLoadState('networkidle')
 
@@ -64,7 +64,7 @@ test('addresses', async ({ page }) => {
     })
 })
 
-test('orders', async ({ page }) => {
+test('orders', BasePage.tags, async ({ page }) => {
     const productPage = new ProductPage(page)
     const checkoutPage = new CheckoutPage(page)
 

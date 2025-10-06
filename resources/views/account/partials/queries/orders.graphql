@@ -17,6 +17,7 @@ query customerOrders($pageSize: Int = 5 $page: Int = 1) {
         items {
           product_name
           product_sku
+          product_url_key
           product_sale_price {
             value
           }

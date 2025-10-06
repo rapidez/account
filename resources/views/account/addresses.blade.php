@@ -7,7 +7,6 @@
 @section('account-content')
     <graphql query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone default_billing default_shipping } } }">
         <div v-if="data" slot-scope="{ data }">
-            <h2 class="mb-2 text-2xl font-bold">@lang('Default addresses')</h2>
             @include('rapidez::account.partials.default-addresses', ['edit' => true])
 
             <div :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
@@ -56,7 +55,7 @@
                                         query="mutation deleteCustomerAddress($id: Int!){ deleteCustomerAddress ( id: $id ) }"
                                         :variables="{ id: additionalAddress.id }"
                                         :callback="refreshUserInfoCallback"
-                                        redirect="{{ route('account.addresses') }}"
+                                        redirect="{{ route('account.edit') }}"
                                     >
                                         <div slot-scope="{ mutate }">
                                             <button v-on:click="mutate" class="underline hover:no-underline" data-testid="address-delete">

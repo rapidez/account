@@ -1,6 +1,6 @@
 @props(['region' => 'region.region_id'])
 
-<form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate">
+<form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate" class="bg p-6 rounded flex flex-col gap-3 sm:px-9 sm:pt-7 sm:pb-9">
     <div class="grid grid-cols-12 gap-4">
         <h2 class="col-span-12 font-bold text-2xl">@lang('Contact information')</h2>
         <div class="col-span-12 sm:col-span-6">

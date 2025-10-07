@@ -47,7 +47,7 @@ test('addresses', BasePage.tags, async ({ page }) => {
     await page.getByTestId('continue').click()
     await page.waitForTimeout(200)
     await page.waitForLoadState('networkidle')
-    await page.waitForURL('/account/addresses')
+    await page.waitForURL('/account/edit')
     await page.waitForLoadState('networkidle')
 
     await expect(page.getByTestId('account-content')).toContainText('Mountain Drive')
@@ -93,7 +93,7 @@ test('orders', BasePage.tags, async ({ page }) => {
     await new AccountPage(page).setDefaultAddress()
     await page.goto('/account')
 
-    // Account overview page with addresses and order
+    // Account overview page with addresses and information
     await new BasePage(page).screenshot('fullpage-footer', {
         name: 'overview-filled.png',
     })

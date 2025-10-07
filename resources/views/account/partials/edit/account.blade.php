@@ -1,7 +1,11 @@
 <graphql query="{ customer { firstname middlename lastname } }">
     <div v-if="data" slot-scope="{ data }">
         <graphql-mutation query="mutation customer ($firstname: String, $middlename: String, $lastname: String) { updateCustomerV2 ( input: { firstname: $firstname, middlename: $middlename, lastname: $lastname } ) { customer { firstname middlename lastname } } }" :variables="data.customer" :callback="refreshUserInfoCallback">
-            <form slot-scope="{ variables, mutate, mutated }" v-on:submit.prevent="mutate" class="flex flex-col gap-y-2">
+            <form
+                slot-scope="{ variables, mutate, mutated }"
+                v-on:submit.prevent="mutate"
+                class="grid gap-5 lg:grid-cols-2"
+            >
                 <label>
                     <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
                     <x-rapidez::input name="firstname" v-model="variables.firstname" required />

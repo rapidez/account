@@ -6,7 +6,7 @@ export class AccountPage {
     }
 
     async setDefaultAddress() {
-        await this.page.goto('/account/addresses')
+        await this.page.goto('/account/edit')
         await this.page.waitForLoadState('networkidle')
         await this.page.getByTestId('address-edit').first().click()
         await this.page.waitForURL('/account/address/*')
@@ -16,7 +16,7 @@ export class AccountPage {
         await this.page.getByTestId('continue').click()
         await this.page.waitForTimeout(200)
         await this.page.waitForLoadState('networkidle')
-        await this.page.waitForURL('/account/addresses')
+        await this.page.waitForURL('/account/edit')
         await this.page.waitForTimeout(200)
         await this.page.waitForLoadState('networkidle')
     }

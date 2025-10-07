@@ -1,39 +1,33 @@
-<ul class="flex flex-col gap-1">
-    <li>
-        @include('rapidez::account.partials.menu-item', [
-            'href' => route('account.overview'),
-            'text' => __('Overview'),
-            'icon' => 'heroicon-o-cog',
-        ])
-    </li>
-    <li>
-        @include('rapidez::account.partials.menu-item', [
-            'href' => route('account.edit'),
-            'text' => __('Account'),
-            'icon' => 'heroicon-o-user',
-        ])
-    </li>
-    <li>
-        @include('rapidez::account.partials.menu-item', [
-            'href' => route('account.addresses'),
-            'text' => __('Addresses'),
-            'icon' => 'heroicon-o-map',
-        ])
-    </li>
-    <li>
-        @include('rapidez::account.partials.menu-item', [
-            'href' => route('account.orders'),
-            'text' => __('Orders'),
-            'icon' => 'heroicon-o-truck',
-        ])
-    </li>
-    @if (App::providerIsLoaded('Rapidez\Wishlist\WishlistServiceProvider'))
-        <li>
-            @include('rapidez::account.partials.menu-item', [
-                'href' => route('account.wishlist'),
-                'text' => __('Wishlist'),
-                'icon' => 'heroicon-o-heart',
-            ])
-        </li>
-    @endif
-</ul>
+<div class="rounded bg p-3">
+    <div class="border flex flex-col gap-y-3 bg-white rounded px-8 pt-6 pb-3 text">
+        <div class="text-lg text font-bold">@lang('Customer centre')</div>
+        <ul class="flex flex-col gap-1 divide-y *:py-3">
+            <li>
+                @include('rapidez::account.partials.menu-item', [
+                    'href' => route('account.orders'),
+                    'text' => __('Orders'),
+                ])
+            </li>
+            <li>
+                @include('rapidez::account.partials.menu-item', [
+                    'href' => route('account.edit'),
+                    'text' => __('Account settings'),
+                ])
+            </li>
+            <li>
+                @include('rapidez::account.partials.menu-item', [
+                    'href' => route('account.overview'),
+                    'text' => __('Account overview'),
+                ])
+            </li>
+            @if (App::providerIsLoaded('Rapidez\Wishlist\WishlistServiceProvider'))
+                <li>
+                    @include('rapidez::account.partials.menu-item', [
+                        'href' => route('account.wishlist'),
+                        'text' => __('Wishlist'),
+                    ])
+                </li>
+            @endif
+        </ul>
+    </div>
+</div>

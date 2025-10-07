@@ -4,7 +4,7 @@
             <dl class="flex flex-wrap flex-1 gap-y-3 gap-x-6 text-sm xl:grid xl:col-span-3 xl:grid-cols-4">
                 <div>
                     <dt class="font-medium text">@lang('Order number')</dt>
-                    <dd class="mt-1 text-muted">
+                    <dd class="mt-1 text-muted" data-testid="masked">
                         <a :href="'/account/order/'+order.number | url" class="underline hover:no-underline">
                             @{{ order.number }}
                         </a>
@@ -12,7 +12,7 @@
                 </div>
                 <div>
                     <dt class="font-medium text">@lang('Order date')</dt>
-                    <dd class="mt-1 text-muted">
+                    <dd class="mt-1 text-muted" data-testid="masked">
                         <div>@{{ (new Date(order.order_date)).toLocaleDateString() }}</div>
                     </dd>
                 </div>

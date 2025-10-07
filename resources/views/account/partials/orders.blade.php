@@ -5,7 +5,7 @@
                 <div>
                     <dt class="font-medium text">@lang('Order number')</dt>
                     <dd class="mt-1 text-muted">
-                        <a :href="'/account/order/'+order.number | url" class="underline hover:no-underline" data-testid="order-id">
+                        <a :href="'/account/order/'+order.number | url" class="underline hover:no-underline">
                             @{{ order.number }}
                         </a>
                     </dd>
@@ -26,7 +26,7 @@
                 </div>
             </dl>
             <div class="col-span-2 flex items-center justify-end space-x-4 max-xl:w-full max-xl:mt-3">
-                <a :href="'/account/order/'+order.number | url" class="flex items-center justify-center rounded-md border bg-white text p-2">
+                <a :href="'/account/order/'+order.number | url" class="flex items-center justify-center rounded-md border bg-white text p-2" data-testid="order-id">
                     <span>@lang('View order')</span>
                 </a>
             </div>
@@ -44,11 +44,9 @@
                         />
                     </div>
                     <div class="ml-6 flex-1 text-sm">
-                        <div class="font-medium text sm:flex sm:justify-between">
+                        <div class="text sm:flex sm:justify-between">
                             <div class="flex flex-col">
-                                <a :href="item.product_url_key">
-                                    <strong>@{{ item.product_name }}</strong>
-                                </a>
+                                <strong>@{{ item.product_name }}</strong>
                                 <span class="text-muted">@{{ item.product_sku }}</span>
                             </div>
                             <div class="flex items-center gap-x-4">

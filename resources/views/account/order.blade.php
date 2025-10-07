@@ -23,25 +23,29 @@
                     />
                 </div>
                 <div class="flex flex-col">
-                    <div class="flex flex-col font-medium">
+                    <div class="flex flex-col">
                         <strong>@{{ product.product_name }}</strong>
                         <span class="text-muted text-sm">@{{ product.product_sku }}</span>
                     </div>
                     <ul v-if="product.selected_options" class="flex divide-x mt-1 text-sm">
                         <li v-for="option in product.selected_options" class="first:pl-0 px-1">
-                            <strong>@{{ option.label }}:</strong>
+                            <span class="text">@{{ option.label }}:</span>
                             <span class="text-muted">@{{ option.value }}</span>
                         </li>
                     </ul>
-                    <div class="mt-6 flex flex-1 items-end">
-                        <dl class="flex divide-x divide-gray-200 text-sm">
-                            <div class="flex pr-4 sm:pr-6">
-                                <dt class="font-bold">@lang('Quantity')</dt>
-                                <dd class="ml-2">@{{ product.quantity_ordered }}</dd>
+                    <div class="mt-3 flex flex-1 items-end lg:mt-6">
+                        <dl class="flex flex-wrap divide-x text-sm">
+                            <div class="flex pr-2">
+                                <dt class="font-bold">@lang('Quantity'):</dt>
+                                <dd class="ml-1">@{{ product.quantity_ordered }}</dd>
                             </div>
-                            <div class="flex pl-4 sm:pl-6">
-                                <dt class="font-bold">@lang('Price')</dt>
-                                <dd class="ml-2">@{{ product.product_sale_price.value * product.quantity_ordered | price }}</dd>
+                            <div class="flex px-2">
+                                <dt class="font-bold">@lang('Price'):</dt>
+                                <dd class="ml-1">@{{ product.product_sale_price.value | price }}</dd>
+                            </div>
+                            <div class="flex pl-2">
+                                <dt class="font-bold">@lang('Subtotal'):</dt>
+                                <dd class="ml-1">@{{ product.product_sale_price.value * product.quantity_ordered | price }}</dd>
                             </div>
                         </dl>
                     </div>

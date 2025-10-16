@@ -1,8 +1,8 @@
 <div v-if="data.customer.orders.items.length" class="max-w-full">
     <div v-for="order in data.customer.orders.items" class="border-b border-t bg-white mb-6 sm:rounded sm:border sm:mb-4">
         <div class="flex bg rounded-t border-b p-4 mb-4 max-xl:flex-col xl:grid xl:grid-cols-5 xl:gap-x-6 xl:p-6 xl:items-center">
-            <dl class="flex flex-wrap flex-1 gap-y-3 gap-x-6 text-sm xl:grid xl:col-span-3 xl:grid-cols-4">
-                <div>
+            <dl class="gap-y-3 gap-x-6 text-sm grid grid-cols-4 xl:col-span-3">
+                <div class="max-xl:col-span-2">
                     <dt class="font-medium text">@lang('Order number')</dt>
                     <dd class="mt-1 text-muted" data-testid="masked">
                         <a :href="'/account/order/'+order.number | url" class="underline hover:no-underline">
@@ -10,17 +10,17 @@
                         </a>
                     </dd>
                 </div>
-                <div>
+                <div class="max-xl:col-span-2">
                     <dt class="font-medium text">@lang('Order date')</dt>
                     <dd class="mt-1 text-muted" data-testid="masked">
                         <div>@{{ (new Date(order.order_date)).toLocaleDateString() }}</div>
                     </dd>
                 </div>
-                <div>
+                <div class="max-xl:col-span-2">
                     <dt class="font-medium text">@lang('Order total')</dt>
                     <dd class="mt-1 text-muted">@{{ order.total.grand_total.value | price }}</dd>
                 </div>
-                <div>
+                <div class="max-xl:col-span-2">
                     <dt class="font-medium text">@lang('Status')</dt>
                     <dd class="mt-1 text-muted">@{{ order.status }}</dd>
                 </div>

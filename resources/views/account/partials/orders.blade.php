@@ -65,12 +65,12 @@
                 redirect="{{ route('cart') }}"
                 :callback="reorderCallback"
             >
-            <form slot-scope="{ mutate }" v-on:submit.prevent="mutate">
-                <x-rapidez::button.secondary type="submit">
-                    @lang('Reorder')
-                </x-rapidez::button.secondary>
-            </form>
-        </graphql-mutation>
+                <form slot-scope="{ mutate }" v-on:submit.prevent="mutate">
+                    <x-rapidez::button.secondary type="submit">
+                        @lang('Reorder')
+                    </x-rapidez::button.secondary>
+                </form>
+            </graphql-mutation>
         </div>
     </div>
 

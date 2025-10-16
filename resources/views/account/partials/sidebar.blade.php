@@ -1,6 +1,6 @@
 <graphql query="@include('rapidez::account.partials.queries.overview')">
     <div v-if="data" slot-scope="{ data }" class="bg rounded p-3">
-        <div class="border bg-white flex flex-col gap-y-4 rounded px-8 py-6 text divide-y">
+        <div class="border bg-white flex flex-col gap-y-4 rounded px-7 py-6 text divide-y">
             <div class="flex flex-col gap-y-2" data-testid="masked">
                 <div class="text-lg text font-bold mb-2">@lang('Account information')</div>
                 <div class="flex flex-col">
@@ -9,7 +9,7 @@
                 </div>
                 <div class="flex flex-col">
                     <strong>@lang('Email'):</strong>
-                    <span class="break-words">@{{ data.customer.email }}</span>
+                    <span>@{{ data.customer.email }}</span>
                 </div>
             </div>
             <div class="pt-2" v-if="data.customer.addresses.find(a => a.default_billing == true)">

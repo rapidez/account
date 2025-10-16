@@ -4,23 +4,22 @@
             <form
                 slot-scope="{ variables, mutate, mutated }"
                 v-on:submit.prevent="mutate"
-                class="grid gap-5 lg:grid-cols-2"
+                class="grid gap-5 lg:grid-cols-8"
             >
-                <label>
+                <label class="col-span-full {{ Rapidez::config('customer/address/middlename_show') ? 'lg:col-span-3' : 'lg:col-span-4' }}">
                     <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
                     <x-rapidez::input name="firstname" v-model="variables.firstname" required />
                 </label>
                 @if(Rapidez::config('customer/address/middlename_show', 0))
-                    <label>
+                    <label class="col-span-full lg:col-span-2">
                         <x-rapidez::label>@lang('Middlename')</x-rapidez::label>
                         <x-rapidez::input name="middlename" v-model="variables.middlename" />
                     </label>
                 @endif
-                <label>
+                <label class="col-span-full {{ Rapidez::config('customer/address/middlename_show') ? 'lg:col-span-3' : 'lg:col-span-4' }}">
                     <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
                     <x-rapidez::input name="lastname" v-model="variables.lastname" required/>
                 </label>
-
                 <div class="flex items-center mt-5">
                     <x-rapidez::button.secondary type="submit">
                         @lang('Change')

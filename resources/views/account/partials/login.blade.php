@@ -19,7 +19,9 @@
                             required
                         />
 
-                        <x-rapidez::button.secondary type="submit" class="w-full my-5" dusk="continue">@lang('Login')</x-rapidez::button.secondary>
+                        <x-rapidez::button.secondary type="submit" class="w-full my-5" dusk="continue">
+                            @lang('Login')
+                        </x-rapidez::button.secondary>
 
                         <div class="flex justify-between">
                             <a href="{{ route('account.forgotpassword') }}" class="text-sm hover:underline">@lang('Forgot your password?')</a>

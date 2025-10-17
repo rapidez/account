@@ -56,7 +56,7 @@
                 <div class="grid grid-cols-2 gap-x-6 gap-y-3 max-md:pb-5 md:grid-cols-4">
                     <dl class="grid col-span-2 gap-x-6 gap-y-3 md:py-5 text-sm md:grid-cols-2">
                         <div v-if="shipping = data.customer.orders.items[0].shipping_address">
-                            <dt class="font-bold xl:text-xl">@lang('Shipping address')</dt>
+                            <dt class="font-bold xl:text-lg">@lang('Shipping address')</dt>
                             <dd class="mt-2">
                                 <div>
                                     @{{ shipping.firstname }} @{{ shipping.lastname }}<br>
@@ -67,7 +67,7 @@
                             </dd>
                         </div>
                         <div>
-                            <dt class="font-bold xl:text-xl">@lang('Billing address')</dt>
+                            <dt class="font-bold xl:text-lg">@lang('Billing address')</dt>
                             <dd class="mt-2">
                                 <div v-if="data.customer.orders.items[0].shipping_method">
                                     @{{ (billing = data.customer.orders.items[0].billing_address).firstname }} @{{ billing.lastname }}<br>
@@ -81,7 +81,7 @@
                     </dl>
                     <dl class="grid col-span-2 gap-x-6 gap-y-3 md:py-5 text-sm md:grid-cols-2">
                         <div>
-                            <dt class="font-bold xl:text-xl">@lang('Payment method')</dt>
+                            <dt class="font-bold xl:text-lg">@lang('Payment method')</dt>
                             <dd class="mt-2">
                                 <div>
                                     @{{ data.customer.orders.items[0].payment_methods[0].name }}
@@ -89,7 +89,7 @@
                             </dd>
                         </div>
                         <div>
-                            <dt class="font-bold xl:text-xl">@lang('Shipping method')</dt>
+                            <dt class="font-bold xl:text-lg">@lang('Shipping method')</dt>
                             <dd class="mt-2">
                                 <div>
                                     @{{ data.customer.orders.items[0].shipping_method }}

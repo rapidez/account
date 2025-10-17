@@ -1,7 +1,6 @@
 <graphql query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone default_billing default_shipping } } }">
     <div v-if="data" slot-scope="{ data }">
         @include('rapidez::account.partials.default-addresses', ['edit' => true])
-
         <div :set="data.customer.additionalAddresses = data.customer.addresses.filter(a => a.default_billing == false && a.default_shipping == false)">
             <h2 class="mt-4 mb-2 text-lg font-bold">@lang('Additional address entries')</h2>
             <div v-if="data.customer.additionalAddresses.length" class="w-full overflow-auto">
@@ -64,7 +63,6 @@
             <div v-else>
                 @lang('You have no other address entries in your address book.')
             </div>
-
             <x-rapidez::button.secondary :href="route('account.address.create')" class="mt-5">
                 @lang('Add new address')
             </x-rapidez::button.secondary>

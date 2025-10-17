@@ -22,7 +22,7 @@ export class AccountPage {
     }
 
     async register() {
-        const email = `wayne+${crypto.randomUUID()}@enterprises.com`;
+        const email = `wayne+${crypto.randomUUID().substring(0, 24)}@enterprises.com`;
         const password = 'IronManSucks.91939';
 
         await this.page.goto('/register')

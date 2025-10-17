@@ -3,11 +3,11 @@
         <div class="border bg-white flex flex-col gap-y-4 rounded px-8 py-6 text divide-y">
             <div class="flex flex-col gap-y-2" data-testid="masked">
                 <div class="text-lg text font-bold mb-2">@lang('Account information')</div>
-                <div class="flex flex-col break-all">
+                <div class="flex flex-col">
                     <strong>@lang('Name'):</strong>
                     <span>@{{ data.customer.firstname }} @{{ data.customer.lastname }}</span>
                 </div>
-                <div class="flex flex-col">
+                <div class="flex flex-col break-all">
                     <strong>@lang('Email'):</strong>
                     <span>@{{ data.customer.email }}</span>
                 </div>

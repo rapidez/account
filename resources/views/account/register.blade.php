@@ -13,9 +13,10 @@
         redirect="{{ route('account.overview') }}"
         :callback="registerCallback"
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
+        v-slot="{ mutate, variables }"
     >
-        <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
-            <div v-if="!loggedIn" class="mt-3.5 flex w-full max-w-lg flex-col items-center rounded bg">
+        <div class="flex flex-col items-center">
+            <div v-if="!window.app?.config?.globalProperties?.loggedIn?.value" class="mt-3.5 flex w-full max-w-lg flex-col items-center rounded bg">
                 <h1 class="mt-8 px-8 text-3xl font-bold">@lang('Register your account')</h1>
 
                 <form v-on:submit.prevent="mutate" class="grid w-full grid-cols-2 gap-3 p-8">

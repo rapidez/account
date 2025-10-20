@@ -9,11 +9,11 @@
                 <li>T: @{{ billing.telephone }}</li>
             </ul>
             @isset($edit)
-                <a :href="'/account/address/'+billing.id | url" class="underline hover:no-underline text-emphasis" data-testid="address-edit">@lang('Change billing address')</a>
+                <a :href="window.url('/account/address/'+billing.id)" class="underline hover:no-underline text-emphasis" data-testid="address-edit">@lang('Change billing address')</a>
             @endisset
         </div>
 
-        <x-rapidez::button.secondary v-else :href="route('account.address.create')" class="mt-5">
+        <x-rapidez::button.secondary v-else="" :href="route('account.address.create')" class="mt-5">
             @lang('Add billing address')
         </x-rapidez::button.secondary>
     </div>
@@ -27,11 +27,11 @@
                 <li>T: @{{ shipping.telephone }}<br></li>
             </ul>
             @isset($edit)
-                <a :href="'/account/address/'+shipping.id | url" class="underline hover:no-underline text-emphasis" data-testid="address-edit">@lang('Change shipping address')</a>
+                <a :href="window.url('/account/address/'+shipping.id)" class="underline hover:no-underline text-emphasis" data-testid="address-edit">@lang('Change shipping address')</a>
             @endisset
         </div>
 
-        <x-rapidez::button.secondary v-else :href="route('account.address.create')" class="mt-5">
+        <x-rapidez::button.secondary v-else="" :href="route('account.address.create')" class="mt-5">
             @lang('Add shipping address')
         </x-rapidez::button.secondary>
     </div>

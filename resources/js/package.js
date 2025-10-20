@@ -1,5 +1,7 @@
-import Vue from 'vue'
 import './callbacks'
 import PasswordStrength from './components/Account/PasswordStrength.vue'
 
-Vue.component('PasswordStrength', PasswordStrength)
+document.addEventListener('vue:loaded', function (event) {
+    const vue = event.detail.vue;
+    vue.component('PasswordStrength', PasswordStrength)
+})

@@ -10,8 +10,9 @@
         query="mutation reset($email: String!) { requestPasswordResetEmail ( email: $email ) }"
         :clear="true"
         :notify="{ message: '@lang('An email has been sent with a password reset link if an account exists with the provided email address.')' }"
+        v-slot="{ mutate, variables }"
     >
-        <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
+        <div class="flex flex-col items-center">
             <div class="flex flex-col items-center rounded bg mt-3.5 max-w-lg w-full">
                 <h1 class="mt-8 text-3xl font-bold px-8">@lang('Forgot your password?')</h1>
                 <form v-on:submit.prevent="mutate" class="flex w-full flex-col gap-3 p-8">

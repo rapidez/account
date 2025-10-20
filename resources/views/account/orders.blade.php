@@ -12,9 +12,10 @@
             pageSize: 5,
             page: 1,
         }"
+        v-slot="{ data, variables, runQuery }"
     >
-        <div slot-scope="{ data, variables, runQuery }">
-            <template v-if="data && !$root.loading">
+    <div>
+            <template v-if="data && !window.app.config.globalProperties.loading">
                 <div
                     class="text-inactive text-sm"
                     v-if="data.customer.orders.items.length == variables.pageSize"

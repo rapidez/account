@@ -31,33 +31,22 @@
                 </a>
             </div>
         </div>
-        <ul>
-            <li v-for="item in order.items" class="px-4 py-2">
-                <div class="flex items-center sm:items-start">
-                    <div class="flex size-20 shrink-0 bg-muted rounded">
-                        <img
-                            :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${item.product_sku}`"
-                            :alt="item.product_name"
-                            height="80"
-                            width="80"
-                            class="object-contain mix-blend-multiply"
-                        />
-                    </div>
-                    <div class="ml-6 flex-1 text-sm">
-                        <div class="text sm:flex sm:justify-between">
-                            <div class="flex flex-col">
-                                <strong>@{{ item.product_name }}</strong>
-                                <span class="text-muted">@{{ item.product_sku }}</span>
-                            </div>
-                            <div class="flex items-center gap-x-4">
-                                <p class="mt-2 sm:mt-0">@{{ item.quantity_ordered }}x</p>
-                                <p class="mt-2 sm:mt-0">@{{ item.product_sale_price.value | price }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
+        <x-rapidez::product-table v-for="item in order.items" class="px-4 py-2">
+            <x-slot:image>
+                <img
+                    :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${item.product_sku}`"
+                    :alt="item.product_name"
+                    height="200"
+                    width="200"
+                    class="object-contain mix-blend-multiply"
+                />
+            </x-slot:image>
+            <x-slot:name>@{{ item.product_name }}</x-slot:name>
+            <x-slot:sku>@{{ item.product_sku }}</x-slot:sku>
+            <x-slot:quantity>@{{ item.quantity_ordered }}</x-slot:quantity>
+            <x-slot:price>@{{ item.product_sale_price.value | price }}</x-slot:price>
+            <x-slot:subtotal>@{{ item.product_sale_price.value * item.quantity_ordered | price }}</x-slot:subtotal>
+        </x-rapidez::product-table>
         <div class="flex w-full justify-end px-4 mb-4">
             <graphql-mutation
                 query="@include('rapidez::account.queries.reorder-items')"
@@ -65,7 +54,7 @@
                 redirect="{{ route('cart') }}"
                 :callback="reorderCallback"
             >
-                <form slot-scope="{ mutate }" v-on:submit.prevent="mutate">
+                <form slot-scope="{ mutate }" v-on:submit.prevent="mutate" class="mt-4">
                     <x-rapidez::button.secondary type="submit">
                         @lang('Reorder')
                     </x-rapidez::button.secondary>
@@ -73,6 +62,5 @@
             </graphql-mutation>
         </div>
     </div>
-
 </div>
 <div v-else class="text-muted">@lang('You do not have any orders yet.')</div>

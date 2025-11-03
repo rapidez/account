@@ -12,45 +12,30 @@
         redirect="{{ route('account.orders') }}"
     >
         <div v-if="data" slot-scope="{ data }">
-            <div v-for="product in data.customer.orders.items[0].items" class="flex space-x-6 border-b py-6">
-                <div class="flex size-20 shrink-0 bg-muted rounded">
+            <x-rapidez::product-table v-for="product in data.customer.orders.items[0].items">
+                <x-slot:image>
                     <img
                         :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${product.product_sku}`"
                         :alt="product.product_name"
-                        height="80"
-                        width="80"
+                        height="200"
+                        width="200"
                         class="object-contain mix-blend-multiply"
                     />
-                </div>
-                <div class="flex flex-col">
-                    <div class="flex flex-col">
-                        <strong>@{{ product.product_name }}</strong>
-                        <span class="text-muted text-sm">@{{ product.product_sku }}</span>
-                    </div>
+                </x-slot:image>
+                <x-slot:name>@{{ product.product_name }}</x-slot:name>
+                <x-slot:sku>@{{ product.product_sku }}</x-slot:sku>
+                <x-slot:options>
                     <ul v-if="product.selected_options" class="flex divide-x mt-1 text-sm">
                         <li v-for="option in product.selected_options" class="first:pl-0 px-1">
                             <span class="text">@{{ option.label }}:</span>
                             <span class="text-muted">@{{ option.value }}</span>
                         </li>
                     </ul>
-                    <div class="mt-3 flex flex-1 items-end lg:mt-6">
-                        <dl class="flex flex-wrap divide-x text-sm">
-                            <div class="flex pr-2">
-                                <dt class="font-bold">@lang('Quantity'):</dt>
-                                <dd class="ml-1">@{{ product.quantity_ordered }}</dd>
-                            </div>
-                            <div class="flex px-2">
-                                <dt class="font-bold">@lang('Price'):</dt>
-                                <dd class="ml-1">@{{ product.product_sale_price.value | price }}</dd>
-                            </div>
-                            <div class="flex pl-2">
-                                <dt class="font-bold">@lang('Subtotal'):</dt>
-                                <dd class="ml-1">@{{ product.product_sale_price.value * product.quantity_ordered | price }}</dd>
-                            </div>
-                        </dl>
-                    </div>
-                </div>
-            </div>
+                </x-slot:options>
+                <x-slot:quantity>@{{ product.quantity_ordered }}</x-slot:quantity>
+                <x-slot:price>@{{ product.product_sale_price.value | price  }}</x-slot:price>
+                <x-slot:subtotal>@{{ product.product_sale_price.value * product.quantity_ordered | price }}</x-slot:subtotal>
+            </x-rapidez::product-table>
 
             <div class="bg rounded p-6 mt-6">
                 <div class="grid grid-cols-2 gap-x-6 gap-y-3 max-md:pb-5 md:grid-cols-4">
@@ -72,8 +57,7 @@
                                 <div v-if="data.customer.orders.items[0].shipping_method">
                                     @{{ (billing = data.customer.orders.items[0].billing_address).firstname }} @{{ billing.lastname }}<br>
                                     @{{ billing.street[0] }} @{{ billing.street[1] }}<br>
-                                    @{{ billing.postcode }} @{{ billing.city }}<br>
-                                    @{{ billing.country_code }}<br>
+                                    @{{ billing.postcode }} @{{ billing.city }} @{{ billing.country_code }}<br>
                                     T: @{{ billing.telephone }}
                                 </div>
                             </dd>

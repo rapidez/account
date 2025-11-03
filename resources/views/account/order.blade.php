@@ -66,19 +66,11 @@
                     <dl class="grid col-span-2 gap-x-6 gap-y-3 md:py-5 text-sm md:grid-cols-2">
                         <div>
                             <dt class="font-bold xl:text-lg">@lang('Payment method')</dt>
-                            <dd class="mt-2">
-                                <div>
-                                    @{{ data.customer.orders.items[0].payment_methods[0].name }}
-                                </div>
-                            </dd>
+                            <dd class="mt-2">@{{ data.customer.orders.items[0].payment_methods[0].name }}</dd>
                         </div>
                         <div>
                             <dt class="font-bold xl:text-lg">@lang('Shipping method')</dt>
-                            <dd class="mt-2">
-                                <div>
-                                    @{{ data.customer.orders.items[0].shipping_method }}
-                                </div>
-                            </dd>
+                            <dd class="mt-2">@{{ data.customer.orders.items[0].shipping_method }}</dd>
                         </div>
                     </dl>
                 </div>

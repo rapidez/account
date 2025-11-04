@@ -12,30 +12,32 @@
         redirect="{{ route('account.orders') }}"
     >
         <div v-if="data" slot-scope="{ data }">
-            <x-rapidez::product-table v-for="product in data.customer.orders.items[0].items">
-                <x-slot:image>
-                    <img
-                        :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${product.product_sku}`"
-                        :alt="product.product_name"
-                        height="200"
-                        width="200"
-                        class="object-contain mix-blend-multiply"
-                    />
-                </x-slot:image>
-                <x-slot:name>@{{ product.product_name }}</x-slot:name>
-                <x-slot:sku>@{{ product.product_sku }}</x-slot:sku>
-                <x-slot:options>
-                    <ul v-if="product.selected_options" class="flex divide-x mt-1 text-sm">
-                        <li v-for="option in product.selected_options" class="first:pl-0 px-1">
-                            <span class="text">@{{ option.label }}:</span>
-                            <span class="text-muted">@{{ option.value }}</span>
-                        </li>
-                    </ul>
-                </x-slot:options>
-                <x-slot:quantity>@{{ product.quantity_ordered }}</x-slot:quantity>
-                <x-slot:price>@{{ product.product_sale_price.value | price  }}</x-slot:price>
-                <x-slot:subtotal>@{{ product.product_sale_price.value * product.quantity_ordered | price }}</x-slot:subtotal>
-            </x-rapidez::product-table>
+            <div class="divide-y">
+                <x-rapidez::product-table v-for="product in data.customer.orders.items[0].items">
+                    <x-slot:image>
+                        <img
+                            :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${product.product_sku}`"
+                            :alt="product.product_name"
+                            height="200"
+                            width="200"
+                            class="object-contain mix-blend-multiply"
+                        />
+                    </x-slot:image>
+                    <x-slot:name>@{{ product.product_name }}</x-slot:name>
+                    <x-slot:sku>@{{ product.product_sku }}</x-slot:sku>
+                    <x-slot:options>
+                        <ul v-if="product.selected_options" class="flex divide-x mt-1 text-sm">
+                            <li v-for="option in product.selected_options" class="first:pl-0 px-1">
+                                <span class="text">@{{ option.label }}:</span>
+                                <span class="text-muted">@{{ option.value }}</span>
+                            </li>
+                        </ul>
+                    </x-slot:options>
+                    <x-slot:quantity>@{{ product.quantity_ordered }}</x-slot:quantity>
+                    <x-slot:price>@{{ product.product_sale_price.value | price  }}</x-slot:price>
+                    <x-slot:subtotal>@{{ product.product_sale_price.value * product.quantity_ordered | price }}</x-slot:subtotal>
+                </x-rapidez::product-table>
+            </div>
 
             <div class="bg rounded p-6 mt-6">
                 <div class="grid grid-cols-2 gap-x-6 gap-y-3 max-md:pb-5 md:grid-cols-4">

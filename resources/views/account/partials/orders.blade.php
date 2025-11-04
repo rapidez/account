@@ -31,22 +31,24 @@
                 </a>
             </div>
         </div>
-        <x-rapidez::product-table v-for="item in order.items" class="px-4 py-2">
-            <x-slot:image>
-                <img
-                    :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${item.product_sku}`"
-                    :alt="item.product_name"
-                    height="200"
-                    width="200"
-                    class="object-contain mix-blend-multiply"
-                />
-            </x-slot:image>
-            <x-slot:name>@{{ item.product_name }}</x-slot:name>
-            <x-slot:sku>@{{ item.product_sku }}</x-slot:sku>
-            <x-slot:quantity>@{{ item.quantity_ordered }}</x-slot:quantity>
-            <x-slot:price>@{{ item.product_sale_price.value | price }}</x-slot:price>
-            <x-slot:subtotal>@{{ item.product_sale_price.value * item.quantity_ordered | price }}</x-slot:subtotal>
-        </x-rapidez::product-table>
+        <div class="divide-y">
+            <x-rapidez::product-table v-for="item in order.items" class="px-4 py-2">
+                <x-slot:image>
+                    <img
+                        :src="`/storage/{{ config('rapidez.store') }}/resizes/200/sku/${item.product_sku}`"
+                        :alt="item.product_name"
+                        height="200"
+                        width="200"
+                        class="object-contain mix-blend-multiply"
+                    />
+                </x-slot:image>
+                <x-slot:name>@{{ item.product_name }}</x-slot:name>
+                <x-slot:sku>@{{ item.product_sku }}</x-slot:sku>
+                <x-slot:quantity>@{{ item.quantity_ordered }}</x-slot:quantity>
+                <x-slot:price>@{{ item.product_sale_price.value | price }}</x-slot:price>
+                <x-slot:subtotal>@{{ item.product_sale_price.value * item.quantity_ordered | price }}</x-slot:subtotal>
+            </x-rapidez::product-table>
+        </div>
         <div class="flex w-full justify-end px-4 mb-4">
             <graphql-mutation
                 query="@include('rapidez::account.queries.reorder-items')"

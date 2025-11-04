@@ -1,7 +1,7 @@
 @props(['data'])
 @slots(['image', 'name', 'sku', 'options', 'quantity', 'price', 'subtotal'])
 
-<div {{ $attributes->twMerge('flex space-x-6 border-b py-6') }}>
+<div {{ $attributes->twMerge('flex space-x-6 py-6') }}>
     <div class="flex size-20 shrink-0 bg-muted rounded">
         {{ $image }}
     </div>

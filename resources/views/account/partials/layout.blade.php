@@ -5,7 +5,7 @@
 @section('content')
     <div class="bg -mt-5 pb-8 pt-5">
         <div v-cloak class="container mx-auto">
-            <div v-if="$root.loggedIn">
+            <div v-if="window.app?.config?.globalProperties?.loggedIn?.value">
                 <h1 @attributes([
                     'class' => 'mb-5 text-3xl font-bold max-sm:px-3',
                     'data-testid' => Route::currentRouteName() == 'account.order' ? 'masked' : null

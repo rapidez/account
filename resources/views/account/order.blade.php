@@ -10,8 +10,9 @@
         :variables="{orderNumber: '{{ request()->id }}'}"
         :check="(data) => data.customer.orders.items[0]"
         redirect="{{ route('account.orders') }}"
+        v-slot="{ data }"
     >
-        <div v-if="data" slot-scope="{ data }">
+    <div v-if="data">
             <div class="overflow-auto max-w-full">
                 <table class="text-left w-full">
                     <thead>
@@ -27,23 +28,23 @@
                         <tr v-for="product in data.customer.orders.items[0].items">
                             <td class="border px-4 py-2">@{{ product.product_name }}</td>
                             <td class="border px-4 py-2">@{{ product.product_sku }}</td>
-                            <td class="border px-4 py-2 text-right">@{{ product.product_sale_price.value | price }}</td>
+                            <td class="border px-4 py-2 text-right">@{{ window.price(product.product_sale_price.value) }}</td>
                             <td class="border px-4 py-2 text-right">@{{ product.quantity_ordered }}</td>
-                            <td class="border px-4 py-2 text-right">@{{ product.product_sale_price.value * product.quantity_ordered | price }}</td>
+                            <td class="border px-4 py-2 text-right">@{{ window.price(product.product_sale_price.value * product.quantity_ordered) }}</td>
                         </tr>
                     </tbody>
                     <tfoot class="text-right">
                         <tr>
                             <td class="border px-4 py-2" colspan="4">@lang('Subtotal')</td>
-                            <td class="border px-4 py-2">@{{ data.customer.orders.items[0].total.subtotal.value | price }}</td>
+                            <td class="border px-4 py-2">@{{ window.price(data.customer.orders.items[0].total.subtotal.value) }}</td>
                         </tr>
                         <tr>
                             <td class="border px-4 py-2" colspan="4">@lang('Shipping & Handling')</td>
-                            <td class="border px-4 py-2">@{{ data.customer.orders.items[0].total.shipping_handling.total_amount.value | price }}</td>
+                            <td class="border px-4 py-2">@{{ window.price(data.customer.orders.items[0].total.shipping_handling.total_amount.value) }}</td>
                         </tr>
                         <tr>
                             <td class="border px-4 py-2" colspan="4">@lang('Grand Total')</td>
-                            <td class="border px-4 py-2 font-bold">@{{ data.customer.orders.items[0].total.grand_total.value | price }}</td>
+                            <td class="border px-4 py-2 font-bold">@{{ window.price(data.customer.orders.items[0].total.grand_total.value) }}</td>
                         </tr>
                     </tfoot>
                 </table>

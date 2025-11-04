@@ -1,7 +1,6 @@
-<graphql-mutation query="mutation password ($currentPassword: String!, $newPassword: String!) { changeCustomerPassword ( currentPassword: $currentPassword, newPassword: $newPassword ) { email } }" :clear="true">
+<graphql-mutation query="mutation password ($currentPassword: String!, $newPassword: String!) { changeCustomerPassword ( currentPassword: $currentPassword, newPassword: $newPassword ) { email } }" :clear="true" v-slot="{ variables, mutate, mutated }">
     <form
         v-on:submit.prevent="mutate"
-        slot-scope="{ variables, mutate, mutated }"
         class="flex flex-col gap-y-2"
     >
         <label>
@@ -31,4 +30,4 @@
             </div>
         </div>
     </form>
-    <graphql-mutation>
+</graphql-mutation>

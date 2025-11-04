@@ -5,8 +5,8 @@
 @section('robots', 'NOINDEX,NOFOLLOW')
 
 @section('account-content')
-    <graphql query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone default_billing default_shipping } } }">
-        <div v-if="data" slot-scope="{ data }">
+    <graphql query="{ customer { addresses { id firstname middlename lastname street city postcode country_code telephone default_billing default_shipping } } }" v-slot="{ data }">
+        <div v-if="data">
             <h2 class="mb-2 text-2xl font-bold">@lang('Default addresses')</h2>
             @include('rapidez::account.partials.default-addresses', ['edit' => true])
 
@@ -47,7 +47,7 @@
                                     <td class="border px-4 py-2">@{{ additionalAddress.telephone }}</td>
                                 @endif
                                 <td class="border px-4 py-2">
-                                    <a :href="'/account/address/' + additionalAddress.id | url" class="underline hover:no-underline" data-testid="address-edit">
+                                    <a :href="window.url('/account/address/' + additionalAddress.id)" class="underline hover:no-underline" data-testid="address-edit">
                                         @lang('Edit')
                                     </a>
                                 </td>
@@ -57,9 +57,10 @@
                                         :variables="{ id: additionalAddress.id }"
                                         :callback="refreshUserInfoCallback"
                                         redirect="{{ route('account.addresses') }}"
+                                        v-slot="{ mutate }"
                                     >
-                                        <div slot-scope="{ mutate }">
-                                            <button v-on:click="mutate" class="underline hover:no-underline" data-testid="address-delete">
+                                        <div>
+                                                <button v-on:click="mutate" class="underline hover:no-underline" data-testid="address-delete">
                                                 @lang('Delete')
                                             </button>
                                         </div>

@@ -10,7 +10,8 @@
         :variables="{ street: [] }"
         :callback="refreshUserInfoCallback"
         redirect="{{ route('account.addresses') }}"
+        v-slot="{ variables, mutate, mutated }"
     >
         @include('rapidez::account.partials.address-form')
-    <graphql-mutation>
+    </graphql-mutation>
 @endsection

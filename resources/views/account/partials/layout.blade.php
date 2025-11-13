@@ -15,7 +15,7 @@
             ])>
                 @yield('title')
             </h1>
-            <div class="flex xl:gap-10 max-xl:flex-col-reverse">
+            <div class="flex max-xl:flex-col-reverse xl:gap-10">
                 <div class="max-w-full flex-1 overflow-hidden" data-testid="account-content">
                     @yield('account-content')
                 </div>

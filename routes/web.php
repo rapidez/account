@@ -10,6 +10,7 @@ Route::middleware('web')->group(function () {
     Route::view('account/edit', 'rapidez::account.edit')->name('account.edit');
     Route::view('account/orders', 'rapidez::account.orders')->name('account.orders');
     Route::view('account/order/{id}', 'rapidez::account.order')->name('account.order');
+    Route::view('account/addresses', 'rapidez::account.addresses')->name('account.addresses');
     Route::view('account/address/new', 'rapidez::account.address-new')->name('account.address.create');
     Route::view('account/address/{id}', 'rapidez::account.address-edit')->name('account.address');
 });

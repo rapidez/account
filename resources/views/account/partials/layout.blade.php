@@ -15,11 +15,11 @@
             ])>
                 @yield('title')
             </h1>
-            <div class="flex xl:gap-10 max-xl:flex-col">
+            <div class="flex xl:gap-10 max-xl:flex-col-reverse">
                 <div class="max-w-full flex-1 overflow-hidden" data-testid="account-content">
                     @yield('account-content')
                 </div>
-                <div class="w-full max-xl:mt-6 xl:shrink-0 xl:w-80">
+                <div class="w-full max-xl:mb-4 xl:shrink-0 xl:w-80">
                     @includeWhen(!$showNavigation, 'rapidez::account.partials.sidebar')
                     @includeWhen($showNavigation, 'rapidez::account.partials.menu')
                 </div>

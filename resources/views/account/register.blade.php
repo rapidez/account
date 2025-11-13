@@ -15,7 +15,7 @@
         :recaptcha="{{ Rapidez::config('recaptcha_frontend/type_for/customer_create') == 'recaptcha_v3' ? 'true' : 'false' }}"
     >
         <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
-            <div v-if="!loggedIn" class="w-full container">
+            <div v-if="!loggedIn" class="w-full max-w-3xl container">
                 <h1 class="mt-6 text-3xl font-bold">@lang('Register your account')</h1>
                 <div class="mt-5 flex w-full gap-8 max-lg:flex-col">
                     <div class="flex-1">
@@ -79,25 +79,6 @@
                             <x-rapidez::button.secondary form="register" type="submit" data-testid="continue">
                                 @lang('Register')
                             </x-rapidez::button.secondary>
-                        </div>
-                    </div>
-                    <div class="bg w-full p-3 self-start lg:w-80">
-                        <div class="border bg-white p-8">
-                            <div class="font-bold text-lg">@lang('Account features')</div>
-                            <ul class="space-y-5 my-5 text-sm *:flex *:items-start *:gap-x-2">
-                                <li>
-                                    <x-heroicon-s-check class="stroke-2 text-primary shrink-0 size-4"/>
-                                    @lang('Track status of your order and view order history')
-                                </li>
-                                <li>
-                                    <x-heroicon-s-check class="stroke-2 text-primary shrink-0 size-4"/>
-                                    @lang('Quick and easy ordering without having to fill in your details every time')
-                                </li>
-                                <li>
-                                    <x-heroicon-s-check class="stroke-2 text-primary shrink-0 size-4"/>
-                                    @lang('Everything centralized in 1 place such as returns, exchanges and customer service')
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>

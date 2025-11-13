@@ -30,6 +30,13 @@
                     <span class="text-muted">@lang('Change login details / Add addresses / Newsletters')</span>
                 </div>
             </x-rapidez::card.white>
+            <x-rapidez::card.white href="{{ route('account.addresses') }}">
+                <x-heroicon-o-identification class="size-6"/>
+                <div class="flex flex-col gap-y-1">
+                    <span class="font-medium">@lang('Address book')</span>
+                    <span class="text-muted">@lang('View / add and delete addresses')</span>
+                </div>
+            </x-rapidez::card.white>
             <user>
                 <x-rapidez::card.white
                     v-on:click.prevent="logout('/login')"

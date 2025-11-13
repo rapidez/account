@@ -20,6 +20,12 @@
                     'text' => __('Account overview'),
                 ])
             </li>
+            <li>
+                @include('rapidez::account.partials.menu-item', [
+                    'href' => route('account.addresses'),
+                    'text' => __('Address book'),
+                ])
+            </li>
             @if (App::providerIsLoaded('Rapidez\Wishlist\WishlistServiceProvider'))
                 <li>
                     @include('rapidez::account.partials.menu-item', [

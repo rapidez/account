@@ -14,7 +14,9 @@
     >
         <div class="flex flex-col items-center">
             <div class="flex flex-col items-center rounded bg mt-3.5 max-w-lg w-full">
-                <h1 class="mt-8 text-3xl font-bold px-8">@lang('Forgot your password?')</h1>
+                <h1 class="mt-8 text-3xl font-bold px-8">
+                    @lang('Forgot your password?')
+                </h1>
                 <form v-on:submit.prevent="mutate" class="flex w-full flex-col gap-3 p-8">
                     <x-rapidez::input
                         name="email"

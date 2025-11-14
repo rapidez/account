@@ -11,16 +11,16 @@
         redirect="{{ route('account.orders') }}"
         v-slot="{ data }"
     >
-    <div v-if="data">
+        <div v-if="data">
             <graphql-mutation
                 query="@include('rapidez::account.partials.queries.address-edit')"
                 :variables="Object.assign(data.customer.addresses.find(a => a.id == {{ request()->id }}), { id: {{ request()->id }} })"
                 :callback="refreshUserInfoCallback"
-                redirect="{{ route('account.addresses') }}"
+                redirect="{{ route('account.edit') }}"
                 v-slot="{ variables, mutate, mutated }"
             >
                 @include('rapidez::account.partials.address-form')
-    </graphql-mutation>
+            </graphql-mutation>
         </div>
     </graphql>
 @endsection

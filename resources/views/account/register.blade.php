@@ -16,9 +16,9 @@
     >
         <div class="flex flex-col items-center" slot-scope="{ mutate, variables }">
             <div v-if="!loggedIn">
-                <h1 class="text-3xl font-bold">@lang('Register your account')</h1>
-                <div class="mt-3.5 flex w-full max-w-lg flex-col items-center rounded bg">
-                    <form v-on:submit.prevent="mutate" id="register" class="grid w-full grid-cols-2 gap-3 p-8">
+                <h1 class="text-3xl font-bold max-sm:px-5">@lang('Register your account')</h1>
+                <div class="mt-3.5 flex w-full max-w-lg flex-col items-center">
+                    <form v-on:submit.prevent="mutate" id="register" class="grid w-full grid-cols-2 gap-3 rounded bg p-8">
                         <div class="max-sm:col-span-2">
                             <x-rapidez::input
                                 v-model="variables.firstname"
@@ -71,7 +71,7 @@
                             </div>
                         @endif
                     </form>
-                    <div class="flex items-center justify-between mt-5">
+                    <div class="w-full flex items-center justify-between mt-5 max-sm:px-5">
                         <x-rapidez::button.outline href="{{ route('account.login') }}">
                             @lang('Go back to login')
                         </x-rapidez::button.outline>

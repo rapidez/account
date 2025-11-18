@@ -16,8 +16,8 @@
         <div slot-scope="{ data, variables, runQuery }">
             <template v-if="data && !$root.loading">
                 <div
-                    class="text-inactive text-sm"
                     v-if="data.customer.orders.items.length == variables.pageSize"
+                    class="text-inactive text-sm"
                 >
                     @lang('Page') @{{ variables.page }}
                 </div>
@@ -32,9 +32,9 @@
                         @lang('Previous page')
                     </x-rapidez::button.secondary>
                     <x-rapidez::button.secondary
-                        class="ml-auto"
                         v-if="data.customer.orders.items.length == variables.pageSize"
                         v-on:click="() => { variables.page++; runQuery(); window.scrollTo(0,0) }"
+                        class="ml-auto"
                     >
                         @lang('Next page')
                     </x-rapidez::button.secondary>

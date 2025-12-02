@@ -1,6 +1,13 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/4.1.3...4.1.3)
+[Unreleased changes](https://github.com/rapidez/account/compare/4.1.4...4.1.4)
+## [4.1.4](https://github.com/rapidez/account/releases/tag/4.1.4) - 2025-10-03
+
+### Fixed
+
+- Playwright Magento version tag (#78)
+- Translation typo (#77)
+
 ## [4.1.3](https://github.com/rapidez/account/releases/tag/4.1.3) - 2025-09-26
 
 ### Fixed

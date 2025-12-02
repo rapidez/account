@@ -1,6 +1,23 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/4.1.3...4.1.3)
+[Unreleased changes](https://github.com/rapidez/account/compare/5.0.0...5.0.0)
+## [5.0.0](https://github.com/rapidez/account/releases/tag/5.0.0) - 2025-11-20
+
+### Added
+
+- Rapidez v5 support (94c335b)
+
+### Changed
+
+- Vue 3 upgrade (#80)
+
+## [4.1.4](https://github.com/rapidez/account/releases/tag/4.1.4) - 2025-10-03
+
+### Fixed
+
+- Playwright Magento version tag (#78)
+- Translation typo (#77)
+
 ## [4.1.3](https://github.com/rapidez/account/releases/tag/4.1.3) - 2025-09-26
 
 ### Fixed

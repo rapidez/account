@@ -40,7 +40,7 @@
                     <x-rapidez::input
                         name="vat_id"
                         v-model="variables.vat_id"
-                        v-on:change="(e) => window.$emit('rapidez:vat-change', $event)"
+                        v-on:change="(e) => window.$emit('vat-change', $event)"
                         :required="Rapidez::config('customer/address/taxvat_show', '0') == 'req'"
                     />
                 </label>
@@ -67,7 +67,7 @@
                     <x-rapidez::input
                         name="housenumber"
                         v-model="variables.street[1]"
-                        v-on:change="() => window.$emit('rapidez:postcode-change', variables)"
+                        v-on:change="() => window.$emit('postcode-change', variables)"
                         required
                     />
                 </label>
@@ -92,7 +92,7 @@
                 <x-rapidez::input
                     name="postcode"
                     v-model="variables.postcode"
-                    v-on:change="() => window.$emit('rapidez:postcode-change', variables)"
+                    v-on:change="() => window.$emit('postcode-change', variables)"
                     required
                 />
             </label>
@@ -109,7 +109,7 @@
                 <x-rapidez::input.select.country
                     name="country"
                     v-model="variables.country_code"
-                    v-on:change="() => { window.$emit('rapidez:postcode-change', variables); variables.region = {}; variables.{{ $region }} = null }"
+                    v-on:change="() => { window.$emit('postcode-change', variables); variables.region = {}; variables.{{ $region }} = null }"
                     class="w-full"
                     required
                 />

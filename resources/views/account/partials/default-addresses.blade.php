@@ -1,5 +1,5 @@
-<div class="flex flex-wrap gap-5 max-sm:flex-col">
-    <div class="flex-1">
+<div class="flex flex-wrap gap-5 max-lg:flex-col">
+    <div class="flex-1 border rounded p-6 bg-white">
         <h3 class="font-bold">@lang('Default billing address')</h3>
         <div v-if="data.customer.addresses.find(a => a.default_billing == true)">
             <ul>
@@ -17,7 +17,7 @@
             @lang('Add billing address')
         </x-rapidez::button.secondary>
     </div>
-    <div class="flex-1">
+    <div class="flex-1 border rounded p-6 bg-white">
         <h3 class="font-bold">@lang('Default shipping address')</h3>
         <div v-if="data.customer.addresses.find(a => a.default_shipping == true)">
             <ul>

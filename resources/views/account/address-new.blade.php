@@ -9,7 +9,7 @@
         query="@include('rapidez::account.partials.queries.address-create')"
         :variables="{ street: [] }"
         :callback="refreshUserInfoCallback"
-        redirect="{{ route('account.addresses') }}"
+        redirect="{{ route('account.edit') }}"
         v-slot="{ variables, mutate, mutated }"
     >
         @include('rapidez::account.partials.address-form')

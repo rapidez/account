@@ -5,7 +5,7 @@
         <h2 class="col-span-12 font-bold text-2xl">@lang('Contact information')</h2>
         <div class="col-span-12 sm:col-span-6">
             <label>
-                <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                <x-rapidez::label>@lang('First name')</x-rapidez::label>
                 <x-rapidez::input name="firstname" v-model="variables.firstname" required />
             </label>
         </div>

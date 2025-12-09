@@ -3,7 +3,7 @@
         <graphql-mutation query="mutation customer ($firstname: String, $middlename: String, $lastname: String) { updateCustomerV2 ( input: { firstname: $firstname, middlename: $middlename, lastname: $lastname } ) { customer { firstname middlename lastname } } }" :variables="data?.customer" :callback="refreshUserInfoCallback" v-slot="{ variables, mutate, mutated }">
             <form v-on:submit.prevent="mutate" class="flex flex-col gap-y-2">
                 <label>
-                    <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                    <x-rapidez::label>@lang('First name')</x-rapidez::label>
                     <x-rapidez::input name="firstname" v-model="variables.firstname" required />
                 </label>
                 @if(Rapidez::config('customer/address/middlename_show', 0))

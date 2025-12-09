@@ -16,7 +16,7 @@
                     <table class="w-full table-auto text-left -mx-4">
                         <thead>
                             <tr>
-                                <th class="px-4">@lang('Firstname')</th>
+                                <th class="px-4">@lang('First name')</th>
                                 @if (Rapidez::config('customer/address/middlename_show', 0))
                                     <th class="px-4">@lang('Middlename')</th>
                                 @endif

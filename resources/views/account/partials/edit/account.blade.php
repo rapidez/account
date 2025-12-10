@@ -8,7 +8,7 @@
                 </label>
                 @if(Rapidez::config('customer/address/middlename_show', 0))
                     <label>
-                        <x-rapidez::label>@lang('Middlename')</x-rapidez::label>
+                        <x-rapidez::label>@lang('Middle name')</x-rapidez::label>
                         <x-rapidez::input name="middlename" v-model="variables.middlename" />
                     </label>
                 @endif

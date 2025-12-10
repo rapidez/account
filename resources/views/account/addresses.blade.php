@@ -18,7 +18,7 @@
                             <tr>
                                 <th class="px-4">@lang('First name')</th>
                                 @if (Rapidez::config('customer/address/middlename_show', 0))
-                                    <th class="px-4">@lang('Middlename')</th>
+                                    <th class="px-4">@lang('Middle name')</th>
                                 @endif
                                 <th class="px-4">@lang('Last name')</th>
                                 <th class="px-4">@lang('Address')</th>

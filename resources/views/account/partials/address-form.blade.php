@@ -12,7 +12,7 @@
         @if(Rapidez::config('customer/address/middlename_show', 0))
             <div class="col-span-12 sm:col-span-6">
                 <label>
-                    <x-rapidez::label>@lang('Middlename')</x-rapidez::label>
+                    <x-rapidez::label>@lang('Middle name')</x-rapidez::label>
                     <x-rapidez::input name="middlename" v-model="variables.middlename" />
                 </label>
             </div>
@@ -63,7 +63,7 @@
         <div class="col-span-12 sm:col-span-4">
             @if(Rapidez::config('customer/address/street_lines', 2) >= 2)
                 <label>
-                    <x-rapidez::label>@lang('Housenumber')</x-rapidez::label>
+                    <x-rapidez::label>@lang('House number')</x-rapidez::label>
                     <x-rapidez::input
                         name="housenumber"
                         v-model="variables.street[1]"

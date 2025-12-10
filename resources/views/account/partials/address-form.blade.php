@@ -19,7 +19,7 @@
         @endif
         <div class="col-span-12 sm:col-span-6">
             <label>
-                <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
+                <x-rapidez::label>@lang('Last name')</x-rapidez::label>
                 <x-rapidez::input name="lastname" v-model="variables.lastname" required />
             </label>
         </div>

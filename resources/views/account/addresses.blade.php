@@ -16,11 +16,11 @@
                     <table class="w-full table-auto text-left -mx-4">
                         <thead>
                             <tr>
-                                <th class="px-4">@lang('Firstname')</th>
+                                <th class="px-4">@lang('First name')</th>
                                 @if (Rapidez::config('customer/address/middlename_show', 0))
-                                    <th class="px-4">@lang('Middlename')</th>
+                                    <th class="px-4">@lang('Middle name')</th>
                                 @endif
-                                <th class="px-4">@lang('Lastname')</th>
+                                <th class="px-4">@lang('Last name')</th>
                                 <th class="px-4">@lang('Address')</th>
                                 <th class="px-4">@lang('Postcode')</th>
                                 <th class="px-4">@lang('City')</th>

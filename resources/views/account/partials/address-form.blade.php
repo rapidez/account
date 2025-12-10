@@ -5,21 +5,21 @@
         <h2 class="col-span-12 font-bold text-2xl">@lang('Contact information')</h2>
         <div class="col-span-12 sm:col-span-6">
             <label>
-                <x-rapidez::label>@lang('Firstname')</x-rapidez::label>
+                <x-rapidez::label>@lang('First name')</x-rapidez::label>
                 <x-rapidez::input name="firstname" v-model="variables.firstname" required />
             </label>
         </div>
         @if(Rapidez::config('customer/address/middlename_show', 0))
             <div class="col-span-12 sm:col-span-6">
                 <label>
-                    <x-rapidez::label>@lang('Middlename')</x-rapidez::label>
+                    <x-rapidez::label>@lang('Middle name')</x-rapidez::label>
                     <x-rapidez::input name="middlename" v-model="variables.middlename" />
                 </label>
             </div>
         @endif
         <div class="col-span-12 sm:col-span-6">
             <label>
-                <x-rapidez::label>@lang('Lastname')</x-rapidez::label>
+                <x-rapidez::label>@lang('Last name')</x-rapidez::label>
                 <x-rapidez::input name="lastname" v-model="variables.lastname" required />
             </label>
         </div>
@@ -63,7 +63,7 @@
         <div class="col-span-12 sm:col-span-4">
             @if(Rapidez::config('customer/address/street_lines', 2) >= 2)
                 <label>
-                    <x-rapidez::label>@lang('Housenumber')</x-rapidez::label>
+                    <x-rapidez::label>@lang('House number')</x-rapidez::label>
                     <x-rapidez::input
                         name="housenumber"
                         v-model="variables.street[1]"

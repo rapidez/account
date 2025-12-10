@@ -25,7 +25,7 @@
                             v-model="variables.firstname"
                             name="firstname"
                             type="text"
-                            :placeholder="__('Firstname')"
+                            :placeholder="__('First name')"
                             required
                         />
                     </div>
@@ -34,7 +34,7 @@
                             v-model="variables.lastname"
                             name="lastname"
                             type="text"
-                            :placeholder="__('Lastname')"
+                            :placeholder="__('Last name')"
                             required
                         />
                     </div>

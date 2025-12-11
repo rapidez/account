@@ -80,6 +80,7 @@ jobs:
         with:
           repository: rapidez/rapidez
           path: rapidez/rapidez
+          ref: 4.x
 
       - uses: actions/setup-node@v4
         with:
@@ -109,7 +110,7 @@ jobs:
 
       - name: Get correct version name for require
         run: echo "REQUIRE_VERSION=$([[ '${{ env.PACKAGE_HASH }}' =~ ^[0-9]+\.[xX]$ ]] && echo '${{ env.PACKAGE_HASH }}-dev' || echo 'dev-${{ env.PACKAGE_HASH }}')" >> $GITHUB_ENV
-        
+
       - name: Composer require the local rapidez package
         run: composer require rapidez/$PACKAGE:"${{ env.REQUIRE_VERSION }} as ${{ env.LATEST_TAG }}"
 

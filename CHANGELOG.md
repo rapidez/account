@@ -1,6 +1,23 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/5.0.0...5.0.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/5.1.0...5.1.0)
+## [5.1.0](https://github.com/rapidez/account/releases/tag/5.1.0) - 2026-01-21
+
+### Changed
+
+- Visual improvements (#81)
+- Playwright reports in Cloudflare R2 (#88)
+
+### Fixed
+
+- Removed Rapidez event prefix (#82)
+- Form label spelling fixes (#83)
+- Fix future playwright tests (#84)
+- Screenshots update (#86)
+- Run Playwright tests at 00:30 (5693407)
+- Screenshot update (#87)
+- Playwright update all screenshots fix (#90)
+
 ## [5.0.0](https://github.com/rapidez/account/releases/tag/5.0.0) - 2025-11-20
 
 ### Added

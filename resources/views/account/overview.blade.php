@@ -37,10 +37,9 @@
                     <span class="text-muted">@lang('View / add and delete addresses')</span>
                 </div>
             </x-rapidez::card.white>
-            <user>
+            <user v-slot="{ logout }">
                 <x-rapidez::card.white
                     v-on:click.prevent="logout('/login')"
-                    v-slot="{ logout }"
                     class="cursor-pointer"
                     data-testid="logout"
                 >

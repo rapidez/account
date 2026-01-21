@@ -6,7 +6,7 @@ export class AccountPage {
     }
 
     async setDefaultAddress() {
-        await this.page.goto('/account/addresses')
+        await this.page.goto('/account/edit')
         await this.page.waitForLoadState('networkidle')
         await this.page.getByTestId('address-edit').first().click()
         await this.page.waitForURL('/account/address/*')
@@ -16,13 +16,13 @@ export class AccountPage {
         await this.page.getByTestId('continue').click()
         await this.page.waitForTimeout(200)
         await this.page.waitForLoadState('networkidle')
-        await this.page.waitForURL('/account/addresses')
+        await this.page.waitForURL('/account/edit')
         await this.page.waitForTimeout(200)
         await this.page.waitForLoadState('networkidle')
     }
 
     async register() {
-        const email = `wayne+${crypto.randomUUID()}@enterprises.com`;
+        const email = `wayne+${crypto.randomUUID().substring(0, 24)}@enterprises.com`;
         const password = 'IronManSucks.91939';
 
         await this.page.goto('/register')

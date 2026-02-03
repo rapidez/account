@@ -73,6 +73,7 @@ test('orders', BasePage.tags, async ({ page }) => {
     await checkoutPage.checkout()
 
     await page.goto('/account/orders')
+    await page.waitForLoadState('networkidle')
     await expect(page.getByTestId('order-id')).toBeVisible()
 
     // Order overview page

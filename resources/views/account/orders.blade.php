@@ -12,10 +12,10 @@
             pageSize: 5,
             page: 1,
         }"
-        v-slot="{ data, variables, runQuery }"
+        v-slot="{ data, variables, runQuery, running }"
     >
         <div>
-            <template v-if="data && !window.app.config.globalProperties.loading">
+            <template v-if="data && !running">
                 <div
                     v-if="data.customer.orders.items.length == variables.pageSize"
                     class="text-inactive text-sm"
@@ -41,6 +41,7 @@
                     </x-rapidez::button.secondary>
                 </div>
             </template>
+            <div v-else>@lang('Loading')...</div>
         </div>
     </graphql>
 @endsection

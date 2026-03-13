@@ -14,7 +14,7 @@
         v-slot="{ mutate, variables }"
     >
         <div class="flex justify-center">
-            <form v-on:submit.prevent="mutate" class="mr-1 w-[400px] rounded border p-8">
+            <form v-on:submit.prevent="mutate" class="mr-1 w-[400px] rounded-sm border p-8">
                 <h1 class="mb-5 text-center text-4xl font-bold">@lang('Reset password')</h1>
                 <div class="space-y-3">
                     <x-rapidez::input

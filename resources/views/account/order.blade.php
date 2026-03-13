@@ -39,7 +39,7 @@
                     <x-slot:subtotal>@{{ window.price(product.product_sale_price.value * product.quantity_ordered) }}</x-slot:subtotal>
                 </x-rapidez::product-table>
             </div>
-            <div class="bg rounded p-6 mt-6">
+            <div class="bg rounded-sm p-6 mt-6">
                 <div class="grid grid-cols-2 gap-x-6 gap-y-3 max-md:pb-5 md:grid-cols-4">
                     <dl class="grid col-span-2 gap-x-6 gap-y-3 md:py-5 text-sm md:grid-cols-2">
                         <div v-if="shipping = data.customer.orders.items[0].shipping_address">

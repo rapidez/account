@@ -2,7 +2,7 @@
 @slots(['image', 'name', 'sku', 'options', 'quantity', 'price', 'subtotal'])
 
 <div {{ $attributes->twMerge('flex space-x-6 py-6') }}>
-    <div class="flex size-20 shrink-0 bg-muted rounded">
+    <div class="flex size-20 shrink-0 bg-muted rounded-sm">
         {{ $image }}
     </div>
     <div class="flex flex-col">

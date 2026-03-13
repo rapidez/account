@@ -1,6 +1,6 @@
 <graphql query="@include('rapidez::account.partials.queries.overview')" v-slot="{ data }">
-    <div v-if="data" class="bg rounded p-3">
-        <div class="border bg-white flex flex-col gap-y-4 rounded px-8 py-6 text divide-y">
+    <div v-if="data" class="bg rounded-sm p-3">
+        <div class="border bg-white flex flex-col gap-y-4 rounded-sm px-8 py-6 text divide-y">
             <div class="flex flex-col gap-y-2" data-testid="masked">
                 <div class="text-lg text font-bold mb-2">@lang('Account information')</div>
                 <div class="flex flex-col">

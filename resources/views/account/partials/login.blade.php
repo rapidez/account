@@ -2,7 +2,7 @@
     <div v-if="!user.is_logged_in" class="flex flex-col items-center">
         <div class="max-w-lg w-full">
             <h1 class="text-3xl font-bold">@lang('Login')</h1>
-            <div class="flex flex-col items-center bg rounded mt-3.5">
+            <div class="flex flex-col items-center bg rounded-sm mt-3.5">
                 <form class="flex flex-col gap-3 p-8 w-full" v-on:submit.prevent="login.go()">
                     <x-rapidez::input
                         name="email"

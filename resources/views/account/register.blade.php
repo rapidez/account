@@ -18,7 +18,7 @@
         <div class="flex flex-col items-center">
             <div v-if="!window.app?.config?.globalProperties?.loggedIn?.value">
                 <h1 class="text-3xl font-bold">@lang('Register your account')</h1>
-                <div class="mt-3.5 flex w-full max-w-lg flex-col items-center rounded bg">
+                <div class="mt-3.5 flex w-full max-w-lg flex-col items-center rounded-sm bg">
                     <form v-on:submit.prevent="mutate" class="grid w-full grid-cols-2 gap-3 p-8">
                         <div class="max-sm:col-span-2">
                             <x-rapidez::input

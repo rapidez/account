@@ -12,7 +12,7 @@
         <div class="mb-4 h-2.5 w-full rounded-full bg-emphasis">
             <div
                 v-bind:style="`width:${passwordStrength.strengths.length / 5 * 100}%`"
-                v-bind:class="passwordStrength.errors.length > 0 ? 'bg-red-500' : 'bg-green-700 !w-full'"
+                v-bind:class="passwordStrength.errors.length > 0 ? 'bg-red-500' : 'bg-green-700 w-full!'"
                 class="h-2.5 rounded-full transition-all duration-300"
             ></div>
         </div>

@@ -6,7 +6,7 @@
 
 @section('account-content')
     <div class="flex flex-col gap-4">
-        <div class="bg p-6 rounded flex flex-col gap-3 sm:px-9 sm:pt-7 sm:pb-9">
+        <div class="bg p-6 rounded-sm flex flex-col gap-3 sm:px-9 sm:pt-7 sm:pb-9">
             <x-rapidez::card.white href="{{ route('account.orders') }}">
                 <x-heroicon-o-truck class="size-6"/>
                 <div class="flex flex-col gap-y-1">

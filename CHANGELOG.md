@@ -1,6 +1,17 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/5.1.0...5.1.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/5.2.0...5.2.0)
+## [5.2.0](https://github.com/rapidez/account/releases/tag/5.2.0) - 2026-03-20
+
+### Changed
+
+- Tailwind 4 update (#96)
+
+### Fixed
+
+- Playwright fix (#92)
+- Orders loading state fix (#93)
+
 ## [5.1.0](https://github.com/rapidez/account/releases/tag/5.1.0) - 2026-01-21
 
 ### Changed

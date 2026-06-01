@@ -13,4 +13,5 @@ Route::middleware('web')->group(function () {
     Route::view('account/addresses', 'rapidez::account.addresses')->name('account.addresses');
     Route::view('account/address/new', 'rapidez::account.address-new')->name('account.address.create');
     Route::view('account/address/{id}', 'rapidez::account.address-edit')->name('account.address');
+    Route::redirect('.well-known/change-password', route('account.edit'));
 });

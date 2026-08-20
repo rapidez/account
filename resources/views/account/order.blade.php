@@ -79,7 +79,7 @@
                 <dl class="space-y-6 border-t pt-5 xl:*:w-1/3">
                     <div class="flex justify-between">
                         <dt class="font-bold">@lang('Subtotal')</dt>
-                        <dd>@{{ window.price(data.customer.orders.items[0].total.subtotal.value) }}</dd>
+                        <dd>@{{ window.price(data.customer.orders.items[0].total.subtotal_incl_tax.value) }}</dd>
                     </div>
                     <div class="flex justify-between">
                         <dt class="font-bold">@lang('Shipping & Handling')</dt>

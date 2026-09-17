@@ -1,7 +1,7 @@
 
 <expire-login v-slot="login">
     <div v-if="login.isTokenExpiring" v-cloak>
-        <div class="fixed sm:max-w-sm sm:w-full bottom-6 left-6 flex flex-col z-notifications">
+        <div class="fixed sm:max-w-sm sm:w-full bottom-6 right-6 left-6 sm:right-auto flex flex-col z-notifications">
             <label for="expire-login-slideover" class="hover:cursor-pointer">
                 <div class="max-w-sm w-full rounded-lg pointer-events-auto ring-1 ring-emphasis/10 overflow-hidden border bg">
                     <div class="p-4">

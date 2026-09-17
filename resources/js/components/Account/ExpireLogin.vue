@@ -44,12 +44,7 @@ export default {
                     loginTimerId = null
                 }
 
-                if (this.warningTime === 0) {
-                    return;
-                }
-
-                const tokenJwt = Jwt.isJwt(token.value) ? Jwt.decode(token.value) : false
-                if (!tokenJwt) {
+                if (this.warningTime === 0 || !date) {
                     return;
                 }
 

@@ -3,8 +3,8 @@
 namespace Rapidez\Account;
 
 use Illuminate\Support\Facades\Blade;
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View as ViewFacade;
+use Illuminate\Support\ServiceProvider;
 use Illuminate\View\View;
 
 class AccountServiceProvider extends ServiceProvider
@@ -28,7 +28,7 @@ class AccountServiceProvider extends ServiceProvider
         ], 'views');
 
         Blade::componentNamespace('Rapidez\\Account\\View\\Components', 'rapidez');
-        ViewFacade::composer('rapidez::layouts.app', function(View $view) {
+        ViewFacade::composer('rapidez::layouts.app', function (View $view) {
             $view->getFactory()->startPush('page_end', view('rapidez::account.partials.login-expire')->render());
         });
     }

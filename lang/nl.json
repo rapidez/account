@@ -78,6 +78,8 @@
     "View / add and delete addresses": "Adressen bekijken / toevoegen en verwijderen",
     "View and edit products in your order list": "Bekijk en bewerk producten in uw bestellijst",
     "View order": "Bekijk bestelling",
+    "You are about to be logged out :relativeExpireText, click here to refresh your session for uninterrupted browsing.": "Je staat op het punt om :relativeExpireText uitgelogd te worden, klik hier om jouw login te verversen en ongehinderd door te gaan.",
+    "You are about to be logged out :relativeExpireText, please login to refresh your session for uninterrupted browsing.": "Je staat op het punt om :relativeExpireText uitgelogd te worden, log in om jouw sessie te verversen en ongehinderd door te gaan.",
     "You do not have any orders yet.": "Je hebt nog geen bestellingen.",
     "You have no other address entries in your address book.": "Je hebt geen andere adressen.",
     "Your password has been changed, please login.": "Je wachtwoord is gewijzigd, log nu in."

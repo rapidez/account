@@ -2,6 +2,7 @@
 
 Route::middleware('web')->group(function () {
     Route::view('login', 'rapidez::account.login')->name('account.login');
+    Route::view('login', 'rapidez::account.login')->name('login'); // Because Laravel expects a "login" route
     Route::view('register', 'rapidez::account.register')->name('account.register');
     Route::view('forgotpassword', 'rapidez::account.forgotpassword')->name('account.forgotpassword');
     Route::view('resetpassword', 'rapidez::account.resetpassword')->name('account.resetpassword');

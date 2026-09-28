@@ -29,6 +29,25 @@ test('edit', BasePage.tags, async ({ page }) => {
     await expect(input).toHaveValue('Batman')
 })
 
+test('edit name', BasePage.tags, async ({ page }) => {
+    await page.goto('/account/edit')
+    const firstname = page.locator('[name=firstname]')
+    const lastname = page.locator('[name=lastname]')
+    await expect(firstname).toHaveValue('Bruce')
+    await expect(lastname).toHaveValue('Wayne')
+    await lastname.fill('Test')
+    await lastname.press('Enter')
+    await page.waitForLoadState('networkidle')
+    await page.reload()
+    await expect(firstname).toHaveValue('Bruce')
+    await expect(lastname).toHaveValue('Test')
+
+    // Edit page with changed name
+    await new BasePage(page).screenshot('fullpage-footer', {
+        name: 'edit-name.png',
+    })
+})
+
 test('addresses', BasePage.tags, async ({ page }) => {
     await page.goto('/account/address/new')
     await page.waitForLoadState('networkidle')

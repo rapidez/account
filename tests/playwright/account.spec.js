@@ -18,15 +18,22 @@ test('overview', BasePage.tags, async ({ page }) => {
     })
 })
 
-test('edit', BasePage.tags, async ({ page }) => {
+test('edit name', BasePage.tags, async ({ page }) => {
     await page.goto('/account/edit')
-    const input = page.locator('[name=firstname]')
-    await expect(input).toHaveValue('Bruce')
-    await input.fill('Batman')
-    await input.press('Enter')
     await page.waitForLoadState('networkidle')
+    const firstname = page.locator('[name=firstname]')
+    const lastname = page.locator('[name=lastname]')
+    await expect(firstname).toHaveValue('Bruce')
+    await expect(lastname).toHaveValue('Wayne')
+    await lastname.fill('Test')
+    const submit = page.locator('form', { has: lastname }).locator('button[type=submit]')
+    await expect(submit).toBeEnabled()
+    await submit.click()
+    await expect(page.getByText('Changed successfully!')).toBeVisible()
     await page.reload()
-    await expect(input).toHaveValue('Batman')
+    await page.waitForLoadState('networkidle')
+    await expect(firstname).toHaveValue('Bruce')
+    await expect(lastname).toHaveValue('Test')
 })
 
 test('addresses', BasePage.tags, async ({ page }) => {

@@ -18,17 +18,6 @@ test('overview', BasePage.tags, async ({ page }) => {
     })
 })
 
-test('edit', BasePage.tags, async ({ page }) => {
-    await page.goto('/account/edit')
-    const input = page.locator('[name=firstname]')
-    await expect(input).toHaveValue('Bruce')
-    await input.fill('Batman')
-    await input.press('Enter')
-    await page.waitForLoadState('networkidle')
-    await page.reload()
-    await expect(input).toHaveValue('Batman')
-})
-
 test('edit name', BasePage.tags, async ({ page }) => {
     await page.goto('/account/edit')
     const firstname = page.locator('[name=firstname]')

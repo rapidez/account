@@ -34,11 +34,6 @@ test('edit name', BasePage.tags, async ({ page }) => {
     await page.waitForLoadState('networkidle')
     await expect(firstname).toHaveValue('Bruce')
     await expect(lastname).toHaveValue('Test')
-
-    // Edit page with changed name
-    await new BasePage(page).screenshot('fullpage-footer', {
-        name: 'edit-name.png',
-    })
 })
 
 test('addresses', BasePage.tags, async ({ page }) => {

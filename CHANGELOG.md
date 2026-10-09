@@ -1,6 +1,21 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/5.2.0...5.2.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/5.3.0...5.3.0)
+## [5.3.0](https://github.com/rapidez/account/releases/tag/5.3.0) - 2026-10-09
+
+### Changed
+
+- Use pnpm as package manager (#104)
+
+### Fixed
+
+- Update Magento versions in Playwright workflow (#99)
+- Add redirect for well-known change-password route (#100)
+- Added login named route (#103, #106)
+- Small fixes (#102)
+
+
+
 ## [5.2.0](https://github.com/rapidez/account/releases/tag/5.2.0) - 2026-03-20
 
 ### Changed

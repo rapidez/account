@@ -44,7 +44,7 @@
                             <x-rapidez::input
                                 v-model="variables.email"
                                 name="email"
-                                autocomplete="username"
+                                autocomplete="email"
                                 type="email"
                                 :placeholder="__('Email')"
                                 required

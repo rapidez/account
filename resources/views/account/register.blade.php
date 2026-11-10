@@ -24,6 +24,7 @@
                             <x-rapidez::input
                                 v-model="variables.firstname"
                                 name="firstname"
+                                autocomplete="given-name"
                                 type="text"
                                 :placeholder="__('First name')"
                                 required
@@ -33,6 +34,7 @@
                             <x-rapidez::input
                                 v-model="variables.lastname"
                                 name="lastname"
+                                autocomplete="family-name"
                                 type="text"
                                 :placeholder="__('Last name')"
                                 required
@@ -42,6 +44,7 @@
                             <x-rapidez::input
                                 v-model="variables.email"
                                 name="email"
+                                autocomplete="username"
                                 type="email"
                                 :placeholder="__('Email')"
                                 required
@@ -51,6 +54,7 @@
                             <x-rapidez::input.password
                                 v-model="variables.password"
                                 name="password"
+                                autocomplete="new-password"
                                 :placeholder="__('Password')"
                                 required
                             />

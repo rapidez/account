@@ -6,21 +6,21 @@
         <div class="col-span-12 sm:col-span-6">
             <label>
                 <x-rapidez::label>@lang('First name')</x-rapidez::label>
-                <x-rapidez::input name="firstname" v-model="variables.firstname" required />
+                <x-rapidez::input name="firstname" autocomplete="given-name" v-model="variables.firstname" required />
             </label>
         </div>
         @if(Rapidez::config('customer/address/middlename_show', 0))
             <div class="col-span-12 sm:col-span-6">
                 <label>
                     <x-rapidez::label>@lang('Middle name')</x-rapidez::label>
-                    <x-rapidez::input name="middlename" v-model="variables.middlename" />
+                    <x-rapidez::input name="middlename" autocomplete="additional-name" v-model="variables.middlename" />
                 </label>
             </div>
         @endif
         <div class="col-span-12 sm:col-span-6">
             <label>
                 <x-rapidez::label>@lang('Last name')</x-rapidez::label>
-                <x-rapidez::input name="lastname" v-model="variables.lastname" required />
+                <x-rapidez::input name="lastname" autocomplete="family-name" v-model="variables.lastname" required />
             </label>
         </div>
 
@@ -28,7 +28,7 @@
             @if(Rapidez::config('customer/address/company_show', 'opt'))
                 <label>
                     <x-rapidez::label>@lang('Company')</x-rapidez::label>
-                    <x-rapidez::input name="company" v-model="variables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
+                    <x-rapidez::input name="company" autocomplete="organization" v-model="variables.company" :required="Rapidez::config('customer/address/company_show', 'opt') == 'req'" />
                 </label>
             @endif
         </div>
@@ -48,7 +48,7 @@
             @if(Rapidez::config('customer/address/telephone_show', 'req'))
                 <label>
                     <x-rapidez::label>@lang('Telephone')</x-rapidez::label>
-                    <x-rapidez::input name="telephone" v-model="variables.telephone" :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'" />
+                    <x-rapidez::input name="telephone" autocomplete="tel" v-model="variables.telephone" :required="Rapidez::config('customer/address/telephone_show', 'req') == 'req'" />
                 </label>
             @endif
         </div>
@@ -91,6 +91,7 @@
                 <x-rapidez::label>@lang('Postcode')</x-rapidez::label>
                 <x-rapidez::input
                     name="postcode"
+                    autocomplete="postal-code"
                     v-model="variables.postcode"
                     v-on:change="() => window.$emit('postcode-change', variables)"
                     required
@@ -100,7 +101,7 @@
         <div class="col-span-12 sm:col-span-4">
             <label>
                 <x-rapidez::label>@lang('City')</x-rapidez::label>
-                <x-rapidez::input name="city" v-model="variables.city" required />
+                <x-rapidez::input name="city" autocomplete="address-level2" v-model="variables.city" required />
             </label>
         </div>
         <div class="col-span-12 sm:col-span-4">
@@ -108,6 +109,7 @@
                 <x-rapidez::label>@lang('Country')</x-rapidez::label>
                 <x-rapidez::input.select.country
                     name="country"
+                    autocomplete="country"
                     v-model="variables.country_code"
                     v-on:change="() => { window.$emit('postcode-change', variables); variables.region = {}; variables.{{ $region }} = null }"
                     class="w-full"
@@ -121,6 +123,7 @@
                 <x-rapidez::input.select.region
                     class="exists"
                     name="region"
+                    autocomplete="address-level1"
                     dusk="region"
                     country="variables.country_code"
                     v-model="variables.{{ $region }}"

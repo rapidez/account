@@ -6,6 +6,7 @@
                 <form class="flex flex-col gap-3 p-8 w-full" v-on:submit.prevent="login.go()">
                     <x-rapidez::input
                         name="email"
+                        autocomplete="username"
                         type="email"
                         :placeholder="__('Email')"
                         v-model="login.email"
@@ -13,6 +14,7 @@
                     />
                     <x-rapidez::input.password
                         name="password"
+                        autocomplete="current-password"
                         :placeholder="__('Password')"
                         v-model="login.password"
                         required

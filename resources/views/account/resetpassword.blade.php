@@ -29,6 +29,7 @@
                         <x-rapidez::input
                             v-model="variables.email"
                             name="email"
+                            autocomplete="username"
                             type="email"
                             required
                         />
@@ -38,6 +39,7 @@
                         <x-rapidez::input.password
                             v-model="variables.password"
                             name="password"
+                            autocomplete="new-password"
                             required
                         />
                     </label>

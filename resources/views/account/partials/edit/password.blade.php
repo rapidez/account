@@ -5,6 +5,7 @@
             <x-rapidez::input.password
                 v-model="variables.currentPassword"
                 name="currentPassword"
+                autocomplete="current-password"
                 required
             />
         </label>
@@ -14,6 +15,7 @@
                 <x-rapidez::input.password
                     v-model="variables.newPassword"
                     name="newPassword"
+                    autocomplete="new-password"
                     required
                 />
             </label>

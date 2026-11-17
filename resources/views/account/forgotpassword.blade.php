@@ -19,6 +19,7 @@
                     <form v-on:submit.prevent="mutate" class="flex w-full flex-col gap-3 p-8">
                         <x-rapidez::input
                             name="email"
+                            autocomplete="email"
                             type="email"
                             :placeholder="__('Email')"
                             v-model="variables.email"

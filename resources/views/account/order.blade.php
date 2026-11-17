@@ -7,7 +7,7 @@
 @section('account-content')
     <graphql
         query='@include('rapidez::account.partials.queries.order')'
-        :variables="{orderNumber: '{{ request()->id }}'}"
+        :variables="{orderNumber: {{ \Illuminate\Support\Js::from((string) request()->id) }}}"
         :check="(data) => data.customer.orders.items[0]"
         redirect="{{ route('account.orders') }}"
         v-slot="{ data }"

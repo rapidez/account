@@ -1,6 +1,14 @@
 # Changelog 
 
-[Unreleased changes](https://github.com/rapidez/account/compare/5.3.0...5.3.0)
+[Unreleased changes](https://github.com/rapidez/account/compare/5.3.1...5.3.1)
+## [5.3.1](https://github.com/rapidez/account/releases/tag/5.3.1) - 2026-11-06
+
+### Fixed
+
+- Added Mage-OS to the Playwright tests (#107)
+- Use the Playwright workflow from rapidez/workflows (#108)
+- Remove BasePage.tags in Playwright tests (#110)
+
 ## [5.3.0](https://github.com/rapidez/account/releases/tag/5.3.0) - 2026-10-09
 
 ### Changed
